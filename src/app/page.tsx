@@ -4,6 +4,7 @@ import Header_main from '@/components/header/main';
 import Footer_main from '@/components/footer/main';
 import { useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header_Login from '@/components/header/Login';
 import Footer_Login from '@/components/footer/Login';
 
@@ -34,7 +35,9 @@ export default function Home() {
       <Header_Login/>
       <main>
         <ul className='firstView'>
-          <li><picture><img src="/img/firstView1.jpg" alt='その一票が未来を変える'/></picture></li>
+          <li>
+            <picture><img src="/img/firstView1.jpg" alt='その一票が未来を変える'/></picture>
+            </li>
           <li><picture><img src="/img/firstView2.jpg" alt='ルールを守って楽しく投票'/></picture></li>
         </ul>
         <div  className='beginnerBtn'>
