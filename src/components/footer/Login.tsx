@@ -1,7 +1,7 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
+import "@/components/footer/style.css"
 
 export default function Footer_Login() {
     return(
@@ -10,7 +10,7 @@ export default function Footer_Login() {
                 <ul className="footer">
                     <li>
                         <p>
-                            <Link href="#">
+                            <Link href="/Home">
                                 <picture className="footerIcon">
                                     <img alt="ホーム" src="/img/Home.svg"/>
                                 </picture>
@@ -30,7 +30,7 @@ export default function Footer_Login() {
                     </li>
                     <li>
                         <p>
-                            <Link href="#">
+                            <Link href="/election">
                                 <picture className="footerIcon">
                                     <img src="/img/vote.svg" alt="ミライ投票"/>
                                 </picture>

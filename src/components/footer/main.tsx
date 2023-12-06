@@ -1,7 +1,7 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
+import "@/components/footer/style.css"
 
 export default function Footer_main() {
     return(

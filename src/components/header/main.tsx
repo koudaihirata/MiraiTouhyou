@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image"
+import "@/components/header/style.css"
 
 export default function Header_main() {
     return(

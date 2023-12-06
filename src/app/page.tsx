@@ -3,7 +3,6 @@
 import Header_main from '@/components/header/main';
 import Footer_main from '@/components/footer/main';
 import { useEffect } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import Header_Login from '@/components/header/Login';
 import Footer_Login from '@/components/footer/Login';
