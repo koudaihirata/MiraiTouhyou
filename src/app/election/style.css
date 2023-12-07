@@ -1,4 +1,48 @@
-.electionView img{
+
+.pseudoVoting{
+    width: 80%;
+    margin: 60px auto 40px;
+    font-size: 16px;
+}
+.pseudoVoting h2{
+    font-weight: bold;
+    margin-top: 20px;
+}
+.pseudoVoting p{
+    margin-left: 32px;
+    margin-top: 10px;
+}
+.componentsBtn{
     width: 100%;
-    height: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.CurrentSituation{
+    width: 80%;
+    margin: 26px auto 30px;
+    border-bottom: #D9D9D9 1px solid;
+}
+.update{
+    margin-bottom: 10px;
+    width: 45px;
+    height: 20px;
+    border-radius: 50px;
+    border: 1px solid #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.update p{
+    font-size: 10px;
+}
+.rank h3{
+    text-align: center;
+}
+
+.candidate{
+    width: 312px;
+    height: 40px;
+    box-shadow: 0px 1px 1px 0px #777777;
+    display: flex;
+    border-radius: 5px;
 }
