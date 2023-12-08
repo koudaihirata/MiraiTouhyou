@@ -16,6 +16,7 @@ type CandidateProps = {
     // now: "新" | "現" | "元",
     now:string,
     num:Number,
+    color:string,
 }
 const persons = [
     {
@@ -23,30 +24,35 @@ const persons = [
         party:"共産",
         now:"新",
         num:101212,
+        color:"#B0A200",
     },
     {
         name: "五十嵐太郎",
         party:"参政",
         now:"新",
         num:85187,
+        color:"#F39800",
     },
     {
         name: "新川るい",
         party:"自民",
         now:"元",
         num:50065,
+        color:"#C51442",
     },
     {
         name: "辛口池流",
         party:"N党",
         now:"現",
         num:10042,
+        color:"#657F10",
     },
     {
         name: "山口煙管",
         party:"無",
         now:"新",
         num:5432,
+        color:"#D9D9D9",
     },      
 ]
 export function Candidate(props:CandidateProps) {
@@ -54,7 +60,7 @@ export function Candidate(props:CandidateProps) {
         <div className="candidate">
             <Image src='/img/profile.svg' alt="Icon" width={24} height={24}/>
             <p>{props.name}</p>
-            <div><p>{props.party}</p></div>
+            <div style={{backgroundColor:props.color}}><p>{props.party}</p></div>
             <div><p>{props.now}</p></div>
             <p>{props.num.toString()}</p>
         </div>
@@ -86,9 +92,11 @@ export default function Election() {
                             <p>13:00</p>
                         </div>
                         <h3>現在の順位</h3>
-                            {persons.map((person,index) =>{
+
+                        {persons.map((person,index) =>{
                             return <Candidate key={index} {...person} />
-                            })}
+                        })}
+
                     </div>
                 </section>
                 <div className="componentsBtn"><Btn label="過去の結果を見る"/></div>
