@@ -1,9 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import "@/components/footer/style.css"
+import "@/components/electionFooter/electionStyle.css"
 
-export default function Footer_Login() {
+export default function Footer_election() {
     return(
         <footer>
             <nav className="footerNav">
@@ -12,7 +12,7 @@ export default function Footer_Login() {
                         <p>
                             <Link href="/">
                                 <picture className="footerIcon">
-                                    <img alt="ホーム" src="/img/Home.svg"/>
+                                    <img alt="ホーム" src="/img/Home2.svg"/>
                                 </picture>
                                 ホーム
                             </Link>
@@ -32,7 +32,7 @@ export default function Footer_Login() {
                         <p>
                             <Link href="/election">
                                 <picture className="footerIcon">
-                                    <img src="/img/vote.svg" alt="ミライ投票"/>
+                                    <img src="/img/election.svg" alt="ミライ投票"/>
                                 </picture>
                                 ミライ投票
                             </Link>
@@ -50,12 +50,7 @@ export default function Footer_Login() {
                     </li>
                     <li>
                         <p>
-                            <Link href="#">
-                                <picture className="footerIcon">
-                                    <img src="/img/profile.svg" alt="プロフィール"/>
-                                </picture>
-                                プロフィール
-                            </Link>
+                            プロフィール
                         </p>
                     </li>
                 </ul>

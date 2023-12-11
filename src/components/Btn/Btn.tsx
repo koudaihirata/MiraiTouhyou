@@ -5,9 +5,9 @@ export default function Btn({ label }: { label: string }) {
     return(
         <>
             <p>
-                <Link href="#" className="Btn">
+                <button className="Btn">
                     {label}
-                </Link>
+                </button>
             </p>
         </>
     )

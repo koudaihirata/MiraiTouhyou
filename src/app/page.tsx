@@ -1,45 +1,36 @@
 "use client"
 
-import Header_main from '@/components/header/main';
-import Footer_main from '@/components/footer/main';
-import { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Header_Login from '@/components/header/Login';
 import Footer_Login from '@/components/footer/Login';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
-  useEffect(()=> {
-    const img = document.querySelectorAll("main li") as NodeListOf<HTMLElement>;
-    let index = 0;
-
-    img[index].style.display = "block";
-    
-    const slide = setInterval(() =>{
-
-      img[index].style.display = "none";
-
-      index++;
-
-      if (index >= img.length) {
-        index = 0;
-      }
-
-      img[index].style.display = "block";
-    },7000);
-  },[]);
-  
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 7000,
+  };
 
   return (
     <>
       <Header_Login/>
       <main>
-        <ul className='firstView'>
-          <li>
-            <picture><img src="/img/firstView1.jpg" alt='その一票が未来を変える'/></picture>
-            </li>
-          <li><picture><img src="/img/firstView2.jpg" alt='ルールを守って楽しく投票'/></picture></li>
-        </ul>
+        <Slider {...settings} className='firstView'>
+          <picture>
+            <img src="/img/firstView1.jpg" alt='その一票が未来を変える' className='.firstViewImg'/>
+          </picture>
+          <picture>
+            <img src="/img/firstView2.jpg" alt='ルールを守って楽しく投票' className='.firstViewImg'/>
+          </picture>
+        </Slider>
         <div  className='beginnerBtn'>
           <Link href='#'>
             <picture>

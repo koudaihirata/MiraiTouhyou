@@ -1,13 +1,12 @@
 "use client"
 
 import Btn from "@/components/Btn/Btn"
-import Footer_main from "@/components/footer/main"
-import Header_Login from "@/components/header/Login"
 import Header_main from "@/components/header/main"
 import Image from "next/image"
 import "@/app/election/style.css"
 import Link from "next/link"
 import { type } from "os"
+import Footer_election from "@/components/electionFooter/election"
 
 
 
@@ -168,7 +167,7 @@ export function Party(props:PartyProps) {
 export default function Election() {
     return(
         <>
-            <Header_Login/>
+            <Header_main/>
             <main className="mb-36">
                 <div style={{ width: '100vw', height: '200px', position: 'relative' }}>
                     <Image src="/img/electionView.svg" alt="第27回参議院議員通常選挙" layout="fill" objectFit="contain"/>
@@ -179,10 +178,15 @@ export default function Election() {
                     <h2>擬似投票結果</h2>
                     <p>6月1日　10時発表</p>
                 </div>
-                <div className="componentsBtn"><Btn label="投票する"/></div>
+                <div className="componentsBtn">
+                    <Link href="/election/vote">
+                        <Btn label="投票する" />
+                    </Link>
+                </div>
                 <section className="CurrentSituation">
                     <div className="rank">
                         <div className="update">
+                            <Image src='/img/reload.svg' alt="リロード" width={10} height={10}/>
                             <p>13:00</p>
                         </div>
                         <h3>現在の順位</h3>
@@ -202,6 +206,7 @@ export default function Election() {
                             {parties.map((parties,index) => {
                                 return <Party key={index} {...parties}/>
                             })}
+                            <p>（万）</p>
                         </div>
                         <p>※選挙情報に誤りがあった場合、恐れ入りますが<Link href="#">こちら</Link>よりお問合せください。</p>
                         <p>
@@ -211,9 +216,13 @@ export default function Election() {
                         </p>
                     </div>
                 </section>
-                <div className="componentsBtn"><Btn label="過去の結果を見る"/></div>
+                <div className="componentsBtn">
+                    <Link href="/election/pastResults">
+                        <Btn label="過去の結果を見る"/>
+                    </Link>
+                </div>
             </main>
-            <Footer_main/>
+            <Footer_election/>
         </>
     )
 }
