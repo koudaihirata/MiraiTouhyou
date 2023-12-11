@@ -93,71 +93,52 @@ const CandidateVotes = [
 
 ]
 
-export function VoteBtn({
-    onClick,
-}:{onClick?:() => void, selected?:boolean}) {
-    const [color, setColor] = useState('#fff');
-    const [selected, setSelected] = useState(false);
-
-    React.useEffect(() => {
-        if (selected) {
-            setColor('#fff')
-        }
-        else{
-            setColor('#FF1414')
-        }
-    },[selected])
-
+type VoteBtnProps = {
+    onClick: () => void;
+    selected: boolean;
+};
+export function VoteBtn({ onClick, selected }:VoteBtnProps) {
     const styles = {
-        backgroundColor: color,
-        width: '30px',
-        height: '30px',
-        borderRadius: '50%'
+    backgroundColor: selected ? '#FF1414' : '#fff',
+    width: '30px',
+    height: '30px',
+    borderRadius: '50%'
     }
 
-    const handleClick = () => {
-        setSelected(!selected);
-        onClick && onClick();
-    }
-
-    return(
-        <div className="VoteBtn">
-            <button style={styles} onClick={handleClick}></button>
-        </div>
+    return (
+    <div className="VoteBtn">
+        <button style={styles} onClick={onClick}></button>
+    </div>
     )
+
 }
-
-export function CandidateVote(props:CandidateVoteProps) {
-    const [selected, setSelected] = useState(false);
-
-    const handleClick = () => {
-        setSelected(!selected);
-    }
-
-    return(
-        <div className="electoralDistrict">
-            <Image src={props.img} alt="新川" width={80} height={100}/>
-            <Link href="#" className="profile">
-                <div className="profileName">
-                    <p>{props.Furigana}</p>
-                    <h4>{props.name}</h4>
-                </div>
-                <div className="profileWork">
-                    <p>{props.Profession}</p>
-                    <p>{props.age.toString()}歳（{props.gender}）［{props.work}］</p>
-                </div>
-                <div className="profileParty">{props.party}</div>
-            </Link>
-            <div className="VoteBtnWarp">
-                <VoteBtn onClick={handleClick} selected={selected}/>
+export function CandidateVote(props:any) {
+    return (
+    <div className="electoralDistrict">
+        <Image src={props.img} alt="新川" width={80} height={100}/>
+        <Link href="#" className="profile">
+            <div className="profileName">
+                <p>{props.Furigana}</p>
+                <h4>{props.name}</h4>
             </div>
+            <div className="profileWork">
+                <p>{props.Profession}</p>
+                <p>{props.age.toString()}歳（{props.gender}）［{props.work}］</p>
+            </div>
+            <div className="profileParty">{props.party}</div>
+        </Link>
+        <div className="VoteBtnWarp">
+            <VoteBtn onClick={props.onClick} selected={props.selected}/>
         </div>
+    </div>
     )
 }
 
 
 export default function Vote() {
-    return(
+    const [selectedCandidate, setSelectedCandidate] = useState<Number|null>(null);
+
+    return (
     <>
         <Header_main/>
         <main>
@@ -169,14 +150,18 @@ export default function Vote() {
                     <p><span>4</span>/7</p>
                 </div>
                 <section className="electoralDistrictBox">
-                    {CandidateVotes.map((CandidateVotes, index) => {
-                        return <CandidateVote key={index} {...CandidateVotes} />
-                    })}
+                    {CandidateVotes.map((candidate, index) => (
+                    <CandidateVote
+                    {...candidate}
+                    key={index}
+                    selected={selectedCandidate === index}
+                    onClick={() => setSelectedCandidate(index)}
+                    />
+                    ))}
                 </section>
             </div>
             <div>
                 <h3>比例代表選挙</h3>
-
             </div>
         </main>
         <Footer_election/>
