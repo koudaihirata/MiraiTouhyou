@@ -8,6 +8,7 @@
     width: 60px;
     height: 40px;
     text-align: center;
+    overflow: hidden;
 }
 .footer a{
     width: 100%;
@@ -30,7 +31,7 @@
     width: 25px;
     height: 25px;
 }
-.footer::before{
+/* .footer::before{
     content: "";
     position: absolute;
     width: 55px;
@@ -51,4 +52,8 @@
     top: 0;
     left: 0;
     z-index: -5;
+} */
+.footerP img{
+    border-radius: 50%;
+    margin: 0 auto;
 }

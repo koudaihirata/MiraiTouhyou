@@ -1,8 +1,11 @@
 "use client"
 
 import "@/components/header/style.css"
+import SignIn from "../signIn/sigin"
 
 export default function Header_Login() {
+
+
     return(
         <header>
             <nav className="headerNav">
@@ -14,12 +17,13 @@ export default function Header_Login() {
                             </picture>
                         </h1>
                     </li>
-                    <li>
-                        <button className="LoginBtn">登録する</button>
+                    <li className="signIn">
+                        <SignIn/>
                     </li>
                 </ul>
             </nav>
         </header>
     )
 }
+
 

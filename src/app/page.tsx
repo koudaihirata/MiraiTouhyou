@@ -16,7 +16,7 @@ export default function Home() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 7000,
+    autoplaySpeed: 5000,
   };
 
   return (
@@ -61,8 +61,8 @@ export default function Home() {
                 <p>〜〜新聞デジタル・5時間前</p>
               </div>
               <div className='newsPhoto'>
-                <picture className='tantan'>
-                  <img src='/img/tenten.svg' alt='詳しく'/>
+                <picture className='point'>
+                  <img src='/img/point.svg' alt='詳しく'/>
                 </picture>
                 <picture>
                   <img src='/img/politician.jpg' alt='政治家' width={75} height={75}/>
@@ -71,7 +71,9 @@ export default function Home() {
             </div>
           </div>
           <div className='SeeMore'>
-            <p><Link href='#'>ニュースをもっと読む</Link></p>
+            <div>
+              <Link href='#'>ニュースをもっと読む</Link>
+            </div>
           </div>
         </section>
       </main>

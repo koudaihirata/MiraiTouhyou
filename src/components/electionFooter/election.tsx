@@ -2,6 +2,30 @@
 
 import Link from "next/link"
 import "@/components/electionFooter/electionStyle.css"
+import Image from "next/image"
+
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "@/firebase/firebase";
+
+export function Icon() {
+    const [user] = useAuthState(auth);
+
+    return (
+        <>
+            {user ? (
+                <Image src={auth.currentUser?.photoURL || "/default/icon/path"} alt="アイコン" width={25} height={25} />
+            ) : (
+                <Image
+                    src="/img/profile.svg"
+                    alt="プロフィール"
+                    width={25}
+                    height={25}
+                />
+            )}
+        </>
+    );
+}
+
 
 export default function Footer_election() {
     return(
@@ -50,7 +74,10 @@ export default function Footer_election() {
                     </li>
                     <li>
                         <p>
-                            プロフィール
+                            <Link href="#" className="footerP">
+                                <Icon />
+                                プロフィール
+                            </Link>
                         </p>
                     </li>
                 </ul>

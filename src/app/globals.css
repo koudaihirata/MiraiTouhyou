@@ -9,6 +9,7 @@
 *{
     color: #333;
     font-size: 12px;
+    overflow-x: hidden;
 }
 li{
     text-decoration: none;
@@ -16,6 +17,10 @@ li{
 
 main{
     padding-top: 60px;
+}
+.firstView{
+    width: 100%;
+    overflow-y: hidden;
 }
 .firstView > li{
     display: none;
@@ -48,6 +53,7 @@ main{
     width: 85%;
     height: 100%;
     margin: 0 auto;
+    overflow: hidden;
 }
 .notice > div > div{
     display: flex;
@@ -72,6 +78,7 @@ main{
     border-top: 1px solid #a4a4a4;
     margin-top: 47px;
     gap: 40px;
+    overflow: hidden;
 }
 .newsMain >div{
     width: 90%;
@@ -91,7 +98,12 @@ main{
     display: flex;
     gap: 16px;
 }
-.tenten img{
+.point{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.point img{
     width: 30px;
     height: 18px;
 }
@@ -101,17 +113,17 @@ main{
     margin: 0 auto;
     margin-bottom: 120px;
     margin-top: 10px;
-}
-.SeeMore > p{
-    color: #1E76DE;
-    width: 86%;
-    text-align: end;
-    margin-bottom: 5px;
-}
-.SeeMore a{
     position: relative;
 }
-.SeeMore a::after{
+.SeeMore > div{
+    width: 80%;
+    text-align: end;
+}
+.SeeMore a{
+    color: #1E76DE;
+    margin-bottom: 5px;
+}
+.SeeMore::after{
     content: "";
     position: absolute;
     width: 12px;
@@ -120,7 +132,6 @@ main{
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
     border-left: 12px solid #1E76DE;
-    border-right: 0;
-    top: 1px;
-    right: -30px;
+    top: 3px;
+    right: 30px;
 }

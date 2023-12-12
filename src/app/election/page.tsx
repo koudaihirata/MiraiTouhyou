@@ -179,7 +179,7 @@ export default function Election() {
                     <p>6月1日　10時発表</p>
                 </div>
                 <div className="componentsBtn">
-                    <Link href="/election/vote">
+                    <Link href="/election/vote" className="voteBtn">
                         <Btn label="投票する" />
                     </Link>
                 </div>
@@ -217,7 +217,7 @@ export default function Election() {
                     </div>
                 </section>
                 <div className="componentsBtn">
-                    <Link href="/election/pastResults">
+                    <Link href="/election/pastResults" className="voteBtn">
                         <Btn label="過去の結果を見る"/>
                     </Link>
                 </div>
