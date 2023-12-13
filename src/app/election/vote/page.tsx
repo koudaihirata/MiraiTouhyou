@@ -1,6 +1,5 @@
 "use client"
 
-import Header_main from "@/components/header/main"
 import "@/app/election/vote/style.css"
 import Link from "next/link"
 import { type } from "os"
@@ -8,6 +7,7 @@ import Image from "next/image"
 import { useState } from "react"
 import React from "react"
 import Footer_election from "@/components/electionFooter/election"
+import Header_Login from "@/components/header/Login"
 
 type CandidateVoteProps = {
     img:string,
@@ -18,7 +18,16 @@ type CandidateVoteProps = {
     gender:string,
     work:string,
     party:string,
+    onClick: () => void,
+    selected: boolean,
 }
+type PartyVoteProps = {
+    party:string,
+    onClick: () => void,
+    selected: boolean,
+
+}
+
 const CandidateVotes = [
     {
         img:"/img/arakawa.jpg",
@@ -92,27 +101,87 @@ const CandidateVotes = [
     },
 
 ]
+const PartyVotes = [
+    {
+        party:"維新政党・新風",
+    },
+    {
+        party:"幸福実現党",
+    },
+    {
+        party:"公明党",
+    },
+    {
+        party:"国民民主党",
+    },
+    {
+        party:"参政党",
+    },
+    {
+        party:"新党くにもり",
+    },
+    {
+        party:"自由民主党",
+    },
+    {
+        party:"日本維新の会",
+    },
+    {
+        party:"日本共産党",
+    },
+    {
+        party:"日本第一党",
+    },
+    {
+        party:"ごぼうの党",
+    },
+    {
+        party:"れいわ新選組",
+    },
+    {
+        party:"社会民主党",
+    },
+    {
+        party:"立憲民主党",
+    },
+    {
+        party:"ＮＨＫ党",
+    },
+]
 
 type VoteBtnProps = {
     onClick: () => void;
     selected: boolean;
 };
-export function VoteBtn({ onClick, selected }:VoteBtnProps) {
+
+export function CandidateVoteBtn({ onClick, selected }:VoteBtnProps) {
     const styles = {
     backgroundColor: selected ? '#FF1414' : '#fff',
     width: '30px',
     height: '30px',
-    borderRadius: '50%'
+    borderRadius: '50%',
     }
-
     return (
     <div className="VoteBtn">
         <button style={styles} onClick={onClick}></button>
     </div>
     )
-
 }
-export function CandidateVote(props:any) {
+export function PartyVoteBtn({ onClick, selected }:VoteBtnProps) {
+    const styles = {
+        backgroundColor: selected ? '#ff1414' : '#fff',
+        width: '16px',
+        height: '16px',
+        borderRadius: '50%',
+    }
+    return(
+        <div className="partyBtn">
+            <button style={styles} onClick={onClick}></button>
+        </div>
+    )
+}
+
+export function CandidateVote(props:CandidateVoteProps) {
     return (
     <div className="electoralDistrict">
         <Image src={props.img} alt="新川" width={80} height={100}/>
@@ -128,9 +197,22 @@ export function CandidateVote(props:any) {
             <div className="profileParty">{props.party}</div>
         </Link>
         <div className="VoteBtnWarp">
-            <VoteBtn onClick={props.onClick} selected={props.selected}/>
+            <CandidateVoteBtn onClick={props.onClick} selected={props.selected}/>
         </div>
     </div>
+    )
+}
+
+export function PartyVote(props:PartyVoteProps) {
+    return(
+        <div className="proportionalRepresentation">
+            <div className="partyName">
+                <p>{props.party}</p>
+            </div>
+            <div className="partyBtnWarp">
+                <PartyVoteBtn onClick={props.onClick} selected={props.selected}/>
+            </div>
+        </div>
     )
 }
 
@@ -140,7 +222,7 @@ export default function Vote() {
 
     return (
     <>
-        <Header_main/>
+        <Header_Login/>
         <main>
             <div>
                 <h2>第27回参議院議員通常選挙</h2>
@@ -160,8 +242,26 @@ export default function Vote() {
                     ))}
                 </section>
             </div>
-            <div>
+            <div className="proportionalRepresentationWarp">
                 <h3>比例代表選挙</h3>
+                <section className="proportionalRepresentationBox">
+                    {PartyVotes.map((candidate, index) => (
+                        <PartyVote
+                        {...candidate}
+                        key={index}
+                        selected={selectedCandidate === index}
+                        onClick={() => setSelectedCandidate(index)}
+                        />
+                    ))}
+                </section>
+                <div>
+                    <p>※選挙情報に誤りがあった場合、恐れ入りますが<Link href="#">こちら</Link>よりお問合せください。</p>
+                    <p>
+                        【候補者・政治家の方へ】<br />
+                        ※政治家・候補者情報の掲載や変更等は無料で承っておりますので、<br />
+                        <Link href="#">こちらをご確認ください。</Link>
+                    </p>
+                </div>
             </div>
         </main>
         <Footer_election/>

@@ -75,3 +75,47 @@ h3{
     justify-content: center;
     align-items: center;
 }
+
+
+
+.proportionalRepresentationBox{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin:20px auto 0;
+}
+.proportionalRepresentation{
+    width: 50%;
+    display: flex;
+    gap: 10px;
+}
+.partyName{
+    font-size: 16px;
+    width: 6em;
+}
+.partyBtn{
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    border: 1px #333 solid;
+    border-radius: 50%;
+}
+.partyBtn{
+    margin-bottom: 1em;
+}
+
+.proportionalRepresentationWarp > div{
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: #d8d8d8 1px solid;
+    padding-bottom: 24px;
+    padding-top: 16px;
+}
+.proportionalRepresentationWarp > div > p{
+    font-size: 8px;
+    margin-bottom: 8px;
+}
+.proportionalRepresentationWarp > div > p a{
+    font-size: 8px;
+    border-bottom: 1px solid #333;
+}

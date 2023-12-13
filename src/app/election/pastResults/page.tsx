@@ -1,7 +1,7 @@
 "use client"
 
 import Footer_election from "@/components/electionFooter/election"
-import Header_main from "@/components/header/main"
+import Header_Login from "@/components/header/Login"
 
 
 
@@ -9,7 +9,7 @@ import Header_main from "@/components/header/main"
 export default function pastResults() {
     return(
         <>
-            <Header_main/>
+            <Header_Login/>
             <main>
                 
             </main>

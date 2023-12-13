@@ -1,12 +1,12 @@
 "use client"
 
 import Btn from "@/components/Btn/Btn"
-import Header_main from "@/components/header/main"
 import Image from "next/image"
 import "@/app/election/style.css"
 import Link from "next/link"
 import { type } from "os"
 import Footer_election from "@/components/electionFooter/election"
+import Header_Login from "@/components/header/Login"
 
 
 
@@ -167,7 +167,7 @@ export function Party(props:PartyProps) {
 export default function Election() {
     return(
         <>
-            <Header_main/>
+            <Header_Login/>
             <main className="mb-36">
                 <div style={{ width: '100vw', height: '200px', position: 'relative' }}>
                     <Image src="/img/electionView.svg" alt="第27回参議院議員通常選挙" layout="fill" objectFit="contain"/>
