@@ -219,6 +219,7 @@ export function PartyVote(props:PartyVoteProps) {
 
 export default function Vote() {
     const [selectedCandidate, setSelectedCandidate] = useState<Number|null>(null);
+    const [PartyVoteDate, setPartyVoteDate] = useState<Number|null>(null);
 
     return (
     <>
@@ -245,12 +246,12 @@ export default function Vote() {
             <div className="proportionalRepresentationWarp">
                 <h3>比例代表選挙</h3>
                 <section className="proportionalRepresentationBox">
-                    {PartyVotes.map((candidate, index) => (
+                    {PartyVotes.map((candidates, index) => (
                         <PartyVote
-                        {...candidate}
+                        {...candidates}
                         key={index}
-                        selected={selectedCandidate === index}
-                        onClick={() => setSelectedCandidate(index)}
+                        selected={PartyVoteDate === index}
+                        onClick={() => setPartyVoteDate(index)}
                         />
                     ))}
                 </section>

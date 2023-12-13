@@ -99,6 +99,9 @@ h3{
     height: 20px;
     border: 1px #333 solid;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .partyBtn{
     margin-bottom: 1em;
@@ -108,7 +111,7 @@ h3{
     width: 80%;
     margin: 0 auto;
     border-bottom: #d8d8d8 1px solid;
-    padding-bottom: 24px;
+    padding-bottom: 2px;
     padding-top: 16px;
 }
 .proportionalRepresentationWarp > div > p{
