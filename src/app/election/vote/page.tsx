@@ -22,7 +22,7 @@ type CandidateVoteProps = {
     selected: boolean,
 }
 type PartyVoteProps = {
-    party:string,
+    parties:string,
     onClick: () => void,
     selected: boolean,
 
@@ -103,49 +103,49 @@ const CandidateVotes = [
 ]
 const PartyVotes = [
     {
-        party:"維新政党・新風",
+        parties:"維新政党・新風",
     },
     {
-        party:"幸福実現党",
+        parties:"幸福実現党",
     },
     {
-        party:"公明党",
+        parties:"公明党",
     },
     {
-        party:"国民民主党",
+        parties:"国民民主党",
     },
     {
-        party:"参政党",
+        parties:"参政党",
     },
     {
-        party:"新党くにもり",
+        parties:"新党くにもり",
     },
     {
-        party:"自由民主党",
+        parties:"自由民主党",
     },
     {
-        party:"日本維新の会",
+        parties:"日本維新の会",
     },
     {
-        party:"日本共産党",
+        parties:"日本共産党",
     },
     {
-        party:"日本第一党",
+        parties:"日本第一党",
     },
     {
-        party:"ごぼうの党",
+        parties:"ごぼうの党",
     },
     {
-        party:"れいわ新選組",
+        parties:"れいわ新選組",
     },
     {
-        party:"社会民主党",
+        parties:"社会民主党",
     },
     {
-        party:"立憲民主党",
+        parties:"立憲民主党",
     },
     {
-        party:"ＮＨＫ党",
+        parties:"ＮＨＫ党",
     },
 ]
 
@@ -207,7 +207,7 @@ export function PartyVote(props:PartyVoteProps) {
     return(
         <div className="proportionalRepresentation">
             <div className="partyName">
-                <p>{props.party}</p>
+                <p>{props.parties}</p>
             </div>
             <div className="partyBtnWarp">
                 <PartyVoteBtn onClick={props.onClick} selected={props.selected}/>
@@ -217,7 +217,9 @@ export function PartyVote(props:PartyVoteProps) {
 }
 
 
-export default function Vote(props:CandidateVoteProps,) {
+export default function Vote(props:PartyVoteProps,) {
+    console.log(props.parties); 
+
     const [selectedCandidate, setSelectedCandidate] = useState<Number|null>(null);
     const [PartyVoteDate, setPartyVoteDate] = useState<Number|null>(null);
 
@@ -264,7 +266,7 @@ export default function Vote(props:CandidateVoteProps,) {
                     </p>
                 </div>
             </div>
-            <Link href={`/election/vote/Confirmation?Candidate=${props.name}&PartyVote=${props.party}`}>投票する</Link>
+            <Link href={`/election/vote/Confirmation?Candidate=${props.parties}`}>投票する</Link>
         </main>
         <Footer_election/>
     </>

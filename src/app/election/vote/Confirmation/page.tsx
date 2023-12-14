@@ -4,21 +4,39 @@
 import Footer_Login from "@/components/footer/Login";
 import Header_Login from "@/components/header/Login";
 import { useSearchParams } from "next/navigation";
+import { useLocation } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Vote from "../page";
+
+
+function ConfirmationPage() {
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const candidate = searchParams.get('Candidate');
+    const partyVote = searchParams.get('PartyVote');
+
+    return (
+        <div>
+            <h1>Confirmation Page</h1>
+            <p>Candidate: {candidate}</p>
+            <p>Party Vote: {partyVote}</p>
+        </div>
+    );
+}
+
 
 
 export default function Confirmation() {
-    const searchParams = useSearchParams();
-    const Candidate = searchParams.get('Candidate')
-    const PartyVote = searchParams.get('PartyVote')
-
     return(
         <>
             <Header_Login/>
             <main>
-                <p>{Candidate}</p>
-                <p>{PartyVote}</p>
+                <Router>
+                    <ConfirmationPage/>
+                </Router>
             </main>
             <Footer_Login/>
         </>
     )
 }
+
