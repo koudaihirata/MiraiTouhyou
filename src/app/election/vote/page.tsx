@@ -217,7 +217,7 @@ export function PartyVote(props:PartyVoteProps) {
 }
 
 
-export default function Vote() {
+export default function Vote(props:CandidateVoteProps,) {
     const [selectedCandidate, setSelectedCandidate] = useState<Number|null>(null);
     const [PartyVoteDate, setPartyVoteDate] = useState<Number|null>(null);
 
@@ -264,6 +264,7 @@ export default function Vote() {
                     </p>
                 </div>
             </div>
+            <Link href={`/election/vote/Confirmation?Candidate=${props.name}&PartyVote=${props.party}`}>投票する</Link>
         </main>
         <Footer_election/>
     </>
