@@ -25,7 +25,7 @@ type PartyVoteProps = {
     parties:string,
     onClick: () => void,
     selected: boolean,
-
+    party:string,
 }
 
 const CandidateVotes = [
@@ -254,6 +254,7 @@ export default function Vote(props:PartyVoteProps,) {
                         key={index}
                         selected={PartyVoteDate === index}
                         onClick={() => setPartyVoteDate(index)}
+                        party={candidates.parties}
                         />
                     ))}
                 </section>

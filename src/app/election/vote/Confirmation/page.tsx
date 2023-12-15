@@ -9,7 +9,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Vote from "../page";
 
 
-function ConfirmationPage() {
+function ConfirmationPage({party}:{party:string}) {
+    console.log(party);
+
+
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const candidate = searchParams.get('Candidate');
@@ -19,7 +22,7 @@ function ConfirmationPage() {
         <div>
             <h1>Confirmation Page</h1>
             <p>Candidate: {candidate}</p>
-            <p>Party Vote: {partyVote}</p>
+            {/* <p>Party Vote: {party.parties}</p> */}
         </div>
     );
 }
