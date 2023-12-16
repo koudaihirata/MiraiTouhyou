@@ -2,152 +2,20 @@
 
 import "@/app/election/vote/style.css"
 import Link from "next/link"
-import { type } from "os"
 import Image from "next/image"
 import { useState } from "react"
 import React from "react"
 import Footer_election from "@/components/electionFooter/election"
 import Header_Login from "@/components/header/Login"
 
-type CandidateVoteProps = {
-    img:string,
-    Furigana:string,
-    name:string,
-    Profession:string,
-    age:Number,
-    gender:string,
-    work:string,
-    party:string,
-    onClick: () => void,
-    selected: boolean,
-}
+
+
 type PartyVoteProps = {
     parties:string,
     onClick: () => void,
     selected: boolean,
     party:string,
 }
-
-const CandidateVotes = [
-    {
-        img:"/img/arakawa.jpg",
-        Furigana: "アラカワ ルイ",
-        name: "新川 るい",
-        Profession: "参議院議員",
-        age: 51,
-        gender: "女",
-        work: "現職",
-        party: "自由民主党"
-    },
-    {
-        img:"/img/igarasi.jpg",
-        Furigana: "イガラシ タロウ",
-        name: "五十嵐 太郎",
-        Profession: "団体役員",
-        age: 43,
-        gender: "男",
-        work: "現職",
-        party: "参政党"
-    },
-    {
-        img:"/img/karakuti.jpg",
-        Furigana: "カラクチ イケル",
-        name: "辛口 池流",
-        Profession: "無職",
-        age: 57,
-        gender: "男",
-        work: "新人",
-        party: "NHK党"
-    },
-    {
-        img:"/img/tatibana.jpg",
-        Furigana: "タチバナ ヤヨイ",
-        name: "橘 弥生",
-        Profession: "政党役員",
-        age: 67,
-        gender: "女",
-        work: "現職",
-        party: "立憲民主党"
-    },
-    {
-        img:"/img/hirata.jpg",
-        Furigana: "ヒラタ コウダイ",
-        name: "平田 広大",
-        Profession: "参議院議員",
-        age: 41,
-        gender: "男",
-        work: "現職",
-        party: "日本共産党"
-    },
-    {
-        img:"/img/yamaguti.jpg",
-        Furigana: "ヤマグチ キセル",
-        name: "山口 煙管",
-        Profession: "無職",
-        age: 68,
-        gender: "男",
-        work: "新人",
-        party: "無所属"
-    },
-    {
-        img:"/img/rukawa.jpg",
-        Furigana: "ルカワ カエデ",
-        name: "流川 楓",
-        Profession: "自営業",
-        age: 38,
-        gender: "男",
-        work: "新人",
-        party: "日本維新の会"
-    },
-
-]
-const PartyVotes = [
-    {
-        parties:"維新政党・新風",
-    },
-    {
-        parties:"幸福実現党",
-    },
-    {
-        parties:"公明党",
-    },
-    {
-        parties:"国民民主党",
-    },
-    {
-        parties:"参政党",
-    },
-    {
-        parties:"新党くにもり",
-    },
-    {
-        parties:"自由民主党",
-    },
-    {
-        parties:"日本維新の会",
-    },
-    {
-        parties:"日本共産党",
-    },
-    {
-        parties:"日本第一党",
-    },
-    {
-        parties:"ごぼうの党",
-    },
-    {
-        parties:"れいわ新選組",
-    },
-    {
-        parties:"社会民主党",
-    },
-    {
-        parties:"立憲民主党",
-    },
-    {
-        parties:"ＮＨＫ党",
-    },
-]
 
 type VoteBtnProps = {
     onClick: () => void;
@@ -181,47 +49,57 @@ export function PartyVoteBtn({ onClick, selected }:VoteBtnProps) {
     )
 }
 
-export function CandidateVote(props:CandidateVoteProps) {
-    return (
-    <div className="electoralDistrict">
-        <Image src={props.img} alt="新川" width={80} height={100}/>
-        <Link href="#" className="profile">
-            <div className="profileName">
-                <p>{props.Furigana}</p>
-                <h4>{props.name}</h4>
-            </div>
-            <div className="profileWork">
-                <p>{props.Profession}</p>
-                <p>{props.age.toString()}歳（{props.gender}）［{props.work}］</p>
-            </div>
-            <div className="profileParty">{props.party}</div>
-        </Link>
-        <div className="VoteBtnWarp">
-            <CandidateVoteBtn onClick={props.onClick} selected={props.selected}/>
-        </div>
-    </div>
-    )
-}
 
 export function PartyVote(props:PartyVoteProps) {
     return(
-        <div className="proportionalRepresentation">
-            <div className="partyName">
-                <p>{props.parties}</p>
+            <div className="proportionalRepresentation">
+                <div className="partyName">
+                    <p>維新政党・新風</p>
+                </div>
+                <div className="partyBtnWarp">
+                    <input type="radio" name="party" value="1"/>
+                </div>
             </div>
-            <div className="partyBtnWarp">
-                <PartyVoteBtn onClick={props.onClick} selected={props.selected}/>
-            </div>
-        </div>
+
     )
 }
 
 
 export default function Vote(props:PartyVoteProps,) {
-    console.log(props.parties); 
+    const [selectedName, setSelectedName] = useState('');
 
-    const [selectedCandidate, setSelectedCandidate] = useState<Number|null>(null);
-    const [PartyVoteDate, setPartyVoteDate] = useState<Number|null>(null);
+    const handleVoteChange = (event:any) => {
+        const selectedProfile = event.target.closest('.electoralDistrict');
+        const selectedName = selectedProfile.querySelector('.profileName h4').textContent;
+        setSelectedName(selectedName);
+    };
+
+    const handleSubmit = (event:any) => {
+        event.preventDefault();
+        console.log(selectedName);
+        // ここでselectedNameを送信する処理を書く
+    };
+
+
+    const [partyName, setPartyName] = useState('');
+
+    const handlePartyChange = (e:any) => {
+        const selectedParty = e.target.closest('.proportionalRepresentation');
+        const partyName = selectedParty.querySelector('.partyName p').textContent;
+        setPartyName(partyName);
+    };
+
+    const partySubmit = (e:any) => {
+        e.preventDefault();
+        console.log(partyName);
+        
+    }
+
+    function handleBoth(e:any) {
+        handleSubmit(e);
+        partySubmit(e);
+    }    
+
 
     return (
     <>
@@ -235,29 +113,270 @@ export default function Vote(props:PartyVoteProps,) {
                     <p><span>4</span>/7</p>
                 </div>
                 <section className="electoralDistrictBox">
-                    {CandidateVotes.map((candidate, index) => (
-                    <CandidateVote
-                    {...candidate}
-                    key={index}
-                    selected={selectedCandidate === index}
-                    onClick={() => setSelectedCandidate(index)}
-                    />
-                    ))}
+                    <form onSubmit={handleSubmit}>
+                        <div className="electoralDistrict">
+                            <Image src="/img/arakawa.jpg" alt="新川" width={80} height={100}/>
+                            <Link href="#" className="profile">
+                                <div className="profileName">
+                                    <p>アラカワ ルイ</p>
+                                    <h4>新川 るい</h4>
+                                </div>
+                                <div className="profileWork">
+                                    <p>参議院議員</p>
+                                    <p>51歳（女）［現職］</p>
+                                </div>
+                                <div className="profileParty">自由民主党</div>
+                            </Link>
+                            <div className="VoteBtnWarp">
+                                <input type="radio" name="profile" value="1" onChange={handleVoteChange}/>
+                            </div>
+                        </div>
+                        <div className="electoralDistrict">
+                            <Image src="/img/igarasi.jpg" alt="五十嵐" width={80} height={100}/>
+                            <Link href="#" className="profile">
+                                <div className="profileName">
+                                    <p>イガラシ タロウ</p>
+                                    <h4>五十嵐 太郎</h4>
+                                </div>
+                                <div className="profileWork">
+                                    <p>団体役員</p>
+                                    <p>43歳（男）［現職］</p>
+                                </div>
+                                <div className="profileParty">参政党</div>
+                            </Link>
+                            <div className="VoteBtnWarp">
+                                <input type="radio"  name="profile" value="2" onChange={handleVoteChange}/>
+                            </div>
+                        </div>
+                        <div className="electoralDistrict">
+                            <Image src="/img/karakuti.jpg" alt="辛口" width={80} height={100}/>
+                            <Link href="#" className="profile">
+                                <div className="profileName">
+                                    <p>カラクチ イケル</p>
+                                    <h4>辛口 池流</h4>
+                                </div>
+                                <div className="profileWork">
+                                    <p>無職</p>
+                                    <p>57歳（男）［新人］</p>
+                                </div>
+                                <div className="profileParty">NHK党</div>
+                            </Link>
+                            <div className="VoteBtnWarp">
+                                <input type="radio"  name="profile" value="3" onChange={handleVoteChange}/>
+                            </div>
+                        </div>
+                        <div className="electoralDistrict">
+                            <Image src="/img/tatibana.jpg" alt="橘" width={80} height={100}/>
+                            <Link href="#" className="profile">
+                                <div className="profileName">
+                                    <p>タチバナ ヤヨイ</p>
+                                    <h4>橘 弥生</h4>
+                                </div>
+                                <div className="profileWork">
+                                    <p>政党役員</p>
+                                    <p>67歳（女）［現職］</p>
+                                </div>
+                                <div className="profileParty">立憲民主党</div>
+                            </Link>
+                            <div className="VoteBtnWarp">
+                                <input type="radio"  name="profile" value="4" onChange={handleVoteChange}/>
+                            </div>
+                        </div>
+                        <div className="electoralDistrict">
+                            <Image src="/img/hirata.jpg" alt="平田" width={80} height={100}/>
+                            <Link href="#" className="profile">
+                                <div className="profileName">
+                                    <p>ヒラタ コウダイ</p>
+                                    <h4>平田 広大</h4>
+                                </div>
+                                <div className="profileWork">
+                                    <p>参議院議員</p>
+                                    <p>41歳（男）［現職］</p>
+                                </div>
+                                <div className="profileParty">日本共産党</div>
+                            </Link>
+                            <div className="VoteBtnWarp">
+                                <input type="radio"  name="profile" value="5" onChange={handleVoteChange}/>
+                            </div>
+                        </div>
+                        <div className="electoralDistrict">
+                            <Image src="/img/hirata.jpg" alt="平田" width={80} height={100}/>
+                            <Link href="#" className="profile">
+                                <div className="profileName">
+                                    <p>ヒラタ コウダイ</p>
+                                    <h4>平田 広大</h4>
+                                </div>
+                                <div className="profileWork">
+                                    <p>参議院議員</p>
+                                    <p>41歳（男）［現職］</p>
+                                </div>
+                                <div className="profileParty">日本共産党</div>
+                            </Link>
+                            <div className="VoteBtnWarp">
+                                <input type="radio"  name="profile" value="6" onChange={handleVoteChange}/>
+                            </div>
+                        </div>
+                        <div className="electoralDistrict">
+                            <Image src="/img/yamaguti.jpg" alt="山口" width={80} height={100}/>
+                            <Link href="#" className="profile">
+                                <div className="profileName">
+                                    <p>ヤマグチ キセル</p>
+                                    <h4>山口 煙管</h4>
+                                </div>
+                                <div className="profileWork">
+                                    <p>無職</p>
+                                    <p>68歳（男）［新人］</p>
+                                </div>
+                                <div className="profileParty">無所属</div>
+                            </Link>
+                            <div className="VoteBtnWarp">
+                                <input type="radio"  name="profile" value="7" onChange={handleVoteChange}/>
+                            </div>
+                        </div>
+                        <div className="electoralDistrict">
+                            <Image src="/img/rukawa.jpg" alt="流川" width={80} height={100}/>
+                            <Link href="#" className="profile">
+                                <div className="profileName">
+                                    <p>ルカワ カエデ</p>
+                                    <h4>流川 楓</h4>
+                                </div>
+                                <div className="profileWork">
+                                    <p>自営業</p>
+                                    <p>38歳（男）［新人］</p>
+                                </div>
+                                <div className="profileParty">日本維新の会</div>
+                            </Link>
+                            <div className="VoteBtnWarp">
+                                <input type="radio"  name="profile" value="8" onChange={handleVoteChange}/>
+                            </div>
+                        </div>
+                    </form>
                 </section>
             </div>
             <div className="proportionalRepresentationWarp">
                 <h3>比例代表選挙</h3>
-                <section className="proportionalRepresentationBox">
-                    {PartyVotes.map((candidates, index) => (
-                        <PartyVote
-                        {...candidates}
-                        key={index}
-                        selected={PartyVoteDate === index}
-                        onClick={() => setPartyVoteDate(index)}
-                        party={candidates.parties}
-                        />
-                    ))}
-                </section>
+                <form className="proportionalRepresentationBox" onSubmit={partySubmit}>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>維新政党・新風</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="1" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>幸福実現党</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="2" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>公明党</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="3" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>国民民主党</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="4" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>参政党</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="5" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>新党くにもり</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="6" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>自由民主党</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="7" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>日本維新の会</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="8" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>日本共産党</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="9" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>日本第一党</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="10" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>ごぼうの党</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="11" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>れいわ新選組</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="12" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>社会民主党</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="13" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>立憲民主党</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="14" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                    <div className="proportionalRepresentation">
+                        <div className="partyName">
+                            <p>ＮＨＫ党</p>
+                        </div>
+                        <div className="partyBtnWarp">
+                            <input type="radio" name="party" value="15" onChange={handlePartyChange}/>
+                        </div>
+                    </div>
+                </form>
                 <div>
                     <p>※選挙情報に誤りがあった場合、恐れ入りますが<Link href="#">こちら</Link>よりお問合せください。</p>
                     <p>
@@ -267,7 +386,9 @@ export default function Vote(props:PartyVoteProps,) {
                     </p>
                 </div>
             </div>
-            <Link href={`/election/vote/Confirmation?Candidate=${props.parties}`}>投票する</Link>
+            <div className="sendBtn">
+                <button onClick={handleBoth}>投票する</button>
+            </div>
         </main>
         <Footer_election/>
     </>

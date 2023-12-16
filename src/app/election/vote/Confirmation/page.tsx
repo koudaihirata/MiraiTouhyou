@@ -35,7 +35,7 @@ export default function Confirmation() {
             <Header_Login/>
             <main>
                 <Router>
-                    <ConfirmationPage/>
+                    {/* <ConfirmationPage/> */}
                 </Router>
             </main>
             <Footer_Login/>
