@@ -7,6 +7,12 @@ import { useState } from "react"
 import React from "react"
 import Footer_election from "@/components/electionFooter/election"
 import Header_Login from "@/components/header/Login"
+import { doc, setDoc, addDoc, collection, serverTimestamp, } from "firebase/firestore";
+// import firebase from '@/firebase/firebase';
+import { initializeApp } from "firebase/app";
+import { getFirestore } from 'firebase/firestore/lite';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 
 
@@ -100,6 +106,23 @@ export default function Vote(props:PartyVoteProps,) {
         partySubmit(e);
     }    
 
+    const firebaseConfig = {
+        apiKey: "AIzaSyDIuns1nYm4ECraOatzn40MPMrGwDORvgU",
+        authDomain: "future-voting.firebaseapp.com",
+        projectId: "future-voting",
+        storageBucket: "future-voting.appspot.com",
+        messagingSenderId: "248901548022",
+        appId: "1:248901548022:web:9b17a1a22ee6ec84a2b9d7",
+        measurementId: "G-BTM4XZ162J"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    var db = firebase.firestore();
+    
+    addDoc( collection ( db, "Vote", ) , {
+        partyName
+    });
 
     return (
     <>
