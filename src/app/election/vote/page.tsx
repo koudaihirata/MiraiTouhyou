@@ -116,13 +116,13 @@ export default function Vote(props:PartyVoteProps,) {
         measurementId: "G-BTM4XZ162J"
     };
 
-    firebase.initializeApp(firebaseConfig);
+    // firebase.initializeApp(firebaseConfig);
 
-    var db = firebase.firestore();
+    // // var db = firebase.firestore();
     
-    addDoc( collection ( db, "Vote", ) , {
-        partyName
-    });
+    // addDoc( collection ( db, "Vote", ) , {
+    //     partyName
+    // });
 
     return (
     <>
