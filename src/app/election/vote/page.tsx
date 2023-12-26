@@ -139,7 +139,7 @@ export default function Vote(props:PartyVoteProps,) {
                     <form onSubmit={handleSubmit}>
                         <div className="electoralDistrict">
                             <Image src="/img/arakawa.jpg" alt="新川" width={80} height={100}/>
-                            <Link href="#" className="profile">
+                            <Link href="/election/vote/one" className="profile">
                                 <div className="profileName">
                                     <p>アラカワ ルイ</p>
                                     <h4>新川 るい</h4>
