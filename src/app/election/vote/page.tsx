@@ -139,7 +139,7 @@ export default function Vote(props:PartyVoteProps,) {
                     <form onSubmit={handleSubmit}>
                         <div className="electoralDistrict">
                             <Image src="/img/arakawa.jpg" alt="新川" width={80} height={100}/>
-                            <Link href="/election/vote/one" className="profile">
+                            <Link href="/election/vote/number/one" className="profile">
                                 <div className="profileName">
                                     <p>アラカワ ルイ</p>
                                     <h4>新川 るい</h4>
@@ -156,7 +156,7 @@ export default function Vote(props:PartyVoteProps,) {
                         </div>
                         <div className="electoralDistrict">
                             <Image src="/img/igarasi.jpg" alt="五十嵐" width={80} height={100}/>
-                            <Link href="#" className="profile">
+                            <Link href="/election/vote/number/two" className="profile">
                                 <div className="profileName">
                                     <p>イガラシ タロウ</p>
                                     <h4>五十嵐 太郎</h4>
@@ -220,23 +220,6 @@ export default function Vote(props:PartyVoteProps,) {
                             </Link>
                             <div className="VoteBtnWarp">
                                 <input type="radio"  name="profile" value="5" onChange={handleVoteChange}/>
-                            </div>
-                        </div>
-                        <div className="electoralDistrict">
-                            <Image src="/img/hirata.jpg" alt="平田" width={80} height={100}/>
-                            <Link href="#" className="profile">
-                                <div className="profileName">
-                                    <p>ヒラタ コウダイ</p>
-                                    <h4>平田 広大</h4>
-                                </div>
-                                <div className="profileWork">
-                                    <p>参議院議員</p>
-                                    <p>41歳（男）［現職］</p>
-                                </div>
-                                <div className="profileParty">日本共産党</div>
-                            </Link>
-                            <div className="VoteBtnWarp">
-                                <input type="radio"  name="profile" value="6" onChange={handleVoteChange}/>
                             </div>
                         </div>
                         <div className="electoralDistrict">
