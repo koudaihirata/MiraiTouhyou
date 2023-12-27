@@ -169,7 +169,7 @@ export default function Election() {
         <>
             <Header_Login/>
             <main className="mb-36">
-                <div style={{ width: '100vw', height: '200px', position: 'relative' }}>
+                <div style={{ width: '100vw', height: '200px', position: 'relative', backgroundColor: '#68C1F2'}}>
                     <Image src="/img/electionView.svg" alt="第27回参議院議員通常選挙" layout="fill" objectFit="contain"/>
                 </div>
                 <div className="pseudoVoting">
@@ -179,9 +179,9 @@ export default function Election() {
                     <p>6月1日　10時発表</p>
                 </div>
                 <div className="componentsBtn">
-                    <Link href="/election/vote" className="voteBtn">
+                    <a href="/election/vote" className="voteBtn">
                         <Btn label="投票する" />
-                    </Link>
+                    </a>
                 </div>
                 <section className="CurrentSituation">
                     <div className="rank">
@@ -217,9 +217,9 @@ export default function Election() {
                     </div>
                 </section>
                 <div className="componentsBtn">
-                    <Link href="/election/pastResults" className="voteBtn">
+                    <a href="/election/pastResults" className="voteBtn">
                         <Btn label="過去の結果を見る"/>
-                    </Link>
+                    </a>
                 </div>
             </main>
             <Footer_election/>

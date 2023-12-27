@@ -34,22 +34,22 @@ export default function Footer_election() {
                 <ul className="footer">
                     <li>
                         <p>
-                            <Link href="/">
+                            <a href="/">
                                 <picture className="footerIcon">
                                     <img alt="ホーム" src="/img/Home2.svg"/>
                                 </picture>
                                 ホーム
-                            </Link>
+                            </a>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <Link href="#">
+                            <a href="#">
                                 <picture className="footerIcon">
                                     <img alt="ポエム" src="/img/poem.svg"/>
                                 </picture>
                                 選挙ポエム
-                            </Link>
+                            </a>
                         </p>
                     </li>
                     <li>
@@ -64,20 +64,20 @@ export default function Footer_election() {
                     </li>
                     <li>
                         <p>
-                            <Link href="#">
+                            <a href="#">
                                 <picture className="footerIcon">
                                     <img src="/img/square.svg" alt="選挙の広場"/>
                                 </picture>
                                 選挙の広場
-                            </Link>
+                            </a>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <Link href="#" className="footerP">
+                            <a href="#" className="footerP">
                                 <Icon />
                                 プロフィール
-                            </Link>
+                            </a>
                         </p>
                     </li>
                 </ul>

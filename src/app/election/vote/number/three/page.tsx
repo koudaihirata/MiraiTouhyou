@@ -7,7 +7,7 @@ import "@/app/election/vote/number/style.css"
 
 
 
-export default function two(){
+export default function three(){
     return(
         <>
             <Header_Login/>
@@ -17,20 +17,20 @@ export default function two(){
                 </div>
                 <section>
                     <div className="name">
-                        <Image src="/img/igarasi.jpg" alt="五十嵐" width={80} height={100}/>
+                        <Image src="/img/karakuti.jpg" alt="辛口" width={80} height={100}/>
                         <div>
-                            <p>イガラシ　タロウ</p>
-                            <h2>五十嵐　太郎</h2>
-                            <p>参政党</p>
+                            <p>カラクチ　イケル</p>
+                            <h2>辛口　池流</h2>
+                            <p>NHK党</p>
                         </div>
                     </div>
                     <div className="profile">
                         <p>職業</p>
-                        <p>団体役員</p>
+                        <p>無職</p>
                     </div>
                     <div className="profile">
                         <p>生年月日</p>
-                        <p>1980年　10月14日　43歳</p>
+                        <p>1966年　2月26日　57歳</p>
                     </div>
                     <div className="profile">
                         <p>性別</p>
@@ -39,12 +39,13 @@ export default function two(){
                     <p>公約</p>
                     <div className="comment">
                         <p>
-                            「私、五十嵐太郎は参政党の候補者として、以下の公約を掲げます。<br />
-                            一つ目は、地方創生を推進し、地域の活性化を図ること。<br />
-                            二つ目は、若者の雇用を増やすための新たな産業政策。<br />
-                            三つ目は、再生可能エネルギーの普及と環境問題への取り組み。<br />
-                            最後に、全国民が安心して生活できる社会保障制度の確立です。<br />
-                            これらを通じて、国民一人ひとりが安心して生活できる社会を目指します。」                        </p>
+                            「私、新川るいは自由民主党の候補者として、次の公約を掲げます。<br />
+                            一つ目は、全ての子供が平等に高品質な教育を受けられるよう、教育制度の改革。<br />
+                            二つ目は、中小企業を支援し、雇用を創出する新たな経済政策。<br />
+                            三つ目は、持続可能な社会を目指し、環境保護とエネルギー効率の向上。<br />
+                            最後に、社会的に弱い立場の人々の生活を支える社会保障制度の強化です。<br />
+                            これらを通じて、より良い社会を創り上げていきます。」
+                        </p>
                     </div>
                 </section>
             </main>

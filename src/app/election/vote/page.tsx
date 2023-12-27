@@ -139,7 +139,7 @@ export default function Vote(props:PartyVoteProps,) {
                     <form onSubmit={handleSubmit}>
                         <div className="electoralDistrict">
                             <Image src="/img/arakawa.jpg" alt="新川" width={80} height={100}/>
-                            <Link href="/election/vote/number/one" className="profile">
+                            <a href="/election/vote/number/one" className="profile">
                                 <div className="profileName">
                                     <p>アラカワ ルイ</p>
                                     <h4>新川 るい</h4>
@@ -149,14 +149,14 @@ export default function Vote(props:PartyVoteProps,) {
                                     <p>51歳（女）［現職］</p>
                                 </div>
                                 <div className="profileParty">自由民主党</div>
-                            </Link>
+                            </a>
                             <div className="VoteBtnWarp">
                                 <input type="radio" name="profile" value="1" onChange={handleVoteChange}/>
                             </div>
                         </div>
                         <div className="electoralDistrict">
                             <Image src="/img/igarasi.jpg" alt="五十嵐" width={80} height={100}/>
-                            <Link href="/election/vote/number/two" className="profile">
+                            <a href="/election/vote/number/two" className="profile">
                                 <div className="profileName">
                                     <p>イガラシ タロウ</p>
                                     <h4>五十嵐 太郎</h4>
@@ -166,14 +166,14 @@ export default function Vote(props:PartyVoteProps,) {
                                     <p>43歳（男）［現職］</p>
                                 </div>
                                 <div className="profileParty">参政党</div>
-                            </Link>
+                            </a>
                             <div className="VoteBtnWarp">
                                 <input type="radio"  name="profile" value="2" onChange={handleVoteChange}/>
                             </div>
                         </div>
                         <div className="electoralDistrict">
                             <Image src="/img/karakuti.jpg" alt="辛口" width={80} height={100}/>
-                            <Link href="#" className="profile">
+                            <a href="/election/vote/number/three" className="profile">
                                 <div className="profileName">
                                     <p>カラクチ イケル</p>
                                     <h4>辛口 池流</h4>
@@ -183,7 +183,7 @@ export default function Vote(props:PartyVoteProps,) {
                                     <p>57歳（男）［新人］</p>
                                 </div>
                                 <div className="profileParty">NHK党</div>
-                            </Link>
+                            </a>
                             <div className="VoteBtnWarp">
                                 <input type="radio"  name="profile" value="3" onChange={handleVoteChange}/>
                             </div>

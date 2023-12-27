@@ -46,27 +46,27 @@ export default function Footer_Login() {
                     </li>
                     <li>
                         <p>
-                            <Link href="#">
+                            <a href="#">
                                 <picture className="footerIcon">
                                     <img alt="ポエム" src="/img/poem.svg" />
                                 </picture>
                                 選挙ポエム
-                            </Link>
+                            </a>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <Link href="/election">
+                            <a href="/election">
                                 <picture className="footerIcon">
                                     <img src="/img/vote.svg" alt="ミライ投票" />
                                 </picture>
                                 ミライ投票
-                            </Link>
+                            </a>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <Link href="#">
+                            <a href="#">
                                 <picture className="footerIcon">
                                     <img
                                         src="/img/square.svg"
@@ -74,15 +74,15 @@ export default function Footer_Login() {
                                     />
                                 </picture>
                                 選挙の広場
-                            </Link>
+                            </a>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <Link href="#" className="footerP">
+                            <a href="#" className="footerP">
                                 <Icon />
                                 プロフィール
-                            </Link>
+                            </a>
                         </p>
                     </li>
                 </ul>
