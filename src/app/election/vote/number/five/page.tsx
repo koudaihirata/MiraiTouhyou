@@ -17,20 +17,20 @@ export default function three(){
                 </div>
                 <section>
                     <div className="name">
-                        <Image src="/img/karakuti.jpg" alt="辛口" width={80} height={100}/>
+                        <Image src="/img/hirata.jpg" alt="平田" width={80} height={100}/>
                         <div>
-                            <p>カラクチ　イケル</p>
-                            <h2>辛口　池流</h2>
-                            <p style={{color:"rgb(182, 200, 27)"}}>NHK党</p>
+                            <p>ヒラタ　コウダイ</p>
+                            <h2>平田　広大</h2>
+                            <p style={{color:"rgb(110, 65, 225)"}}>日本共産党</p>
                         </div>
                     </div>
                     <div className="profile">
                         <p>職業</p>
-                        <p>無職</p>
+                        <p>参議院議員</p>
                     </div>
                     <div className="profile">
                         <p>生年月日</p>
-                        <p>1966年　2月26日　57歳</p>
+                        <p>1982年　6月1日　41歳</p>
                     </div>
                     <div className="profile">
                         <p>性別</p>
@@ -39,12 +39,13 @@ export default function three(){
                     <p>公約</p>
                     <div className="comment">
                         <p>
-                        「私、辛口池流はNHK党の候補者として、以下の公約を掲げます。<br />
-                        一つ目は、NHK受信料の公平な徴収制度の確立。<br />
-                        二つ目は、公共放送の透明性と公正性を保証するための改革。<br />
-                        三つ目は、情報の自由と公開を推進し、メディアの多様性を保護。<br />
-                        最後に、国民の声を反映した番組制作を実現します。<br />
-                        これらを通じて、公共放送のあり方を見直し、国民のための放送を目指します。」                        </p>
+                            「私、平田広大は日本共産党として、以下の公約を掲げます。<br />
+                            一つ目は、経済の活性化と雇用の創出。<br />
+                            二つ目は、教育の機会均等と若者の未来への投資。<br />
+                            三つ目は、地方創生と地域の活性化。<br />
+                            最後に、全国民が安心して生活できる社会保障制度の確立です。<br />
+                            これらを通じて、国民一人ひとりが安心して生活でき、誰もが幸せになれる社会を目指します。」
+                        </p>
                     </div>
                 </section>
             </main>

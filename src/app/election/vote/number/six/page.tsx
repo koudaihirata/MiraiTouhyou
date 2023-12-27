@@ -7,7 +7,7 @@ import "@/app/election/vote/number/style.css"
 
 
 
-export default function three(){
+export default function six(){
     return(
         <>
             <Header_Login/>
@@ -17,11 +17,11 @@ export default function three(){
                 </div>
                 <section>
                     <div className="name">
-                        <Image src="/img/karakuti.jpg" alt="辛口" width={80} height={100}/>
+                        <Image src="/img/yamaguti.jpg" alt="山口" width={80} height={100}/>
                         <div>
-                            <p>カラクチ　イケル</p>
-                            <h2>辛口　池流</h2>
-                            <p style={{color:"rgb(182, 200, 27)"}}>NHK党</p>
+                            <p>ヤマグチ　キセル</p>
+                            <h2>山口　煙管</h2>
+                            <p>無所属</p>
                         </div>
                     </div>
                     <div className="profile">
@@ -30,7 +30,7 @@ export default function three(){
                     </div>
                     <div className="profile">
                         <p>生年月日</p>
-                        <p>1966年　2月26日　57歳</p>
+                        <p>1955年　6月1日　68歳</p>
                     </div>
                     <div className="profile">
                         <p>性別</p>
@@ -39,12 +39,13 @@ export default function three(){
                     <p>公約</p>
                     <div className="comment">
                         <p>
-                        「私、辛口池流はNHK党の候補者として、以下の公約を掲げます。<br />
-                        一つ目は、NHK受信料の公平な徴収制度の確立。<br />
-                        二つ目は、公共放送の透明性と公正性を保証するための改革。<br />
-                        三つ目は、情報の自由と公開を推進し、メディアの多様性を保護。<br />
-                        最後に、国民の声を反映した番組制作を実現します。<br />
-                        これらを通じて、公共放送のあり方を見直し、国民のための放送を目指します。」                        </p>
+                            「私、山口煙管は無所属の候補者として、以下の公約を掲げます。<br />
+                            一つ目は、社会保障の充実と格差の是正。<br />
+                            二つ目は、教育の機会均等と子供たちの未来への投資。<br />
+                            三つ目は、環境問題への積極的な取り組みと持続可能な社会の実現。<br />
+                            最後に、地方自治と地域の活性化を推進します。<br />
+                            これらを通じて、全ての国民が安心して生活でき、誰もが幸せになれる社会を目指します。」
+                        </p>
                     </div>
                 </section>
             </main>

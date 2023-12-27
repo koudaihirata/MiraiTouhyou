@@ -128,6 +128,7 @@ export default function Vote(props:PartyVoteProps,) {
     <>
         <Header_Login/>
         <main>
+            <form onClick={handleBoth}></form>
             <div>
                 <h2>第27回参議院議員通常選挙</h2>
                 <h3>選挙区投票</h3>
@@ -148,7 +149,7 @@ export default function Vote(props:PartyVoteProps,) {
                                     <p>参議院議員</p>
                                     <p>51歳（女）［現職］</p>
                                 </div>
-                                <div className="profileParty">自由民主党</div>
+                                <div className="profileParty" style={{color:"rgb(210, 35, 25)"}}>自由民主党</div>
                             </a>
                             <div className="VoteBtnWarp">
                                 <input type="radio" name="profile" value="1" onChange={handleVoteChange}/>
@@ -165,7 +166,7 @@ export default function Vote(props:PartyVoteProps,) {
                                     <p>団体役員</p>
                                     <p>43歳（男）［現職］</p>
                                 </div>
-                                <div className="profileParty">参政党</div>
+                                <div className="profileParty" style={{color:"rgb(235, 100, 10)"}}>参政党</div>
                             </a>
                             <div className="VoteBtnWarp">
                                 <input type="radio"  name="profile" value="2" onChange={handleVoteChange}/>
@@ -182,7 +183,7 @@ export default function Vote(props:PartyVoteProps,) {
                                     <p>無職</p>
                                     <p>57歳（男）［新人］</p>
                                 </div>
-                                <div className="profileParty">NHK党</div>
+                                <div className="profileParty" style={{color:"rgb(182, 200, 27)"}}>NHK党</div>
                             </a>
                             <div className="VoteBtnWarp">
                                 <input type="radio"  name="profile" value="3" onChange={handleVoteChange}/>
@@ -190,7 +191,7 @@ export default function Vote(props:PartyVoteProps,) {
                         </div>
                         <div className="electoralDistrict">
                             <Image src="/img/tatibana.jpg" alt="橘" width={80} height={100}/>
-                            <Link href="#" className="profile">
+                            <a href="/election/vote/number/four" className="profile">
                                 <div className="profileName">
                                     <p>タチバナ ヤヨイ</p>
                                     <h4>橘 弥生</h4>
@@ -199,15 +200,15 @@ export default function Vote(props:PartyVoteProps,) {
                                     <p>政党役員</p>
                                     <p>67歳（女）［現職］</p>
                                 </div>
-                                <div className="profileParty">立憲民主党</div>
-                            </Link>
+                                <div className="profileParty" style={{color:"rgb(35, 145, 255)"}}>立憲民主党</div>
+                            </a>
                             <div className="VoteBtnWarp">
                                 <input type="radio"  name="profile" value="4" onChange={handleVoteChange}/>
                             </div>
                         </div>
                         <div className="electoralDistrict">
                             <Image src="/img/hirata.jpg" alt="平田" width={80} height={100}/>
-                            <Link href="#" className="profile">
+                            <a href="/election/vote/number/five" className="profile">
                                 <div className="profileName">
                                     <p>ヒラタ コウダイ</p>
                                     <h4>平田 広大</h4>
@@ -216,15 +217,15 @@ export default function Vote(props:PartyVoteProps,) {
                                     <p>参議院議員</p>
                                     <p>41歳（男）［現職］</p>
                                 </div>
-                                <div className="profileParty">日本共産党</div>
-                            </Link>
+                                <div className="profileParty" style={{color:"rgb(110, 65, 225)"}}>日本共産党</div>
+                            </a>
                             <div className="VoteBtnWarp">
                                 <input type="radio"  name="profile" value="5" onChange={handleVoteChange}/>
                             </div>
                         </div>
                         <div className="electoralDistrict">
                             <Image src="/img/yamaguti.jpg" alt="山口" width={80} height={100}/>
-                            <Link href="#" className="profile">
+                            <a href="/election/vote/number/six" className="profile">
                                 <div className="profileName">
                                     <p>ヤマグチ キセル</p>
                                     <h4>山口 煙管</h4>
@@ -234,14 +235,14 @@ export default function Vote(props:PartyVoteProps,) {
                                     <p>68歳（男）［新人］</p>
                                 </div>
                                 <div className="profileParty">無所属</div>
-                            </Link>
+                            </a>
                             <div className="VoteBtnWarp">
                                 <input type="radio"  name="profile" value="7" onChange={handleVoteChange}/>
                             </div>
                         </div>
                         <div className="electoralDistrict">
                             <Image src="/img/rukawa.jpg" alt="流川" width={80} height={100}/>
-                            <Link href="#" className="profile">
+                            <a href="/election/vote/number/seven" className="profile">
                                 <div className="profileName">
                                     <p>ルカワ カエデ</p>
                                     <h4>流川 楓</h4>
@@ -250,8 +251,8 @@ export default function Vote(props:PartyVoteProps,) {
                                     <p>自営業</p>
                                     <p>38歳（男）［新人］</p>
                                 </div>
-                                <div className="profileParty">日本維新の会</div>
-                            </Link>
+                                <div className="profileParty" style={{color:"rgb(225, 154, 0)"}}>日本維新の会</div>
+                            </a>
                             <div className="VoteBtnWarp">
                                 <input type="radio"  name="profile" value="8" onChange={handleVoteChange}/>
                             </div>
@@ -264,7 +265,7 @@ export default function Vote(props:PartyVoteProps,) {
                 <form className="proportionalRepresentationBox" onSubmit={partySubmit}>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>維新政党・新風</p>
+                            <p style={{color:"rgb(100, 50, 10)"}}>維新政党・新風</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="1" onChange={handlePartyChange}/>
@@ -272,7 +273,7 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>幸福実現党</p>
+                            <p style={{color:"rgb(150, 150, 250)"}}>幸福実現党</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="2" onChange={handlePartyChange}/>
@@ -280,7 +281,7 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>公明党</p>
+                            <p style={{color:"rgb(235, 97, 190)"}}>公明党</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="3" onChange={handlePartyChange}/>
@@ -288,7 +289,7 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>国民民主党</p>
+                            <p style={{color:"rgb(0, 16, 165)"}}>国民民主党</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="4" onChange={handlePartyChange}/>
@@ -296,7 +297,7 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>参政党</p>
+                            <p style={{color:"rgb(235, 100, 10)"}}>参政党</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="5" onChange={handlePartyChange}/>
@@ -304,7 +305,7 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>新党くにもり</p>
+                            <p style={{color:"rgb(180, 110, 90)"}}>新党くにもり</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="6" onChange={handlePartyChange}/>
@@ -312,7 +313,7 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>自由民主党</p>
+                            <p style={{color:"rgb(210, 35, 25)"}}>自由民主党</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="7" onChange={handlePartyChange}/>
@@ -320,7 +321,7 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>日本維新の会</p>
+                            <p style={{color:"rgb(225, 154, 0)"}}>日本維新の会</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="8" onChange={handlePartyChange}/>
@@ -328,7 +329,7 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>日本共産党</p>
+                            <p style={{color:"rgb(110, 65, 225)"}}>日本共産党</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="9" onChange={handlePartyChange}/>
@@ -336,7 +337,7 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>日本第一党</p>
+                            <p style={{color:"rgb(170, 130, 75)"}}>日本第一党</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="10" onChange={handlePartyChange}/>
@@ -344,7 +345,7 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>ごぼうの党</p>
+                            <p style={{color:"rgb(35, 70, 0)"}}>ごぼうの党</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="11" onChange={handlePartyChange}/>
@@ -352,7 +353,7 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>れいわ新選組</p>
+                            <p style={{color:"rgb(240, 160, 167)"}}>れいわ新選組</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="12" onChange={handlePartyChange}/>
@@ -360,7 +361,7 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>社会民主党</p>
+                            <p style={{color:"rgb(5, 85, 90)"}}>社会民主党</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="13" onChange={handlePartyChange}/>
@@ -368,7 +369,7 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>立憲民主党</p>
+                            <p style={{color:"rgb(35, 145, 255)"}}>立憲民主党</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="14" onChange={handlePartyChange}/>
@@ -376,7 +377,7 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                     <div className="proportionalRepresentation">
                         <div className="partyName">
-                            <p>ＮＨＫ党</p>
+                            <p style={{color:"rgb(182, 200, 27)"}}>ＮＨＫ党</p>
                         </div>
                         <div className="partyBtnWarp">
                             <input type="radio" name="party" value="15" onChange={handlePartyChange}/>
@@ -393,7 +394,7 @@ export default function Vote(props:PartyVoteProps,) {
                 </div>
             </div>
             <div className="sendBtn">
-                <button onClick={handleBoth}>投票する</button>
+                <button>投票する</button>
             </div>
         </main>
         <Footer_election/>

@@ -7,7 +7,7 @@ import "@/app/election/vote/number/style.css"
 
 
 
-export default function one(){
+export default function four(){
     return(
         <>
             <Header_Login/>
@@ -17,20 +17,20 @@ export default function one(){
                 </div>
                 <section>
                     <div className="name">
-                        <Image src="/img/arakawa.jpg" alt="新川" width={80} height={100}/>
+                        <Image src="/img/tatibana.jpg" alt="橘" width={80} height={100}/>
                         <div>
-                            <p>アラカワ　ルイ</p>
-                            <h2>新川　るい</h2>
-                            <p style={{color:"rgb(210, 35, 25)"}}>自由民主党</p>
+                            <p>タチバナ　ヤヨイ</p>
+                            <h2>橘　弥生</h2>
+                            <p style={{color:"rgb(35, 145, 255)"}}>立憲民主党</p>
                         </div>
                     </div>
                     <div className="profile">
                         <p>職業</p>
-                        <p>参議院議員</p>
+                        <p>政党役員</p>
                     </div>
                     <div className="profile">
                         <p>生年月日</p>
-                        <p>1972年　7月3日　51歳</p>
+                        <p>1956年　4月6日　67歳</p>
                     </div>
                     <div className="profile">
                         <p>性別</p>
@@ -39,12 +39,12 @@ export default function one(){
                     <p>公約</p>
                     <div className="comment">
                         <p>
-                            「私、新川るいは自由民主党の候補者として、次の公約を掲げます。<br />
-                            一つ目は、全ての子供が平等に高品質な教育を受けられるよう、教育制度の改革。<br />
-                            二つ目は、中小企業を支援し、雇用を創出する新たな経済政策。<br />
-                            三つ目は、持続可能な社会を目指し、環境保護とエネルギー効率の向上。<br />
-                            最後に、社会的に弱い立場の人々の生活を支える社会保障制度の強化です。<br />
-                            これらを通じて、より良い社会を創り上げていきます。」
+                            「私、橘弥生は立憲民主党の候補者として、以下の公約を掲げます。<br />
+                            一つ目は、社会保障の充実と格差の是正。<br />
+                            二つ目は、教育の機会均等と子供たちの未来への投資。<br />
+                            三つ目は、環境問題への積極的な取り組みと持続可能な社会の実現。<br />
+                            最後に、地方自治と地域の活性化を推進します。<br />
+                            これらを通じて、全ての国民が安心して生活でき、誰もが幸せになれる社会を目指します。」
                         </p>
                     </div>
                 </section>

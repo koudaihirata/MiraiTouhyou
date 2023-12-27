@@ -21,7 +21,7 @@ export default function two(){
                         <div>
                             <p>イガラシ　タロウ</p>
                             <h2>五十嵐　太郎</h2>
-                            <p>参政党</p>
+                            <p style={{color:"rgb(235, 100, 10)"}}>参政党</p>
                         </div>
                     </div>
                     <div className="profile">
