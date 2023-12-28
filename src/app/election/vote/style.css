@@ -132,7 +132,7 @@ h3{
     align-items: center;
     margin-top: 40px;
 }
-.sendBtn a{
+.sendBtn button{
     width: 160px;
     height: 46px;
     background-color: #68C1F2;
@@ -144,7 +144,7 @@ h3{
     text-align: center;
     line-height: 46px;
 }
-.sendBtn a::after{
+.sendBtn button::after{
     content: "";
     position: absolute;
     width: 12px;

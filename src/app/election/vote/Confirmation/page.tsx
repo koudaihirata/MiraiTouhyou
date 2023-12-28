@@ -6,8 +6,8 @@ import { useState, useEffect } from "react";
 import { db } from "@/firebase/firebase";
 import { DocumentData, collection } from "firebase/firestore";
 import { getDocs } from "firebase/firestore";
+import { doc, deleteDoc } from "firebase/firestore";
 import "@/app/election/vote/Confirmation/style.css"
-import Btn from "@/components/Btn/Btn";
 
 
 
@@ -28,6 +28,31 @@ export default function Confirmation() {
             setVotes(data);
         });
     },[]);
+
+
+
+    async function handleBoth(event:any) {
+        event.preventDefault();
+        try {
+            // Votesから削除したいデータを選択
+            const voteToDelete1 = Votes[0]; // Votesの最初の要素を削除する
+            const voteToDelete2 = Votes[1]; // Votesの次の要素を削除する
+    
+            // Firestoreから該当のデータを削除
+            const docRef1 = doc(db, 'Vote', voteToDelete1.id);
+            const docRef2 = doc(db, 'Vote', voteToDelete2.id);
+            await deleteDoc(docRef1);
+            await deleteDoc(docRef2);
+    
+            // ローカルのstateからもデータを削除
+            setVotes(Votes.filter(vote => vote.id !== voteToDelete1.id && vote.id !== voteToDelete2.id));
+    
+            window.history.back();
+        } catch (e) {
+            console.error("Error: ", e);
+        }
+    }
+            
 
     return(
         <>
@@ -70,7 +95,7 @@ export default function Confirmation() {
                     </div>
                 </div>
                 <div className="correction">
-                    <button onClick={() => window.history.back()}>修正する</button>
+                    <button onClick={handleBoth}>修正する</button>
                 </div>
                 <div className="completion">
                     <button onClick={() => window.location.href='/election/vote/Confirmation/Conf'}>投票する</button>

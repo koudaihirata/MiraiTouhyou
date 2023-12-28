@@ -7,110 +7,99 @@ import { useState } from "react"
 import React from "react"
 import Footer_election from "@/components/electionFooter/election"
 import Header_Login from "@/components/header/Login"
-import { doc, setDoc, addDoc, collection, serverTimestamp, } from "firebase/firestore";
-// import firebase from '@/firebase/firebase';
-import { initializeApp } from "firebase/app";
-import { getFirestore } from 'firebase/firestore/lite';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+import { addDoc, collection } from "firebase/firestore"
+import { db } from "@/firebase/firebase"
+import { BrowserRouter as Router } from "react-router-dom";
 
 
 
-type PartyVoteProps = {
-    parties:string,
-    onClick: () => void,
-    selected: boolean,
-    party:string,
-}
+export function Vote() {
+// 選択された名前を管理するためのstateを作成します。初期値は空文字列です。
+const [selectedName, setSelectedName] = useState('');
 
-type VoteBtnProps = {
-    onClick: () => void;
-    selected: boolean;
+// 投票変更を処理する関数です。イベントオブジェクトを引数に取ります。
+const handleVoteChange = (event:any) => {
+    // イベントが発生した要素から最も近い '.electoralDistrict' 要素を取得します。
+    const selectedProfile = event.target.closest('.electoralDistrict');
+    // 選択されたプロフィールから名前を取得します。
+    const selectedName = selectedProfile.querySelector('.profileName h4').textContent;
+    // 選択された名前をstateに保存します。
+    setSelectedName(selectedName);
 };
 
-export function CandidateVoteBtn({ onClick, selected }:VoteBtnProps) {
-    const styles = {
-    backgroundColor: selected ? '#FF1414' : '#fff',
-    width: '30px',
-    height: '30px',
-    borderRadius: '50%',
+// 投票を送信する非同期関数です。イベントオブジェクトを引数に取ります。
+const handleSubmit = async (event:any) => {
+    // フォームのデフォルトの送信動作をキャンセルします。
+    event.preventDefault();
+    // 選択された名前をコンソールに出力します。
+    console.log(selectedName);
+
+    try{
+        // Firestoreの"Vote"コレクションに新しいドキュメントを追加します。そのドキュメントの内容は、選択された名前です。
+        const docRef = await addDoc(collection(db, "Vote"),{
+            name:selectedName,
+        });
+        // ドキュメントのIDをコンソールに出力します。
+        console.log("Document written with ID: ", docRef.id);
+    } catch(e) {
+        // ドキュメントの追加中にエラーが発生した場合、そのエラーをコンソールに出力します。
+        console.error("Error adding document: ", e);
     }
-    return (
-    <div className="VoteBtn">
-        <button style={styles} onClick={onClick}></button>
-    </div>
-    )
-}
-export function PartyVoteBtn({ onClick, selected }:VoteBtnProps) {
-    const styles = {
-        backgroundColor: selected ? '#ff1414' : '#fff',
-        width: '16px',
-        height: '16px',
-        borderRadius: '50%',
+};
+
+// 選択された党名を管理するためのstateを作成します。初期値は空文字列です。
+const [partyName, setPartyName] = useState('');
+
+// 党の変更を処理する関数です。イベントオブジェクトを引数に取ります。
+const handlePartyChange = (e:any) => {
+    // イベントが発生した要素から最も近い '.proportionalRepresentation' 要素を取得します。
+    const selectedParty = e.target.closest('.proportionalRepresentation');
+    // 選択された党から党名を取得します。
+    const partyName = selectedParty.querySelector('.partyName p').textContent;
+    // 選択された党名をstateに保存します。
+    setPartyName(partyName);
+};
+
+// 党の投票を送信する非同期関数です。イベントオブジェクトを引数に取ります。
+const partySubmit = async (e:any) => {
+    // フォームのデフォルトの送信動作をキャンセルします。
+    e.preventDefault();
+    // 選択された党名をコンソールに出力します。
+    console.log(partyName);
+    try {
+        // Firestoreの"Vote"コレクションに新しいドキュメントを追加します。そのドキュメントの内容は、選択された党名です。
+        const docRef = await addDoc(collection(db, "Vote"), {
+        party: partyName,
+    });
+        // ドキュメントのIDをコンソールに出力します。
+        console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+        // ドキュメントの追加中にエラーが発生した場合、そのエラーをコンソールに出力します。
+        console.error("Error adding document: ", e);
     }
-    return(
-        <div className="partyBtn">
-            <button style={styles} onClick={onClick}></button>
-        </div>
-    )
-}
+};
 
-
-export function PartyVote(props:PartyVoteProps) {
-    return(
-            <div className="proportionalRepresentation">
-                <div className="partyName">
-                    <p>維新政党・新風</p>
-                </div>
-                <div className="partyBtnWarp">
-                    <input type="radio" name="party" value="1"/>
-                </div>
-            </div>
-
-    )
-}
-
-
-export default function Vote(props:PartyVoteProps,) {
-    const [selectedName, setSelectedName] = useState('');
-
-    const handleVoteChange = (event:any) => {
-        const selectedProfile = event.target.closest('.electoralDistrict');
-        const selectedName = selectedProfile.querySelector('.profileName h4').textContent;
-        setSelectedName(selectedName);
-    };
-
-
-    const handleSubmit = (event:any) => {
-        // event.preventDefault();
-        console.log(selectedName);
-        // ここでselectedNameを送信する処理を書く
-    };
-
-    const [partyName, setPartyName] = useState('');
-
-    const handlePartyChange = (e:any) => {
-        const selectedParty = e.target.closest('.proportionalRepresentation');
-        const partyName = selectedParty.querySelector('.partyName p').textContent;
-        setPartyName(partyName);
-    };
-
-    const partySubmit = (e:any) => {
-        // e.preventDefault();
-        console.log(partyName);
-        
+// 両方の投票を処理する非同期関数です。イベントオブジェクトを引数に取ります。
+async function handleBoth(event:any) {
+    // フォームのデフォルトの送信動作をキャンセルします。
+    event.preventDefault();
+    try {
+        // 個別の投票と党の投票を送信します。
+        await handleSubmit(event);
+        await partySubmit(event);
+        // 投票が成功したら、ユーザーを確認ページにリダイレクトします。
+        window.location.href = "/election/vote/Confirmation";
+    } catch (e) {
+        // 何かエラーが発生した場合、そのエラーをコンソールに出力します。
+        console.error("Error: ", e);
     }
+}
 
-    function handleBoth(e:any) {
-        handleSubmit(e);
-        partySubmit(e);
-    }    
+
 
     return (
-    <>
-        <Header_Login/>
         <main>
-            <form>
+            <div>
                 <div>
                     <h2>第27回参議院議員通常選挙</h2>
                     <h3>選挙区投票</h3>
@@ -376,11 +365,22 @@ export default function Vote(props:PartyVoteProps,) {
                     </div>
                 </div>
                 <div className="sendBtn">
-                    <a href="/election/vote/Confirmation" onClick={(event) => { handleBoth(event); }}>投票する</a>
+                    <button onClick={handleBoth}>投票する</button>
                 </div>
-            </form>
+            </div>
         </main>
-        <Footer_election/>
-    </>
+    )
+}
+
+
+export default function VoteMain() {
+    return(
+        <>
+            <Header_Login/>
+            <Router>
+                <Vote/>
+            </Router>
+            <Footer_election/>
+        </>
     )
 }
