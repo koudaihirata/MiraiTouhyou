@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import "@/components/electionFooter/electionStyle.css"
+import "@/components/footer/style.css"
 import Image from "next/image"
 
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -54,17 +54,17 @@ export default function Footer_election() {
                     </li>
                     <li>
                         <p>
-                            <Link href="/election">
+                            <a href="/election">
                                 <picture className="footerIcon">
                                     <img src="/img/election.svg" alt="ミライ投票"/>
                                 </picture>
                                 ミライ投票
-                            </Link>
+                            </a>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <a href="#">
+                            <a href="/square">
                                 <picture className="footerIcon">
                                     <img src="/img/square.svg" alt="選挙の広場"/>
                                 </picture>
@@ -74,7 +74,7 @@ export default function Footer_election() {
                     </li>
                     <li>
                         <p>
-                            <a href="#" className="footerP">
+                            <a href="/profile" className="footerP">
                                 <Icon />
                                 プロフィール
                             </a>

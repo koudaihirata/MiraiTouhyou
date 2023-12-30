@@ -1,9 +1,7 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import "@/components/footer/style.css";
-import { signInWithPopup } from "firebase/auth";
-import Image from "next/image";
+import "@/components/footer/style.css"
+import Image from "next/image"
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/firebase/firebase";
@@ -17,7 +15,7 @@ export function Icon() {
                 <Image src={auth.currentUser?.photoURL || "/default/icon/path"} alt="アイコン" width={25} height={25} />
             ) : (
                 <Image
-                    src="/img/profile.svg"
+                    src="/img/profileIcon.svg"
                     alt="プロフィール"
                     width={25}
                     height={25}
@@ -27,28 +25,27 @@ export function Icon() {
     );
 }
 
-export default function Footer_Login() {
-    const [user] = useAuthState(auth);
 
-    return (
+export default function Footer_profile() {
+    return(
         <footer>
             <nav className="footerNav">
                 <ul className="footer">
                     <li>
                         <p>
-                            <Link href="/">
+                            <a href="/">
                                 <picture className="footerIcon">
-                                    <img alt="ホーム" src="/img/Home.svg" />
+                                    <img alt="ホーム" src="/img/Home2.svg"/>
                                 </picture>
                                 ホーム
-                            </Link>
+                            </a>
                         </p>
                     </li>
                     <li>
                         <p>
                             <a href="#">
                                 <picture className="footerIcon">
-                                    <img alt="ポエム" src="/img/poem.svg" />
+                                    <img alt="ポエム" src="/img/poem.svg"/>
                                 </picture>
                                 選挙ポエム
                             </a>
@@ -58,7 +55,7 @@ export default function Footer_Login() {
                         <p>
                             <a href="/election">
                                 <picture className="footerIcon">
-                                    <img src="/img/vote.svg" alt="ミライ投票" />
+                                    <img src="/img/vote.svg" alt="ミライ投票"/>
                                 </picture>
                                 ミライ投票
                             </a>
@@ -68,10 +65,7 @@ export default function Footer_Login() {
                         <p>
                             <a href="/square">
                                 <picture className="footerIcon">
-                                    <img
-                                        src="/img/square.svg"
-                                        alt="選挙の広場"
-                                    />
+                                    <img src="/img/square.svg" alt="選挙の広場"/>
                                 </picture>
                                 選挙の広場
                             </a>
@@ -88,5 +82,5 @@ export default function Footer_Login() {
                 </ul>
             </nav>
         </footer>
-    );
+    )
 }
