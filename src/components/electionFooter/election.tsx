@@ -1,9 +1,7 @@
 "use client"
 
-import Link from "next/link"
 import "@/components/footer/style.css"
 import Image from "next/image"
-
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/firebase/firebase";
 

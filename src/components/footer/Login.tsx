@@ -36,12 +36,12 @@ export default function Footer_Login() {
                 <ul className="footer">
                     <li>
                         <p>
-                            <Link href="/">
+                            <a href="/">
                                 <picture className="footerIcon">
                                     <img alt="ホーム" src="/img/Home.svg" />
                                 </picture>
                                 ホーム
-                            </Link>
+                            </a>
                         </p>
                     </li>
                     <li>

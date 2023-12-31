@@ -1,7 +1,6 @@
 "use client"
 
 import Link from 'next/link';
-import Image from 'next/image';
 import Header_Login from '@/components/header/Login';
 import Footer_Login from '@/components/footer/Login';
 import Slider from "react-slick";
@@ -72,7 +71,7 @@ export default function Home() {
           </div>
           <div className='SeeMore'>
             <div>
-              <Link href='#'>ニュースをもっと読む</Link>
+              <a href='/square'>ニュースをもっと読む</a>
             </div>
           </div>
         </section>

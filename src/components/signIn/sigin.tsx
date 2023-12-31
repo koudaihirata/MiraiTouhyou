@@ -48,7 +48,7 @@ export default function SignIn() {
         <>
             {user ? (
                 <>
-                    <SignOutBtn />
+                    {/* <SignOutBtn /> */}
                     <Image src="/img/bell.svg" alt="ベル" width={15} height={15}/>
                     <Image src="/img/letter.svg" alt="レター" width={24} height={20}/>
                 </>

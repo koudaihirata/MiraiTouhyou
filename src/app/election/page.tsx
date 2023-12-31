@@ -212,7 +212,7 @@ export default function Election() {
                         <p>
                             【候補者・政治家の方へ】<br />
                             ※政治家・候補者情報の掲載や変更等は無料で承っておりますので、<br />
-                            <Link href="#">こちらをご確認ください。</Link>
+                            <a href="#">こちらをご確認ください。</a>
                         </p>
                     </div>
                 </section>
