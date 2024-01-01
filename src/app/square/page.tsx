@@ -102,7 +102,7 @@ export function Article(props:articleProps) {
             <div>
                 <a href={props.link}>
                     <Image src={props.src} alt="KounoPhoto" width={140} height={120} className="photo" />
-                    <input type="radio" checked/>
+                    <input type="radio" />
                     <p>{props.title}</p>
                     <div>
                         <div className="timeComment">

@@ -67,7 +67,7 @@ export default function Footer_square() {
                                 <picture className="footerIcon">
                                     <img src="/img/squareIcon.svg" alt="選挙の広場"/>
                                 </picture>
-                                選挙の広場
+                                政治の広場
                             </a>
                         </p>
                     </li>

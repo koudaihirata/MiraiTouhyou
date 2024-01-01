@@ -73,7 +73,7 @@ export default function Footer_Login() {
                                         alt="選挙の広場"
                                     />
                                 </picture>
-                                選挙の広場
+                                政治の広場
                             </a>
                         </p>
                     </li>

@@ -81,9 +81,8 @@ return(
                         <p>お気に入りの記事</p>
                         <div>
                             <a href="#">
-                                <div className="photo">
-                                    <input type="radio" checked/>
-                                </div>
+                                <Image src="/img/KounoPhoto.jpg" alt="KounoPhoto" width={140} height={120} className="photo" />
+                                <input type="radio" checked/>
                                 <p>河野太郎氏、国会でのスマホ使用「私のミス」とお詫び</p>
                                 <div>
                                     <div className="timeComment">
