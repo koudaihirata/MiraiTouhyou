@@ -22,7 +22,7 @@ type articleProps = {
 }
 const articles = [
     {
-        link: "#",
+        link: "/square/detail/one",
         src: "/img/KounoPhoto.jpg",
         title: "河野太郎氏、国会でのスマホ使用「私のミス」とお詫び",
         month: "11",
