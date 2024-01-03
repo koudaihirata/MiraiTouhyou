@@ -4,6 +4,9 @@ import Header_Login from "@/components/header/Login"
 import Footer_square from "@/components/squareFooter/square"
 import Image from "next/image"
 import "@/app/square/detail/style.scss"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faThumbsUp } from '@fortawesome/free-regular-svg-icons'
+import { faThumbsDown } from "@fortawesome/free-regular-svg-icons"
 
 
 type detailProps = {
@@ -44,11 +47,11 @@ export function Com(props:detailProps) {
                     <p><a href="#">{props.replyNam} 件の返信を表示する</a></p>
                     <div>
                         <div>
-
+                            <FontAwesomeIcon icon={faThumbsUp} />
                             <p>{props.goodNam}</p>
                         </div>
                         <div>
-
+                            <FontAwesomeIcon icon={faThumbsDown} />
                             <p>{props.badNum}</p>
                         </div>
                     </div>

@@ -105,8 +105,13 @@ main{
                         display: flex;
                         gap: 8px;
 
-                        p{
-                            font-size: 10px;
+                        > div{
+                            display: flex;
+                            gap: 2px;
+
+                            p{
+                                font-size: 10px;
+                            }
                         }
                     }
                 }
