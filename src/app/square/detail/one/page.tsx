@@ -67,7 +67,9 @@ export default function detailOne() {
         <>
             <Header_Login/>
             <main>
-                <div className="firstView"></div>
+                <div className="firstView">
+                    <button onClick={() => window.history.back()}>戻る</button>
+                </div>
                 <section>
                     <h2>河野太郎氏、国会でのスマホ使用「私のミス」とお詫び</h2>
                     <div className="timeCom">
@@ -96,6 +98,7 @@ export default function detailOne() {
                         <p><a href="#">もっと見る（670件）</a></p>
                     </div>
                 </section>
+                <p><a href="#">＋</a></p>
             </main>
             <Footer_square/>
         </>
