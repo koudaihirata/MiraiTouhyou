@@ -6,6 +6,7 @@ import Footer_Login from '@/components/footer/Login';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import Head from 'next/head'
 
 export default function Home() {
   const settings = {
@@ -20,6 +21,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>ミライ投票</title>
+      </Head>
       <Header_Login/>
       <main>
         <Slider {...settings} className='firstView'>
