@@ -12,7 +12,7 @@ export default function PastResults() {
                 <section className="HouseOfCouncilors">
                     <h2>参議院議員通常選挙</h2>
                     <div>
-                        <p><a href="#">第26回参議院議員通常選挙結果</a></p>
+                        <p><a href="/election/pastResults/electionResults/twenty-six">第26回参議院議員通常選挙結果</a></p>
                         <p><a href="#">第25回参議院議員通常選挙結果</a></p>
                         <p><a href="#">第24回参議院議員通常選挙結果</a></p>
                         <p><a href="#">第23回参議院議員通常選挙結果</a></p>
