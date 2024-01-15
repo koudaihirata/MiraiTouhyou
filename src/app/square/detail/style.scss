@@ -161,10 +161,11 @@ main{
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        background-color: #68C1F2;
+        background-color: #fff;
+        // border: #333 1px solid;
         bottom: 100px;
         right: 30px;
-
+        box-shadow: 0 0 8px #ddd;
 
         > a{
             display: block;
@@ -173,7 +174,8 @@ main{
             text-align: center;
             line-height: 80px;
             font-size: 65px;
-
+            color: #68C1F2;
+            overflow-y: hidden;
         }
     }
 }
