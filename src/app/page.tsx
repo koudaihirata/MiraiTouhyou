@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Head from 'next/head'
+import Inquiry from '@/components/inquiry/inquiry';
 
 export default function Home() {
   const settings = {
@@ -79,6 +80,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <Inquiry />
       </main>
       <Footer_Login/>
     </>
