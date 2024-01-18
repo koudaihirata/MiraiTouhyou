@@ -7,6 +7,7 @@ import "@/app/square/style.scss"
 import Image from "next/image";
 import Link from "next/link";
 import "@/app/square/style.css"
+import Inquiry from "@/components/inquiry/inquiry";
 
 type articleProps = {
     link:string,
@@ -145,6 +146,7 @@ export default function Square() {
                 <a href="#">もっと見る</a>
                 </section>
             </main>
+                <Inquiry/>
             <Footer_square/>
         </>
     )

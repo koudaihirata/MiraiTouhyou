@@ -1,12 +1,15 @@
 .Inquiry{
-    background-color: #fafafa;
+    background-color: #919191;
     margin-top: 16px;
     margin-bottom: 75px;
+    width: 100%;
 
     > p{
+        width: 100%;
         font-size: 8px;
         text-align: center;
         margin-top: 24px;
+        color: #fff;
     }
     div{
         width: 90%;
@@ -15,18 +18,18 @@
 
         > div{
             width: 100%;
-            border-top: #6d6d6d 1px dotted;
+            border-top: #fff 1px dotted;
             margin-top: 8px;
 
             p{
                 text-align: start;
     
                 a{
-                    font-size: 16px;
-                    color: #6d6d6d;
+                    font-size: 10px;
+                    color: #fff;
 
                     &:hover{
-                        color: #333;
+                        color: #efefef;
                     }
                 }
             }
@@ -39,5 +42,8 @@
     }
     .small{
         text-align: center;
+    }
+    .small small{
+        color: #fff;
     }
 }

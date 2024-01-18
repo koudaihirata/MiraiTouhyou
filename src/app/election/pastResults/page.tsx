@@ -3,6 +3,7 @@
 import Footer_election from "@/components/electionFooter/election";
 import Header_Login from "@/components/header/Login";
 import "@/app/election/pastResults/style.scss"
+import Inquiry from "@/components/inquiry/inquiry";
 
 export default function PastResults() {
     return(
@@ -42,6 +43,7 @@ export default function PastResults() {
                     </div>
                 </section>
             </main>
+            <Inquiry/>
             <Footer_election/>
         </>
     )

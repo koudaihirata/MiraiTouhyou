@@ -36,37 +36,37 @@ export default function Footer_Login() {
                 <ul className="footer">
                     <li>
                         <p>
-                            <a href="/">
+                            <Link href="/">
                                 <picture className="footerIcon">
                                     <img alt="ホーム" src="/img/Home.svg" />
                                 </picture>
                                 ホーム
-                            </a>
+                            </Link>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <a href="#">
+                            <Link href="#">
                                 <picture className="footerIcon">
                                     <img alt="ポエム" src="/img/poem.svg" />
                                 </picture>
                                 選挙ポエム
-                            </a>
+                            </Link>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <a href="/election">
+                            <Link href="/election">
                                 <picture className="footerIcon">
                                     <img src="/img/vote.svg" alt="ミライ投票" />
                                 </picture>
                                 ミライ投票
-                            </a>
+                            </Link>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <a href="/square">
+                            <Link href="/square">
                                 <picture className="footerIcon">
                                     <img
                                         src="/img/square.svg"
@@ -74,15 +74,15 @@ export default function Footer_Login() {
                                     />
                                 </picture>
                                 政治の広場
-                            </a>
+                            </Link>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <a href="/profile" className="footerP">
+                            <Link href="/profile" className="footerP">
                                 <Icon />
                                 プロフィール
-                            </a>
+                            </Link>
                         </p>
                     </li>
                 </ul>
