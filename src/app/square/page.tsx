@@ -24,8 +24,8 @@ type articleProps = {
 const articles = [
     {
         link: "/square/detail/one",
-        src: "/img/KounoPhoto.jpg",
-        title: "河野太郎氏、国会でのスマホ使用「私のミス」とお詫び",
+        src: "/img/FireflyPhoto.jpg",
+        title: "河野氏、国会でのスマホ使用「私のミス」とお詫び",
         month: "11",
         date: "28",
         week: "火",
@@ -36,8 +36,8 @@ const articles = [
     },
     {
         link: "#",
-        src: "/img/KounoPhoto.jpg",
-        title: "河野太郎氏、国会でのスマホ使用「私のミス」とお詫び",
+        src: "/img/FireflyCall.jpg",
+        title: "石破氏、党内結束呼びかけ「ポスト岸田」高市氏前に",
         month: "11",
         date: "28",
         week: "火",
@@ -48,8 +48,20 @@ const articles = [
     },
     {
         link: "#",
-        src: "/img/KounoPhoto.jpg",
-        title: "河野太郎氏、国会でのスマホ使用「私のミス」とお詫び",
+        src: "/img/FireflyRetirement.jpg",
+        title: "共産・志位委員長が退任。交代は24年ぶり",
+        month: "11",
+        date: "28",
+        week: "火",
+        time: "12:55",
+        comment: "598",
+        place: "東京都",
+        categoryPlace: "共産",
+    },
+    {
+        link: "#",
+        src: "/img/FireflyCurry.jpg",
+        title: "炊き出しのカレー「普段の何万倍も美味しかった」",
         month: "11",
         date: "28",
         week: "火",
@@ -60,8 +72,8 @@ const articles = [
     },
     {
         link: "#",
-        src: "/img/KounoPhoto.jpg",
-        title: "河野太郎氏、国会でのスマホ使用「私のミス」とお詫び",
+        src: "/img/FireflyAmerican.jpg",
+        title: "米駐日大使「日本は米国内では信じられないほど厚い支持」",
         month: "11",
         date: "28",
         week: "火",
@@ -72,20 +84,8 @@ const articles = [
     },
     {
         link: "#",
-        src: "/img/KounoPhoto.jpg",
-        title: "河野太郎氏、国会でのスマホ使用「私のミス」とお詫び",
-        month: "11",
-        date: "28",
-        week: "火",
-        time: "12:55",
-        comment: "598",
-        place: "東京都",
-        categoryPlace: "国会",
-    },
-    {
-        link: "#",
-        src: "/img/KounoPhoto.jpg",
-        title: "河野太郎氏、国会でのスマホ使用「私のミス」とお詫び",
+        src: "/img/FireflyHandshake.jpg",
+        title: "日米首脳会談「4月10日」軸に、訪米は4月の上旬で再調整",
         month: "11",
         date: "28",
         week: "火",
@@ -143,7 +143,7 @@ export default function Square() {
                     {articles.map((article,index) => {
                         return<Article key={index} {...article} />
                     })}
-                <a href="#">もっと見る</a>
+                <Link href="#">もっと見る</Link>
                 </section>
             </main>
                 <Inquiry/>
