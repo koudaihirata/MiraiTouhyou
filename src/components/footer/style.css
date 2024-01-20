@@ -4,6 +4,7 @@
     position: fixed;
     bottom: 0;
     height: 75px;
+    z-index: 1000;
 }
 .footer > li > p{
     width: 60px;
@@ -57,3 +58,40 @@
     left: 0;
     z-index: -5;
 } */
+@media (min-width: 960px) {
+    .footerNav{
+        border: 1px solid #eee;
+        background: #fff;
+        height: 75px;
+    }
+    .footer > li > p{
+        width: 60px;
+        height: 50px;
+        text-align: center;
+    }
+    .footer a{
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        font-size: 10px;
+    }
+    .footer > li > p > a > picture > img{
+        margin: 0 auto;
+    }
+    .footer{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+    }
+    .footerIcon img{
+        width: 25px;
+        height: 25px;
+    }
+    .footerP img{
+        border-radius: 50%;
+        margin: 0 auto;
+    }    
+}

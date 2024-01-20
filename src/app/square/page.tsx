@@ -130,7 +130,6 @@ export default function Square() {
 
     return(
         <>
-            <Header_Login/>
             <main>
                 <h2>政治の広場</h2>
                 <div className="search">

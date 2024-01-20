@@ -1,16 +1,17 @@
 "use client"
 
 import Link from 'next/link';
-import Header_Login from '@/components/header/Login';
 import Footer_Login from '@/components/footer/Login';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Head from 'next/head'
 import Inquiry from '@/components/inquiry/inquiry';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const settings = {
+    className:'firstView',
     dots: true,
     infinite: true,
     speed: 500,
@@ -20,14 +21,32 @@ export default function Home() {
     autoplaySpeed: 5000,
   };
 
+  const [ scrollY , setScrollY ] = useState<any>(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  },[]);
+
+  const factor1 = 0.9
+  const factor2 = 0.77; 
+  
+  const trans1 = scrollY > 300 ? 270 : scrollY * factor1;
+  const trans2 = scrollY > 300 ? 230 : scrollY * factor2;
+  
   return (
     <>
       <Head>
         <title>ミライ投票</title>
       </Head>
-      <Header_Login/>
       <main>
-        <Slider {...settings} className='firstView'>
+        <Footer_Login/>
+        <Slider {...settings}>
           <picture>
             <img src="/img/firstView1.jpg" alt='その一票が未来を変える' className='.firstViewImg'/>
           </picture>
@@ -35,6 +54,8 @@ export default function Home() {
             <img src="/img/firstView2.jpg" alt='ルールを守って楽しく投票' className='.firstViewImg'/>
           </picture>
         </Slider>
+        <div className='translucentSquare1' style={{transform: `translateY(${trans1}px) translateX(-50%)`}}></div>
+        <div className='translucentSquare2' style={{transform: `translateY(${trans2}px) translateX(-50%)`}}></div>
         <div  className='beginnerBtn'>
           <Link href='#'>
             <picture>
@@ -82,7 +103,6 @@ export default function Home() {
         </section>
         <Inquiry />
       </main>
-      <Footer_Login/>
     </>
   )
 }
