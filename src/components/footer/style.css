@@ -61,10 +61,10 @@
 @media (min-width: 960px) {
     .footerNav{
         border: none;
-        background: #fff;
-        height: 75px;
-        margin-top: 200px;
-        position: static;
+        background: none;
+        height: 120px;
+        position: fixed;
+        top: 0;
     }
     .footer > li > p{
         width: 60px;
@@ -81,7 +81,8 @@
         margin: 0 auto;
     }
     .footer{
-        width: 100%;
+        width: 50%;
+        margin: 0 auto;
         height: 100%;
         display: flex;
         align-items: center;

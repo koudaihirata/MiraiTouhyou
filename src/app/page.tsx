@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Head from 'next/head'
 import Inquiry from '@/components/inquiry/inquiry';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
   const settings = {
@@ -52,20 +53,28 @@ export default function Home() {
   
   const factor3 = -1.5;
 
-  let color = '#68C1F2';
+  let color = 'rgb(104, 193, 242)'; // #68C1F2 in RGB
   if (scrollPos > 0 && scrollPos <= 500) {
-    const opacity = scrollPos / 500;
-    color = `rgba(30, 118, 222, ${opacity})`; 
+    const ratio = scrollPos / 500;
+    const r = Math.floor(104 + (178 - 104) * ratio);
+    const g = Math.floor(193 + (220 - 193) * ratio);
+    const b = Math.floor(242 + (243 - 242) * ratio);
+    color = `rgb(${r}, ${g}, ${b})`; 
   } else if (scrollPos > 500) {
-    color = '#1E76DE';
+    color = 'rgb(178, 220, 243)'; // #b2dcf3 in RGB
   }
-  const left = scrollPos > 1000 ? -450 : scrollPos * factor3;
+    const left = scrollPos > 10000 ? -450 : scrollPos * factor3;
+
+
 
   return (
     <>
-        <div style={{position:'fixed', bottom:'-50px', left:left, color:color, fontSize:'250px', zIndex:'-100', mixBlendMode:'multiply'}}>
+      <div>
+        <p style={{position:'fixed', bottom:'-50px', left:left, color:color, fontSize:'250px', zIndex:'-100', mixBlendMode:'multiply', fontWeight:'bold'}}>
           FUTYRE&nbsp;VOTING&nbsp;&nbsp;&nbsp;FUTYRE&nbsp;VOTING
-        </div>
+        </p>
+      </div>
+        <Footer_Login/>
       <main>
         <Slider {...settings}>
           <picture>
@@ -77,27 +86,26 @@ export default function Home() {
         </Slider>
         <div className='translucentSquare1' style={{transform: `translateY(${trans1}px) translateX(-50%)`}}></div>
         <div className='translucentSquare2' style={{transform: `translateY(${trans2}px) translateX(-50%)`}}></div>
-        {/* <Footer_Login/> */}
         <div  className='beginnerBtn'>
           <Link href='#'>
-            <picture>
-              <img src='/img/beginner.svg' alt='初心者へ'/>
-            </picture>
+              <Image src='/img/beginner.svg' alt='初心者へ' width={330} height={80}/>
           </Link>
         </div>
         <section className='notice'>
           <div>
-            <div>
+            <div className='noticeTitle'>
               <picture>
                 <img src='/img/bell2.svg' alt='ベル'/>
               </picture>
               <h2>お知らせ</h2>
             </div>
-            <p className='dey'>2023/11/16</p>
-            <p className='Sentence'>
-              参議院議員通常選挙は2026年に実施予定なので、<br/>
-              それまでは、選挙前投票の実施は行いません。
-            </p>
+            <div>
+              <p className='dey'>2023/11/16</p>
+              <p className='Sentence'>
+                参議院議員通常選挙は2026年に実施予定なので、<br/>
+                それまでは、選挙前投票の実施は行いません。
+              </p>
+            </div>
           </div>
         </section>
         <section>

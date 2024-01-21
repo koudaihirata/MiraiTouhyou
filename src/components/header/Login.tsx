@@ -3,10 +3,31 @@
 import "@/components/header/style.css"
 import SignIn from "../signIn/sigin"
 import Head from "next/head"
+import { useEffect, useState } from "react"
 
+function useScroll() {
+    const [ scrollPosition, setScrollPosition ] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollPosition(window.pageYOffset);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return() => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    },[]);
+
+    return scrollPosition;
+}
 
 export default function Header_Login() {
+    const scrollPosition = useScroll();
 
+    const opacity = scrollPosition <= 300 ? 1 - Math.min(scrollPosition / 300, 1) : 0;
+
+    const style = window.innerWidth >= 960 ? { opacity:opacity } : {};
 
     return(
         <>
@@ -23,7 +44,7 @@ export default function Header_Login() {
                 <meta name="msapplication-TileColor" content="#da532c" />
                 <meta name="theme-color" content="#ffffff" />
             </Head>
-            <header>
+            <header style={style}>
                 <nav className="headerNav">
                     <ul className="header">
                         <li>

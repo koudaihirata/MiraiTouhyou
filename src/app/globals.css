@@ -9,7 +9,7 @@
 *{
     color: #333;
     font-size: 12px;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 li{
     text-decoration: none;
@@ -46,7 +46,6 @@ main{
 }
 .notice{
     width: 100%;
-    height: 100px;
     margin-top: 36px;
 }
 .notice > div{
@@ -55,7 +54,7 @@ main{
     margin: 0 auto;
     overflow: hidden;
 }
-.notice > div > div{
+.notice > div > .noticeTitle{
     display: flex;
     gap: 8px;
     font-weight: bold;
@@ -194,50 +193,54 @@ main{
         border-radius: 50%;
         margin: 0 auto;
     }
-        .beginnerBtn{
+    .beginnerBtn{
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: end;
-        margin-top: 200px;
+        margin-top: 300px;
     }
     .beginnerBtn img{
         width: 330px;
         height: 80px;
     }
     .notice{
-        width: 100%;
-        height: 100px;
-        margin-top: 36px;
+        width: 60%;
+        margin: 200px auto 0;
     }
     .notice > div{
         width: 85%;
         height: 100%;
         margin: 0 auto;
         overflow: hidden;
+        display: flex;
+        gap: 48px;
     }
-    .notice > div > div{
+    .notice > div > .noticeTitle{
         display: flex;
         gap: 8px;
         font-weight: bold;
     }
     .notice img{
-        width: 15px;
-        height: 15px;
+        width: 20px;
+        height: 20px;
+    }
+    .notice h2{
+        font-size: 16px;
     }
     .Sentence{
-        margin-top: 10px;
+        margin-top: 0;
         line-height: 1.8em;
     }
     .dey{
-        margin-top: 14px;
+        margin-top: 0;
+        line-height: 24px;
     }
     .newsMain{
-        width: 85%;
+        width: 40%;
         height: 84px;
-        margin: 0 auto;
+        margin: 150px auto 0;
         border-top: 1px solid #a4a4a4;
-        margin-top: 47px;
         gap: 40px;
         overflow: hidden;
     }
@@ -269,7 +272,7 @@ main{
         height: 18px;
     }
     .SeeMore{
-        width: 85%;
+        width: 40%;
         border-bottom: 1px solid #a4a4a4;
         margin: 0 auto;
         margin-top: 10px;
