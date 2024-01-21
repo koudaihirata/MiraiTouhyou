@@ -22,6 +22,7 @@ export default function Home() {
   };
 
   const [ scrollY , setScrollY ] = useState<any>(0);
+  const [scrollPos, setScrollPos] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,20 +31,41 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-    };
+    };    
   },[]);
 
-  const factor1 = 0.9
+  useEffect(() => {
+    const letterScroll = () => {
+      setScrollPos(window.pageYOffset);
+    };
+    window.addEventListener('scroll', letterScroll);
+    return() => {
+      window.removeEventListener('scroll', letterScroll);
+    }
+  },[]);
+
+  const factor1 = 0.9;
   const factor2 = 0.77; 
   
   const trans1 = scrollY > 300 ? 270 : scrollY * factor1;
   const trans2 = scrollY > 300 ? 230 : scrollY * factor2;
   
+  const factor3 = -1.5;
+
+  let color = '#68C1F2';
+  if (scrollPos > 0 && scrollPos <= 500) {
+    const opacity = scrollPos / 500;
+    color = `rgba(30, 118, 222, ${opacity})`; 
+  } else if (scrollPos > 500) {
+    color = '#1E76DE';
+  }
+  const left = scrollPos > 1000 ? -450 : scrollPos * factor3;
+
   return (
     <>
-      <Head>
-        <title>ミライ投票</title>
-      </Head>
+        <div style={{position:'fixed', bottom:'-50px', left:left, color:color, fontSize:'250px', zIndex:'-100', mixBlendMode:'multiply'}}>
+          FUTYRE&nbsp;VOTING&nbsp;&nbsp;&nbsp;FUTYRE&nbsp;VOTING
+        </div>
       <main>
         <Slider {...settings}>
           <picture>
@@ -55,7 +77,7 @@ export default function Home() {
         </Slider>
         <div className='translucentSquare1' style={{transform: `translateY(${trans1}px) translateX(-50%)`}}></div>
         <div className='translucentSquare2' style={{transform: `translateY(${trans2}px) translateX(-50%)`}}></div>
-        <Footer_Login/>
+        {/* <Footer_Login/> */}
         <div  className='beginnerBtn'>
           <Link href='#'>
             <picture>

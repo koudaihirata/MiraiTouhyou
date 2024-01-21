@@ -9,7 +9,7 @@
 *{
     color: #333;
     font-size: 12px;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 li{
     text-decoration: none;
@@ -151,6 +151,7 @@ main{
         left: 50%;
         z-index: -100;
         mix-blend-mode: multiply;
+        transition: all .8s;
         background: linear-gradient( to left,#68C1F2 0%,#a8d8f1 100% );
     }
     .translucentSquare2{
@@ -161,7 +162,7 @@ main{
         left: 50%;
         z-index: -50;
         mix-blend-mode: multiply;
-        transition: all .5;
+        transition: all .5s;
         background: linear-gradient( to left,#68C1F2 0%,#a8d8f1 100% );
     }
     .footer > li > p{
