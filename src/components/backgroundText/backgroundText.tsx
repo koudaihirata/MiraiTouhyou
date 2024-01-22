@@ -22,7 +22,7 @@ export default function BackgroundText() {
     useEffect(() => {
         if (typeof window !== 'undefined') {
             const letterScroll = () => {
-            setScrollPos(window.pageYOffset);
+            setScrollPos(window.scrollY);
             };
             window.addEventListener('scroll', letterScroll);
             return() => {
