@@ -1,12 +1,12 @@
 "use client"
 
-import Header_Login from "@/components/header/Login";
 import Footer_profile from "@/components/profileFooter/page";
 import "@/app/profile/style.scss"
 import Image from "next/image";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, provider } from "@/firebase/firebase";
 import { signInWithPopup } from "firebase/auth";
+import Inquiry from "@/components/inquiry/inquiry";
 
 
 
@@ -58,7 +58,7 @@ return(
                         <div>
                             <div>
                                 <p>{auth.currentUser?.displayName}</p>
-                                <a href="#">詳しい情報を入力</a>
+                                <a href="#">プロフィールを編集</a>
                             </div>
                             <p>{auth.currentUser?.email}</p>
                         </div>
@@ -119,9 +119,9 @@ return(
 export default function profile() {
     return(
         <>
-            <Header_Login/>
             <main>
                 <ProfilerPage/>
+                <Inquiry/>
             </main>
             <Footer_profile/>
         </>

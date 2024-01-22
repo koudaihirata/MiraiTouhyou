@@ -38,7 +38,7 @@ main{
     height: 140px;
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
 }
 .beginnerBtn img{
     width: 330px;
@@ -100,7 +100,7 @@ main{
 .point{
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
 }
 .point img{
     width: 30px;
@@ -197,7 +197,7 @@ main{
         width: 100%;
         display: flex;
         justify-content: center;
-        align-items: end;
+        align-items: flex-end;
         margin-top: 300px;
     }
     .beginnerBtn img{
@@ -265,7 +265,7 @@ main{
     .point{
         display: flex;
         justify-content: center;
-        align-items: end;
+        align-items: flex-end;
     }
     .point img{
         width: 30px;

@@ -9,6 +9,7 @@ import Head from 'next/head'
 import Inquiry from '@/components/inquiry/inquiry';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import BackgroundText from '@/components/backgroundText/backgroundText';
 
 export default function Home() {
   const settings = {
@@ -35,45 +36,18 @@ export default function Home() {
     };    
   },[]);
 
-  useEffect(() => {
-    const letterScroll = () => {
-      setScrollPos(window.pageYOffset);
-    };
-    window.addEventListener('scroll', letterScroll);
-    return() => {
-      window.removeEventListener('scroll', letterScroll);
-    }
-  },[]);
 
   const factor1 = 0.9;
   const factor2 = 0.77; 
   
   const trans1 = scrollY > 300 ? 270 : scrollY * factor1;
   const trans2 = scrollY > 300 ? 230 : scrollY * factor2;
-  
-  const factor3 = -1.5;
-
-  let color = 'rgb(104, 193, 242)'; // #68C1F2 in RGB
-  if (scrollPos > 0 && scrollPos <= 500) {
-    const ratio = scrollPos / 500;
-    const r = Math.floor(104 + (178 - 104) * ratio);
-    const g = Math.floor(193 + (220 - 193) * ratio);
-    const b = Math.floor(242 + (243 - 242) * ratio);
-    color = `rgb(${r}, ${g}, ${b})`; 
-  } else if (scrollPos > 500) {
-    color = 'rgb(178, 220, 243)'; // #b2dcf3 in RGB
-  }
-    const left = scrollPos > 10000 ? -450 : scrollPos * factor3;
 
 
 
   return (
     <>
-      <div>
-        <p style={{position:'fixed', bottom:'-50px', left:left, color:color, fontSize:'250px', zIndex:'-100', mixBlendMode:'multiply', fontWeight:'bold'}}>
-          FUTYRE&nbsp;VOTING&nbsp;&nbsp;&nbsp;FUTYRE&nbsp;VOTING
-        </p>
-      </div>
+      <BackgroundText/>
         <Footer_Login/>
       <main>
         <Slider {...settings}>
