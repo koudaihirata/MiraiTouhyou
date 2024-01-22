@@ -9,13 +9,15 @@ function useScroll() {
     const [ scrollPosition, setScrollPosition ] = useState(0);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrollPosition(window.pageYOffset);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return() => {
-            window.removeEventListener('scroll', handleScroll);
+        if(typeof window !== 'undefined') {
+            const handleScroll = () => {
+                setScrollPosition(window.pageYOffset);
+            };
+    
+            window.addEventListener('scroll', handleScroll);
+            return() => {
+                window.removeEventListener('scroll', handleScroll);
+            }
         }
     },[]);
 
@@ -24,11 +26,17 @@ function useScroll() {
 
 export default function Header_Login() {
     const scrollPosition = useScroll();
+    const [style, setStyle] = useState({});
 
-    const opacity = scrollPosition <= 300 ? 1 - Math.min(scrollPosition / 300, 1) : 0;
+    useEffect(() => {
+        const opacity = scrollPosition <= 300 ? 1 - Math.min(scrollPosition / 300, 1) : 0;
+        // 画面の幅が960px以上の場合にのみ透明度を適用
+        if (window.innerWidth >= 960) {
+            setStyle({ opacity: opacity });
+        }
+    }, [scrollPosition]);
 
-    const style = window.innerWidth >= 960 ? { opacity:opacity } : {};
-
+    
     return(
         <>
             <Head>

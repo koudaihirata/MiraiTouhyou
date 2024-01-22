@@ -32,14 +32,16 @@ function useScroll() {
     const [ scrollPosition, setScrollPosition ] = useState(0);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrollPosition(window.pageYOffset);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return() => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        if(typeof window !== 'undefined') {
+            const handleScroll = () => {
+                setScrollPosition(window.pageYOffset);
+            };
+    
+            window.addEventListener('scroll', handleScroll);
+            return() => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }
     },[]);
 
     return scrollPosition;
@@ -48,11 +50,16 @@ function useScroll() {
 export default function Footer_Login() {
     const [user] = useAuthState(auth);
     const scrollPosition = useScroll();
-    // スクロール位置が250px以上の場合に透明度を計算    
-    const opacity = scrollPosition >= 250 ? Math.min((scrollPosition - 250) / 500, 1) : 0;
-    // 画面の幅が960px以上の場合にのみ透明度を適用
-    const style = window.innerWidth >= 960 ? { opacity:opacity } : {};
+    const [style, setStyle] = useState({});
 
+    useEffect(() => {
+        // スクロール位置が250px以上の場合に透明度を計算    
+        const opacity = scrollPosition >= 250 ? Math.min((scrollPosition - 250) / 500, 1) : 0;
+        // 画面の幅が960px以上の場合にのみ透明度を適用
+        if (window.innerWidth >= 960) {
+            setStyle({ opacity: opacity });
+        }
+    }, [scrollPosition]);
 
     return (
         <footer style={style}>
