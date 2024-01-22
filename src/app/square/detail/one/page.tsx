@@ -7,6 +7,7 @@ import "@/app/square/detail/style.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faThumbsUp } from '@fortawesome/free-regular-svg-icons'
 import { faThumbsDown } from "@fortawesome/free-regular-svg-icons"
+import { useRouter } from 'next/navigation';
 
 
 type detailProps = {
@@ -34,11 +35,12 @@ const details = [
 ]
 
 function Com(props:detailProps) {
+    const { name = '', comment = '', replyNam = 0, goodNam = 0, badNum = 0 } = props;
     return(
         <div className="Com">
             <div className="name">
                 <div className="Image"><Image src="/img/profile.svg" alt="profile" width={24} height={24} /></div>
-                <h5>{props.name}</h5>
+                <h4>{props.name}</h4>
             </div>
             <div className="comment">
                 <p>{props.comment}</p>
@@ -62,13 +64,15 @@ function Com(props:detailProps) {
 }
 
 
-export default function detailOne() {
+export default function DetailOne() {
+    const router = useRouter();
+
     return(
         <>
             <Header_Login/>
             <main>
                 <div className="firstView">
-                    <button onClick={() => window.history.back()}>戻る</button>
+                    <button onClick={() => router.back()}>戻る</button>
                 </div>
                 <section>
                     <h2>河野太郎氏、国会でのスマホ使用「私のミス」とお詫び</h2>

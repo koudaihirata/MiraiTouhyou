@@ -4,16 +4,22 @@ import Footer_election from "@/components/electionFooter/election";
 import Header_Login from "@/components/header/Login";
 import Image from "next/image";
 import "@/app/election/vote/number/style.css"
+import Link from "next/link";
+import { useRouter } from 'next/navigation';
 
 
 
-export default function three(){
+export default function Three(){
+    const router = useRouter();
+
     return(
         <>
             <Header_Login/>
             <main>
                 <div className="backBtn">
-                    <button onClick={() => window.history.back()}>戻る</button>
+                    <Link href=''>
+                        <button onClick={() => router.back()}>戻る</button>
+                    </Link>
                 </div>
                 <section>
                     <div className="name">

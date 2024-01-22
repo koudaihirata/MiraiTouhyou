@@ -10,11 +10,13 @@ import Header_Login from "@/components/header/Login"
 import { addDoc, collection } from "firebase/firestore"
 import { db } from "@/firebase/firebase"
 import { BrowserRouter as Router } from "react-router-dom";
+import { useRouter } from 'next/navigation';
 
 
 function Vote() {
 // 選択された名前を管理するためのstateを作成します。初期値は空文字列です。
 const [selectedName, setSelectedName] = useState('');
+const router = useRouter();
 
 // 投票変更を処理する関数です。イベントオブジェクトを引数に取ります。
 const handleVoteChange = (event:any) => {
@@ -87,7 +89,8 @@ async function handleBoth(event:any) {
         await handleSubmit(event);
         await partySubmit(event);
         // 投票が成功したら、ユーザーを確認ページにリダイレクトします。
-        window.location.href = "/election/vote/Confirmation";
+        router.push("/election/vote/Confirmation");
+
     } catch (e) {
         // 何かエラーが発生した場合、そのエラーをコンソールに出力します。
         console.error("Error: ", e);

@@ -8,11 +8,16 @@ import { DocumentData, collection } from "firebase/firestore";
 import { getDocs } from "firebase/firestore";
 import { doc, deleteDoc } from "firebase/firestore";
 import "@/app/election/vote/Confirmation/style.css"
+import Link from "next/link";
+import { useRouter } from 'next/navigation';
+
 
 
 
 export default function Confirmation() {
     const [ Votes, setVotes ] = useState<DocumentData[]>([]);
+    const router = useRouter()
+
 
     useEffect(() => {                            /* ↓Cloud Firestoreのコレクションの名前 */
         const usersCollectionRef = collection(db, 'Vote');
@@ -47,7 +52,7 @@ export default function Confirmation() {
             // ローカルのstateからもデータを削除
             setVotes(Votes.filter(vote => vote.id !== voteToDelete1.id && vote.id !== voteToDelete2.id));
     
-            window.history.back();
+            router.back();
         } catch (e) {
             console.error("Error: ", e);
         }
@@ -98,7 +103,9 @@ export default function Confirmation() {
                     <button onClick={handleBoth}>修正する</button>
                 </div>
                 <div className="completion">
-                    <button onClick={() => window.location.href='/election/vote/Confirmation/Conf'}>投票する</button>
+                    <Link href={"/election/vote/Confirmation/Conf"}>
+                        <button>投票する</button>
+                    </Link>
                 </div>
 
             </main>

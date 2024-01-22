@@ -4,16 +4,19 @@ import Footer_election from "@/components/electionFooter/election";
 import Header_Login from "@/components/header/Login";
 import Image from "next/image";
 import "@/app/election/vote/number/style.css"
+import { useRouter } from 'next/navigation';
 
 
 
-export default function two(){
+export default function Two(){
+    const router = useRouter();
+
     return(
         <>
             <Header_Login/>
             <main>
                 <div className="backBtn">
-                    <button onClick={() => window.history.back()}>戻る</button>
+                    <button onClick={() => router.back()}>戻る</button>
                 </div>
                 <section>
                     <div className="name">

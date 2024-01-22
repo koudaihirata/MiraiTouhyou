@@ -7,10 +7,13 @@ import { DocumentData, collection } from "firebase/firestore";
 import { getDocs } from "firebase/firestore";
 import { doc, deleteDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
+import { useRouter } from 'next/navigation';
+
 
 
 export default function Conf() {
     const [ Votes, setVotes ] = useState<DocumentData[]>([]);
+    const router = useRouter()
 
     useEffect(() => {                            /* ↓Cloud Firestoreのコレクションの名前 */
         const usersCollectionRef = collection(db, 'Vote');
@@ -44,7 +47,7 @@ async function handleBoth(event:any) {
         // ローカルのstateからもデータを削除
         setVotes(Votes.filter(vote => vote.id !== voteToDelete1.id && vote.id !== voteToDelete2.id));
 
-        window.location.href='/';
+        router.push("/")
     } catch (e) {
         console.error("Error: ", e);
     }
