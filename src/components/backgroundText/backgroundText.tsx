@@ -8,22 +8,26 @@ export default function BackgroundText() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-        }
-        window.addEventListener('resize',handleResize);
-        return() => {
-            window.removeEventListener('resize', handleResize);
+        if (typeof window !== 'undefined') {
+            const handleResize = () => {
+                setWindowWidth(window.innerWidth);
+            }
+            window.addEventListener('resize',handleResize);
+            return() => {
+                window.removeEventListener('resize', handleResize);
+            }            
         }
     },[]);
 
     useEffect(() => {
-        const letterScroll = () => {
-        setScrollPos(window.pageYOffset);
-        };
-        window.addEventListener('scroll', letterScroll);
-        return() => {
-        window.removeEventListener('scroll', letterScroll);
+        if (typeof window !== 'undefined') {
+            const letterScroll = () => {
+            setScrollPos(window.pageYOffset);
+            };
+            window.addEventListener('scroll', letterScroll);
+            return() => {
+            window.removeEventListener('scroll', letterScroll);
+            }            
         }
     },[]);
 

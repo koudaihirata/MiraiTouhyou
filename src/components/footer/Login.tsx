@@ -53,11 +53,13 @@ export default function Footer_Login() {
     const [style, setStyle] = useState({});
 
     useEffect(() => {
-        // スクロール位置が250px以上の場合に透明度を計算    
-        const opacity = scrollPosition >= 250 ? Math.min((scrollPosition - 250) / 500, 1) : 0;
-        // 画面の幅が960px以上の場合にのみ透明度を適用
-        if (window.innerWidth >= 960) {
-            setStyle({ opacity: opacity });
+        if (typeof window !== 'undefined') {
+            // スクロール位置が250px以上の場合に透明度を計算    
+            const opacity = scrollPosition >= 250 ? Math.min((scrollPosition - 250) / 500, 1) : 0;
+            // 画面の幅が960px以上の場合にのみ透明度を適用
+            if (window.innerWidth >= 960) {
+                setStyle({ opacity: opacity });
+            }            
         }
     }, [scrollPosition]);
 

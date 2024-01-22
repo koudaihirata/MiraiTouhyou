@@ -4,6 +4,8 @@ import "@/components/header/style.css"
 import SignIn from "../signIn/sigin"
 import Head from "next/head"
 import { useEffect, useState } from "react"
+import { useRouter } from 'next/navigation';
+
 
 function useScroll() {
     const [ scrollPosition, setScrollPosition ] = useState(0);
@@ -29,10 +31,12 @@ export default function Header_Login() {
     const [style, setStyle] = useState({});
 
     useEffect(() => {
-        const opacity = scrollPosition <= 300 ? 1 - Math.min(scrollPosition / 300, 1) : 0;
-        // 画面の幅が960px以上の場合にのみ透明度を適用
-        if (window.innerWidth >= 960) {
-            setStyle({ opacity: opacity });
+        if (typeof window !== 'undefined') {
+            const opacity = scrollPosition <= 300 ? 1 - Math.min(scrollPosition / 300, 1) : 0;
+            // 画面の幅が960px以上の場合にのみ透明度を適用
+            if (window.innerWidth >= 960) {
+                setStyle({ opacity: opacity });
+            }
         }
     }, [scrollPosition]);
 
