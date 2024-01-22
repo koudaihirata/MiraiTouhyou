@@ -97,7 +97,7 @@ const articles = [
 
 ]
 
-export function Article(props:articleProps) {
+function Article(props:articleProps) {
     return(
         <>
             <div>
