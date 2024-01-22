@@ -9,15 +9,6 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// const firebaseConfig = {
-//     apiKey: "AIzaSyDIuns1nYm4ECraOatzn40MPMrGwDORvgU",
-//     authDomain: "future-voting.firebaseapp.com",
-//     projectId: "future-voting",
-//     storageBucket: "future-voting.appspot.com",
-//     messagingSenderId: "248901548022",
-//     appId: "1:248901548022:web:9b17a1a22ee6ec84a2b9d7",
-//     measurementId: "G-BTM4XZ162J"
-// };
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
