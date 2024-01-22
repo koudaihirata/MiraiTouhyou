@@ -12,8 +12,7 @@ import { db } from "@/firebase/firebase"
 import { BrowserRouter as Router } from "react-router-dom";
 
 
-
-export function Vote() {
+function Vote() {
 // 選択された名前を管理するためのstateを作成します。初期値は空文字列です。
 const [selectedName, setSelectedName] = useState('');
 
