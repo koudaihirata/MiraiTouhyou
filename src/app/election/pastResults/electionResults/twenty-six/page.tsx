@@ -11,7 +11,7 @@ type partyNames = {
 }
 
 
-export function ProportionalRepresentationDistrict(props: { partyNames: partyNames[] }) {
+function ProportionalRepresentationDistrict(props: { partyNames: partyNames[] }) {
     return (
         <>
             <table>
