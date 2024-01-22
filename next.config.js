@@ -6,12 +6,21 @@ const nextConfig = {
     config.resolve.alias['@'] = path.join(__dirname, 'src')
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        hostname: 'example.com',
+        pathname: '/**',
+      },
+      {
+        hostname: 'example.net',
+        pathname: '/**',
+      },
+      {
+        hostname: 'lh3.googleusercontent.com',
+        pathname: '/**',
+      },
+    ],
+  },
 }
 module.exports = nextConfig
-
-module.exports = nextConfig
-module.exports = {
-    images: {
-    domains: ['lh3.googleusercontent.com', 'example.com', 'example.net'],
-    },
-}
