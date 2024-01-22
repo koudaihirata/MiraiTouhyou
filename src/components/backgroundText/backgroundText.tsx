@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 export default function BackgroundText() {
     const [scrollPos, setScrollPos] = useState(0);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [windowWidth, setWindowWidth] = useState(0);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
