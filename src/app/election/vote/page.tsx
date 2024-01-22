@@ -20,31 +20,18 @@ const router = useRouter();
 
 // 投票変更を処理する関数です。イベントオブジェクトを引数に取ります。
 const handleVoteChange = (event:any) => {
-    // イベントが発生した要素から最も近い '.electoralDistrict' 要素を取得します。
-    const selectedProfile = event.target.closest('.electoralDistrict');
-    // 選択されたプロフィールから名前を取得します。
-    const selectedName = selectedProfile.querySelector('.profileName h4').textContent;
     // 選択された名前をstateに保存します。
-    setSelectedName(selectedName);
+    setSelectedName(event.target.value);
 };
 
 // 投票を送信する非同期関数です。イベントオブジェクトを引数に取ります。
-const handleSubmit = async (event:any) => {
-    // フォームのデフォルトの送信動作をキャンセルします。
-    event.preventDefault();
-    // 選択された名前をコンソールに出力します。
-    console.log(selectedName);
-
+const handleSubmit = async () => {
     try{
         // Firestoreの"Vote"コレクションに新しいドキュメントを追加します。そのドキュメントの内容は、選択された名前です。
         const docRef = await addDoc(collection(db, "Vote"),{
             name:selectedName,
         });
-        // ドキュメントのIDをコンソールに出力します。
-        console.log("Document written with ID: ", docRef.id);
     } catch(e) {
-        // ドキュメントの追加中にエラーが発生した場合、そのエラーをコンソールに出力します。
-        console.error("Error adding document: ", e);
     }
 };
 
@@ -53,41 +40,27 @@ const [partyName, setPartyName] = useState('');
 
 // 党の変更を処理する関数です。イベントオブジェクトを引数に取ります。
 const handlePartyChange = (e:any) => {
-    // イベントが発生した要素から最も近い '.proportionalRepresentation' 要素を取得します。
-    const selectedParty = e.target.closest('.proportionalRepresentation');
-    // 選択された党から党名を取得します。
-    const partyName = selectedParty.querySelector('.partyName p').textContent;
     // 選択された党名をstateに保存します。
-    setPartyName(partyName);
+    setPartyName(e.target.value);
 };
 
 // 党の投票を送信する非同期関数です。イベントオブジェクトを引数に取ります。
-const partySubmit = async (e:any) => {
-    // フォームのデフォルトの送信動作をキャンセルします。
-    e.preventDefault();
-    // 選択された党名をコンソールに出力します。
-    console.log(partyName);
+const partySubmit = async () => {
     try {
         // Firestoreの"Vote"コレクションに新しいドキュメントを追加します。そのドキュメントの内容は、選択された党名です。
         const docRef = await addDoc(collection(db, "Vote"), {
         party: partyName,
     });
-        // ドキュメントのIDをコンソールに出力します。
-        console.log("Document written with ID: ", docRef.id);
     } catch (e) {
-        // ドキュメントの追加中にエラーが発生した場合、そのエラーをコンソールに出力します。
-        console.error("Error adding document: ", e);
     }
 };
 
 // 両方の投票を処理する非同期関数です。イベントオブジェクトを引数に取ります。
 async function handleBoth(event:any) {
-    // フォームのデフォルトの送信動作をキャンセルします。
-    event.preventDefault();
     try {
         // 個別の投票と党の投票を送信します。
-        await handleSubmit(event);
-        await partySubmit(event);
+        await handleSubmit();
+        await partySubmit();
         // 投票が成功したら、ユーザーを確認ページにリダイレクトします。
         router.push("/election/vote/Confirmation");
 
@@ -125,7 +98,7 @@ async function handleBoth(event:any) {
                                     <div className="profileParty" style={{color:"rgb(210, 35, 25)"}}>自由民主党</div>
                                 </a>
                                 <div className="VoteBtnWarp">
-                                    <input type="radio" name="profile" value="1" onChange={handleVoteChange}/>
+                                    <input type="radio" name="profile" value="新川 るい" onChange={handleVoteChange}/>
                                 </div>
                             </div>
                             <div className="electoralDistrict">
@@ -142,7 +115,7 @@ async function handleBoth(event:any) {
                                     <div className="profileParty" style={{color:"rgb(235, 100, 10)"}}>参政党</div>
                                 </a>
                                 <div className="VoteBtnWarp">
-                                    <input type="radio"  name="profile" value="2" onChange={handleVoteChange}/>
+                                    <input type="radio"  name="profile" value="五十嵐 太郎" onChange={handleVoteChange}/>
                                 </div>
                             </div>
                             <div className="electoralDistrict">
@@ -159,7 +132,7 @@ async function handleBoth(event:any) {
                                     <div className="profileParty" style={{color:"rgb(182, 200, 27)"}}>NHK党</div>
                                 </a>
                                 <div className="VoteBtnWarp">
-                                    <input type="radio"  name="profile" value="3" onChange={handleVoteChange}/>
+                                    <input type="radio"  name="profile" value="辛口 池流" onChange={handleVoteChange}/>
                                 </div>
                             </div>
                             <div className="electoralDistrict">
@@ -176,7 +149,7 @@ async function handleBoth(event:any) {
                                     <div className="profileParty" style={{color:"rgb(35, 145, 255)"}}>立憲民主党</div>
                                 </a>
                                 <div className="VoteBtnWarp">
-                                    <input type="radio"  name="profile" value="4" onChange={handleVoteChange}/>
+                                    <input type="radio"  name="profile" value="橘 弥生" onChange={handleVoteChange}/>
                                 </div>
                             </div>
                             <div className="electoralDistrict">
@@ -193,7 +166,7 @@ async function handleBoth(event:any) {
                                     <div className="profileParty" style={{color:"rgb(110, 65, 225)"}}>日本共産党</div>
                                 </a>
                                 <div className="VoteBtnWarp">
-                                    <input type="radio"  name="profile" value="5" onChange={handleVoteChange}/>
+                                    <input type="radio"  name="profile" value="平田 広大" onChange={handleVoteChange}/>
                                 </div>
                             </div>
                             <div className="electoralDistrict">
@@ -210,7 +183,7 @@ async function handleBoth(event:any) {
                                     <div className="profileParty">無所属</div>
                                 </a>
                                 <div className="VoteBtnWarp">
-                                    <input type="radio"  name="profile" value="7" onChange={handleVoteChange}/>
+                                    <input type="radio"  name="profile" value="山口 煙管" onChange={handleVoteChange}/>
                                 </div>
                             </div>
                             <div className="electoralDistrict">
@@ -227,7 +200,7 @@ async function handleBoth(event:any) {
                                     <div className="profileParty" style={{color:"rgb(225, 154, 0)"}}>日本維新の会</div>
                                 </a>
                                 <div className="VoteBtnWarp">
-                                    <input type="radio"  name="profile" value="8" onChange={handleVoteChange}/>
+                                    <input type="radio"  name="profile" value="流川 楓" onChange={handleVoteChange}/>
                                 </div>
                             </div>
                         </form>
@@ -241,7 +214,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(100, 50, 10)"}}>維新政党・新風</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="1" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="維新政党・新風" onChange={handlePartyChange}/>
                             </div>
                         </div>
                         <div className="proportionalRepresentation">
@@ -249,7 +222,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(150, 150, 250)"}}>幸福実現党</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="2" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="幸福実現党" onChange={handlePartyChange}/>
                             </div>
                         </div>
                         <div className="proportionalRepresentation">
@@ -257,7 +230,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(235, 97, 190)"}}>公明党</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="3" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="公明党" onChange={handlePartyChange}/>
                             </div>
                         </div>
                         <div className="proportionalRepresentation">
@@ -265,7 +238,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(0, 16, 165)"}}>国民民主党</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="4" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="国民民主党" onChange={handlePartyChange}/>
                             </div>
                         </div>
                         <div className="proportionalRepresentation">
@@ -273,7 +246,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(235, 100, 10)"}}>参政党</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="5" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="参政党" onChange={handlePartyChange}/>
                             </div>
                         </div>
                         <div className="proportionalRepresentation">
@@ -281,7 +254,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(180, 110, 90)"}}>新党くにもり</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="6" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="新党くにもり" onChange={handlePartyChange}/>
                             </div>
                         </div>
                         <div className="proportionalRepresentation">
@@ -289,7 +262,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(210, 35, 25)"}}>自由民主党</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="7" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="自由民主党" onChange={handlePartyChange}/>
                             </div>
                         </div>
                         <div className="proportionalRepresentation">
@@ -297,7 +270,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(225, 154, 0)"}}>日本維新の会</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="8" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="日本維新の会" onChange={handlePartyChange}/>
                             </div>
                         </div>
                         <div className="proportionalRepresentation">
@@ -305,7 +278,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(110, 65, 225)"}}>日本共産党</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="9" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="日本共産党" onChange={handlePartyChange}/>
                             </div>
                         </div>
                         <div className="proportionalRepresentation">
@@ -313,7 +286,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(170, 130, 75)"}}>日本第一党</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="10" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="日本第一党" onChange={handlePartyChange}/>
                             </div>
                         </div>
                         <div className="proportionalRepresentation">
@@ -321,7 +294,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(35, 70, 0)"}}>ごぼうの党</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="11" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="ごぼうの党" onChange={handlePartyChange}/>
                             </div>
                         </div>
                         <div className="proportionalRepresentation">
@@ -329,7 +302,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(240, 160, 167)"}}>れいわ新選組</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="12" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="れいわ新選組" onChange={handlePartyChange}/>
                             </div>
                         </div>
                         <div className="proportionalRepresentation">
@@ -337,7 +310,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(5, 85, 90)"}}>社会民主党</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="13" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="社会民主党" onChange={handlePartyChange}/>
                             </div>
                         </div>
                         <div className="proportionalRepresentation">
@@ -345,7 +318,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(35, 145, 255)"}}>立憲民主党</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="14" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="立憲民主党" onChange={handlePartyChange}/>
                             </div>
                         </div>
                         <div className="proportionalRepresentation">
@@ -353,7 +326,7 @@ async function handleBoth(event:any) {
                                 <p style={{color:"rgb(182, 200, 27)"}}>ＮＨＫ党</p>
                             </div>
                             <div className="partyBtnWarp">
-                                <input type="radio" name="party" value="15" onChange={handlePartyChange}/>
+                                <input type="radio" name="party" value="ＮＨＫ党" onChange={handlePartyChange}/>
                             </div>
                         </div>
                     </form>
