@@ -34,7 +34,7 @@ function useScroll() {
     useEffect(() => {
         if(typeof window !== 'undefined') {
             const handleScroll = () => {
-                setScrollPosition(window.pageYOffset);
+                setScrollPosition(window.scrollY);
             };
     
             window.addEventListener('scroll', handleScroll);
