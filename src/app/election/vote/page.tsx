@@ -3,7 +3,7 @@
 import "@/app/election/vote/style.css"
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import React from "react"
 import Footer_election from "@/components/electionFooter/election"
 import Header_Login from "@/components/header/Login"

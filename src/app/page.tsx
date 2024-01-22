@@ -24,7 +24,6 @@ export default function Home() {
   };
 
   const [ scrollY , setScrollY ] = useState<any>(0);
-  const [scrollPos, setScrollPos] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
