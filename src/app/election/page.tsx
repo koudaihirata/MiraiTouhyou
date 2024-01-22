@@ -8,22 +8,9 @@ import { type } from "os"
 import Footer_election from "@/components/electionFooter/election"
 import Header_Login from "@/components/header/Login"
 import Inquiry from "@/components/inquiry/inquiry"
+import { Candidate } from "@/components/Candidate/Candidate"
+import { Party } from "@/components/Party/Party"
 
-
-
-type CandidateProps = {
-    name:string,
-    party:string,
-    // now: "新" | "現" | "元",
-    now:string,
-    num:Number,
-    color:string,
-}
-type PartyProps = {
-    name:string,
-    num:Number,
-    color:string,
-}
 
 const persons = [
     {
@@ -139,30 +126,6 @@ const parties = [
         color:"rgb(100, 50, 10)",
     },
 ]
-
-export function Candidate(props:CandidateProps) {
-    return(
-        <div className="candidate">
-            <Image src='/img/profile.svg' alt="Icon" width={24} height={24}/>
-            <p className="candidateName">{props.name}</p>
-            <div style={{backgroundColor:props.color}} className="candidateParty"><p>{props.party}</p></div>
-            <div className="candidateNow"><p>{props.now}</p></div>
-            <p>{props.num.toString()}票</p>
-        </div>
-    )
-}
-export function Party(props:PartyProps) {
-    return(
-        <div className="party" style={{backgroundColor:props.color}}>
-            <div className="partyName"><p>{props.name}</p></div>
-            <div className="partyNum"><p>{props.num.toString()}</p></div>
-        </div>
-    )
-}
-
-
-
-
 
 
 export default function Election() {
