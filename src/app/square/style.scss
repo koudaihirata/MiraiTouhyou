@@ -85,7 +85,7 @@ section{
     section{
         display: flex;
         flex-wrap: wrap;
-        gap: 60px;
+        justify-content: space-between;
         width: 50%;
         margin: 0 auto;
     

@@ -16,19 +16,22 @@ const router = useRouter();
 
 // 投票変更を処理する関数です。イベントオブジェクトを引数に取ります。
 const handleVoteChange = (event:any) => {
-    // 選択された名前をstateに保存します。
-    setSelectedName(event.target.value);
+    if(typeof window !== 'undefined') {
+        // 選択された名前をstateに保存します。
+        setSelectedName(event.target.value);
+    }    
 };
-
 // 投票を送信する非同期関数です。イベントオブジェクトを引数に取ります。
 const handleSubmit = async () => {
-    try{
-        // Firestoreの"Vote"コレクションに新しいドキュメントを追加します。そのドキュメントの内容は、選択された名前です。
-        const docRef = await addDoc(collection(db, "Vote"),{
-            name:selectedName,
-        });
-    } catch(e) {
-    }
+    if(typeof window !== 'undefined') {
+        try{
+            // Firestoreの"Vote"コレクションに新しいドキュメントを追加します。そのドキュメントの内容は、選択された名前です。
+            const docRef = await addDoc(collection(db, "Vote"),{
+                name:selectedName,
+            });
+        } catch(e) {
+        }
+    }        
 };
 
 // 選択された党名を管理するためのstateを作成します。初期値は空文字列です。
@@ -36,34 +39,40 @@ const [partyName, setPartyName] = useState('');
 
 // 党の変更を処理する関数です。イベントオブジェクトを引数に取ります。
 const handlePartyChange = (e:any) => {
-    // 選択された党名をstateに保存します。
-    setPartyName(e.target.value);
+    if(typeof window !== 'undefined') {
+        // 選択された党名をstateに保存します。
+        setPartyName(e.target.value);
+    }        
 };
 
 // 党の投票を送信する非同期関数です。イベントオブジェクトを引数に取ります。
 const partySubmit = async () => {
-    try {
-        // Firestoreの"Vote"コレクションに新しいドキュメントを追加します。そのドキュメントの内容は、選択された党名です。
-        const docRef = await addDoc(collection(db, "Vote"), {
-        party: partyName,
-    });
-    } catch (e) {
-    }
+    if(typeof window !== 'undefined') {
+        try {
+            // Firestoreの"Vote"コレクションに新しいドキュメントを追加します。そのドキュメントの内容は、選択された党名です。
+            const docRef = await addDoc(collection(db, "Vote"), {
+            party: partyName,
+        });
+        } catch (e) {
+        }
+    }        
 };
 
 // 両方の投票を処理する非同期関数です。イベントオブジェクトを引数に取ります。
 async function handleBoth(event:any) {
-    try {
-        // 個別の投票と党の投票を送信します。
-        await handleSubmit();
-        await partySubmit();
-        // 投票が成功したら、ユーザーを確認ページにリダイレクトします。
-        router.push("/election/vote/Confirmation");
-
-    } catch (e) {
-        // 何かエラーが発生した場合、そのエラーをコンソールに出力します。
-        console.error("Error: ", e);
-    }
+    if(typeof window !== 'undefined') {
+        try {
+            // 個別の投票と党の投票を送信します。
+            await handleSubmit();
+            await partySubmit();
+            // 投票が成功したら、ユーザーを確認ページにリダイレクトします。
+            router.push("/election/vote/Confirmation");
+    
+        } catch (e) {
+            // 何かエラーが発生した場合、そのエラーをコンソールに出力します。
+            console.error("Error: ", e);
+        }
+    }        
 }
 
 

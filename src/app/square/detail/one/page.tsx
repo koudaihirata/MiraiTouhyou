@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faThumbsUp } from '@fortawesome/free-regular-svg-icons'
 import { faThumbsDown } from "@fortawesome/free-regular-svg-icons"
 import { useRouter } from 'next/navigation';
+import Inquiry from "@/components/inquiry/inquiry"
 
 
 type detailProps = {
@@ -69,8 +70,7 @@ export default function DetailOne() {
 
     return(
         <>
-            <Header_Login/>
-            <main>
+            <main className="DetailOneMain">
                 <div className="firstView">
                     <button onClick={() => router.back()}>戻る</button>
                 </div>
@@ -104,6 +104,7 @@ export default function DetailOne() {
                 </section>
                 <p><a href="#">＋</a></p>
             </main>
+            <Inquiry/>
             <Footer_square/>
         </>
     )

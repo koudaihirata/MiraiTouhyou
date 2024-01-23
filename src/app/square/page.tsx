@@ -143,7 +143,7 @@ export default function Square() {
                         return<Article key={index} {...article} />
                     })}
                 </section>
-                <Link href="#">もっと見る</Link>
+                <p><Link href="#">もっと見る</Link></p>
             </main>
                 <Inquiry/>
             <Footer_square/>
