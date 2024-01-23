@@ -59,10 +59,10 @@ export default function BackgroundText() {
      // 960px以上の場合のスタイルを設定
     const styleOver960px = {
         position: 'fixed' as any,
-        bottom: '-50px',
+        bottom: '-100px',
         left: left,
         color: color,
-        fontSize: '250px',
+        fontSize: '300px',
         zIndex: '-100',
         mixBlendMode: 'multiply' as any,
         fontWeight: 'bold'

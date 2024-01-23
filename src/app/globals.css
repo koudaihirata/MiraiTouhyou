@@ -134,7 +134,7 @@ main{
     right: 30px;
 }
 @media (min-width: 960px) {
-    main{
+    .HomeMain{
         padding-top: 200px;
     }
     .firstView{

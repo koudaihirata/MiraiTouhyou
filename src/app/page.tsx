@@ -50,7 +50,7 @@ export default function Home() {
     <>
       <BackgroundText/>
         <Footer_Login/>
-      <main>
+      <main className='HomeMain'>
         <Slider {...settings}>
           <picture>
             <img src="/img/firstView1.jpg" alt='その一票が未来を変える' className='.firstViewImg'/>

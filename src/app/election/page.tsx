@@ -131,8 +131,7 @@ const parties = [
 export default function Election() {
     return(
         <>
-            <Header_Login/>
-            <main>
+            <main className="ElectionMain">
                 <div style={{ width: '100vw', height: '200px', position: 'relative', backgroundColor: '#68C1F2'}}>
                     <Image src="/img/electionView.svg" alt="第27回参議院議員通常選挙" layout="fill" objectFit="contain"/>
                 </div>

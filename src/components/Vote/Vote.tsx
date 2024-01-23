@@ -69,7 +69,7 @@ async function handleBoth(event:any) {
 
 
     return (
-        <main>
+        <main className="voteMain">
             <div>
                 <div>
                     <h2>第27回参議院議員通常選挙</h2>

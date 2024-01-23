@@ -130,7 +130,7 @@ export default function Square() {
 
     return(
         <>
-            <main>
+            <main className="SquareMain">
                 <h2>政治の広場</h2>
                 <div className="search">
                     <div className="Sort">
@@ -142,8 +142,8 @@ export default function Square() {
                     {articles.map((article,index) => {
                         return<Article key={index} {...article} />
                     })}
-                <Link href="#">もっと見る</Link>
                 </section>
+                <Link href="#">もっと見る</Link>
             </main>
                 <Inquiry/>
             <Footer_square/>

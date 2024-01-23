@@ -61,8 +61,7 @@ export default function Confirmation() {
 
     return(
         <>
-            <Header_Login/>
-            <main>
+            <main className="ConfirmationMain">
                 <p>この内容でよろしいですか</p>
                 <div>
                     <div className="ballotPaper">
