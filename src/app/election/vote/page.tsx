@@ -1,3 +1,5 @@
+"use client"
+
 import dynamic from 'next/dynamic';
 import Footer_election from "@/components/electionFooter/election"
 import Header_Login from "@/components/header/Login"
@@ -8,7 +10,6 @@ const Vote = dynamic(() => import('@/components/Vote/Vote'), { ssr: false });
 export default function VoteMain() {
     return(
         <>
-            <Header_Login/>
             <Router>
                 <Vote/>
             </Router>
