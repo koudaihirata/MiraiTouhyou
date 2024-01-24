@@ -1,104 +1,155 @@
-.SquareMain{
-    width: 80%;
-    margin: 0 auto;
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
-h2{
-    font-size: 20px;
-    font-family: 'Note Sans JP', sans-serif;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 36px;
+section > div {
+  width: 140px;
+  margin-top: 16px;
+  position: relative;
 }
-.search{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 16px;
+section > div .photo {
+  width: 100%;
+  height: 120px;
+  border-radius: 10px;
+  background-color: #C4C4C4;
 }
-.Sort{
-    width: 82px;
-    height: 22px;
-    border-bottom: 1px solid #1E1E1E;
-    position: relative;
+section > div input {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 100;
 }
-.Sort p{
-    font-size: 14px;
-    font-family: 'Note Sans JP', sans-serif;
-    font-weight: bold;
+section > div > a > p {
+  font-size: 10px;
 }
-.Sort::after{
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    top: 2px;
-    right: 8px;
-    border-bottom: #333 1px solid;
-    border-right: 1px solid #333;
-    transform: rotate(45deg);
-} 
-.search input{
-    width: 120px;
-    height: 22px;
-    border: #1E1E1E 1px solid;
-    border-radius: 15px;
-    font-size: 10px;
-    text-align: center;
+section > div .timeComment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
-
+section > div .timeComment :first-child {
+  font-size: 8px;
+  color: #a6a6a6;
+}
+section > div .timeComment ::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 10px;
+  background-image: url(../../../public/img/Comment.svg);
+  background-repeat: no-repeat;
+  top: 5px;
+  right: 25px;
+}
+section > div .category {
+  display: flex;
+  gap: 4px;
+}
+section > div .category .place {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  background-color: #EFEFEF;
+  width: 36px;
+  height: 12px;
+  border-radius: 2px;
+}
+section > div .category .place p {
+  font-size: 6px;
+  color: #A6A6A6;
+}
+section > div .category .categoryPlace {
+  width: 36px;
+  height: 12px;
+  border: #6BE956 1px solid;
+  border-radius: 2px;
+}
+section > div .category .categoryPlace p {
+  font-size: 6px;
+  color: #A6A6A6;
+  text-align: center;
+  line-height: 10px;
+}
 
 @media (min-width: 960px) {
-    .SquareMain{
-        width: 80%;
-        margin: 0 auto;
-        padding-top: 100px;
-    }
-    h2{
-        font-size: 20px;
-        font-family: 'Note Sans JP', sans-serif;
-        font-weight: bold;
-        text-align: center;
-    }
-    .search{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 16px;
-        width: 60%;
-        margin: 40px auto 32px;
-    }
-    .Sort{
-        width: 82px;
-        height: 22px;
-        border-bottom: 1px solid #1E1E1E;
-        position: relative;
-    }
-    .Sort p{
-        font-size: 14px;
-        font-family: 'Note Sans JP', sans-serif;
-        font-weight: bold;
-    }
-    .Sort::after{
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        top: 2px;
-        right: 8px;
-        border-bottom: #333 1px solid;
-        border-right: 1px solid #333;
-        transform: rotate(45deg);
-    } 
-    .search input{
-        width: 120px;
-        height: 22px;
-        border: #1E1E1E 1px solid;
-        border-radius: 15px;
-        font-size: 10px;
-        text-align: center;
-    }
-    .SquareMain > p{
-        text-align: center;
-        color: #1E76DE;
-        text-decoration: underline;
-        margin-top: 70px;
-    }
-}
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+  }
+  section > div {
+    width: 140px;
+    margin-top: 16px;
+    position: relative;
+  }
+  section > div .photo {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    background-color: #C4C4C4;
+  }
+  section > div input {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    z-index: 100;
+  }
+  section > div > a > p {
+    font-size: 10px;
+  }
+  section > div .timeComment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  section > div .timeComment :first-child {
+    font-size: 8px;
+    color: #a6a6a6;
+  }
+  section > div .timeComment ::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 10px;
+    background-image: url(../../../public/img/Comment.svg);
+    background-repeat: no-repeat;
+    top: 5px;
+    right: 25px;
+  }
+  section > div .category {
+    display: flex;
+    gap: 4px;
+  }
+  section > div .category .place {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    background-color: #EFEFEF;
+    width: 36px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  section > div .category .place p {
+    font-size: 6px;
+    color: #A6A6A6;
+  }
+  section > div .category .categoryPlace {
+    width: 36px;
+    height: 12px;
+    border: #6BE956 1px solid;
+    border-radius: 2px;
+  }
+  section > div .category .categoryPlace p {
+    font-size: 6px;
+    color: #A6A6A6;
+    text-align: center;
+    line-height: 10px;
+  }
+}/*# sourceMappingURL=style.css.map */

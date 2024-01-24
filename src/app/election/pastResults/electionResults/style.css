@@ -1,0 +1,117 @@
+main {
+  width: 100%;
+  margin-bottom: 120px;
+}
+main #information {
+  width: 60%;
+  margin: 0 auto;
+}
+main #information h2 {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 16px;
+}
+main #information .information {
+  display: flex;
+  gap: 62px;
+  margin-top: 12px;
+}
+main #information > h3 {
+  margin-top: 16px;
+}
+main #information .gender {
+  display: flex;
+  gap: 12px;
+}
+main #electoralDistrict {
+  width: 100%;
+}
+main #electoralDistrict h2 {
+  width: 100%;
+  height: 60px;
+  background-color: #68C1F2;
+  font-size: 16px;
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+  margin-top: 24px;
+}
+main #electoralDistrict div {
+  display: flex;
+  flex-wrap: wrap;
+}
+main #electoralDistrict div p {
+  width: 50%;
+  height: 42px;
+  border: #E9E9E9 1px solid;
+}
+main #electoralDistrict div p a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 1em;
+  position: relative;
+}
+main #electoralDistrict div p a::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #68C1F2;
+  border-right: 1px solid #68C1F2;
+  top: 16px;
+  right: 15%;
+  transform: rotate(45deg);
+}
+main #proportionalRepresentationDistrict {
+  width: 100%;
+}
+main #proportionalRepresentationDistrict h2 {
+  width: 100%;
+  height: 60px;
+  background-color: #68C1F2;
+  font-size: 16px;
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+}
+main #proportionalRepresentationDistrict table {
+  width: 100%;
+}
+main #proportionalRepresentationDistrict table thead {
+  width: 100%;
+  height: 40px;
+}
+main #proportionalRepresentationDistrict table thead td {
+  color: #fff;
+  background-color: #BFBFBF;
+  height: 40px;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  border-right: 1px solid #fff;
+  line-height: 1.3em;
+}
+main #proportionalRepresentationDistrict table thead td:last-of-type {
+  border-right: 0;
+}
+main #proportionalRepresentationDistrict table tbody {
+  width: 100%;
+}
+main #proportionalRepresentationDistrict table tbody td {
+  height: 40px;
+  padding: 5px;
+  vertical-align: middle;
+  line-height: 1.3em;
+  font-size: 12px;
+  border-right: 1px solid #D5D5D5;
+  border-bottom: 1px solid #d5d5d5;
+  text-align: center;
+  white-space: nowrap;
+}
+main #proportionalRepresentationDistrict table tbody td:last-of-type {
+  border-right: 0;
+}/*# sourceMappingURL=style.css.map */
