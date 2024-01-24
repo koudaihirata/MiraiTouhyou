@@ -141,11 +141,11 @@ export default function Election() {
                     <h2>擬似投票結果</h2>
                     <p>6月1日　10時発表</p>
                 </div>
-                {/* <div className="componentsBtn">
+                <div className="componentsBtn">
                     <a href="/election/vote" className="voteBtn">
                         <Btn label="投票する" />
                     </a>
-                </div> */}
+                </div>
                 <section className="CurrentSituation">
                     <div className="rank">
                         <div className="update">

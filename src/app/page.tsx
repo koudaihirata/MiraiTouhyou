@@ -51,7 +51,7 @@ export default function Home() {
 
   return (
     <>
-      {/* <BackgroundText/>
+      <BackgroundText/>
         <Footer_Login/>
       <main className='HomeMain'>
         <Slider {...settings}>
@@ -110,7 +110,7 @@ export default function Home() {
           </div>
         </section>
         <Inquiry />
-      </main> */}
+      </main>
     </>
   )
 }
