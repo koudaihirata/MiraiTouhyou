@@ -87,7 +87,7 @@ export default function Footer_Login() {
                             </Link>
                         </p>
                     </li>
-                    <li>
+                    {/* <li>
                         <p>
                             <Link href="/election">
                                 <picture className="footerIcon">
@@ -96,7 +96,7 @@ export default function Footer_Login() {
                                 ミライ投票
                             </Link>
                         </p>
-                    </li>
+                    </li> */}
                     <li>
                         <p>
                             <Link href="/square">
