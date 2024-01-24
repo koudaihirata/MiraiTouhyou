@@ -52,7 +52,7 @@ export default function Footer_square() {
                             </Link>
                         </p>
                     </li>
-                    {/* <li>
+                    <li>
                         <p>
                             <Link href="/election">
                                 <picture className="footerIcon">
@@ -61,7 +61,7 @@ export default function Footer_square() {
                                 ミライ投票
                             </Link>
                         </p>
-                    </li> */}
+                    </li>
                     <li>
                         <p>
                             <Link href="/square">
