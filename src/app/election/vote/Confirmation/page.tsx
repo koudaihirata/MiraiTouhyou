@@ -1,6 +1,6 @@
 "use client"
 
-// import Footer_election from "@/components/electionFooter/election";
+import Footer_election from "@/components/electionFooter/election";
 import Header_Login from "@/components/header/Login";
 import { useState, useEffect } from "react";
 import { db } from "@/firebase/firebase";
@@ -108,7 +108,7 @@ export default function Confirmation() {
                 </div>
 
             </main>
-            {/* <Footer_election/> */}
+            <Footer_election/>
         </>
     )
 }

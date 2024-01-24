@@ -5,7 +5,7 @@ import Image from "next/image"
 import "@/app/election/style.css"
 import Link from "next/link"
 import { type } from "os"
-// import Footer_election from "@/components/electionFooter/election"
+import Footer_election from "@/components/electionFooter/election"
 import Header_Login from "@/components/header/Login"
 import Inquiry from "@/components/inquiry/inquiry"
 import { Candidate } from "@/components/Candidate/Candidate"
@@ -186,7 +186,7 @@ export default function Election() {
                 </div>
                 <Inquiry/>
             </main>
-            {/* <Footer_election/> */}
+            <Footer_election/>
         </>
     )
 }

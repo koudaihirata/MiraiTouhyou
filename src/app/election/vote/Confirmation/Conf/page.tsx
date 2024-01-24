@@ -1,6 +1,6 @@
 "use client"
 
-// import Footer_election from "@/components/electionFooter/election";
+import Footer_election from "@/components/electionFooter/election";
 import Header_Login from "@/components/header/Login";
 import { useState, useEffect } from "react";
 import { DocumentData, collection } from "firebase/firestore";
@@ -61,7 +61,7 @@ async function handleBoth(event:any) {
                 <p style={{fontSize: '16px', textAlign: 'center'}}>投票完了しました</p>
                 <a href="/" onClick={handleBoth} style={{fontSize: '16px', color: '#6464FF', textDecoration: 'underline'}}>ホームに戻る</a>
             </main>
-            {/* <Footer_election/> */}
+            <Footer_election/>
         </>
     )
 }
