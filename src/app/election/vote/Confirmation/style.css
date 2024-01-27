@@ -1,0 +1,264 @@
+.ConfirmationMain{
+    width: 85%;
+    margin: 0 auto;
+}
+.ConfirmationMain > p{
+    text-align: center;
+    font-size: 16px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.ConfirmationMain > div{
+    display: flex;
+    justify-content: space-around;
+}
+.ballotPaper{
+    display: flex;
+    gap: 10px;
+    width: 150px;
+    height: 250px;
+    background-color: #FDF5E6;
+    mix-blend-mode: multiply;
+    position: relative;
+}
+.ballotPaper::after{
+    content: "選";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #EFEFEF;
+    font-size: 32px;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #EFEFEF;
+    top: 5px;
+    right: 10px;
+    z-index: -1;
+}
+.ballotPaper2{
+    display: flex;
+    gap: 10px;
+    width: 150px;
+    height: 250px;
+    border: 1px #333 solid;
+    position: relative;
+}
+.ballotPaper2::after{
+    content: "比";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #EFEFEF;
+    font-size: 32px;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #EFEFEF;
+    top: 5px;
+    right: 10px;
+    z-index: -1;
+}
+.CandidateNomination{
+    border: 1px #333 solid;
+    padding: 3px;
+    margin-top: 24px;
+    margin-left: 16px;
+}
+.CandidateNominationName{
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    width: 70px;
+    height: 182px;
+    border-bottom: 1px #333 solid;
+    border-left: 1px #333 solid;
+    border-right: 1px #333 solid;
+    font-size: 24px;
+    text-align: center;
+    line-height: 70px;
+    margin-left: 16px;
+}
+
+.ElectionName{
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+}
+.ElectionName p{
+    margin-top: 1em;
+}
+.ElectionName h3{
+    margin-top: 2em;
+}
+.ElectionName span{
+    font-size: 20px;
+}
+
+.correction{
+    width: 96px;
+    height: 36px;
+    background-color:#68C1F2;
+    border-radius: 5px;
+    margin: 0 auto;
+    color: #fff;
+    margin-top: 27px;
+    margin-bottom: 20px;
+    box-shadow: 0px 1px 1px 0px #777777;
+}
+.correction:hover{
+    box-shadow: inset 0px 1px 1px 0px #777777;
+}
+.correction button{
+    width: 100%;
+    height: 100%;
+}
+.completion{
+    width: 115px;
+    height: 46px;
+    background-color:#68C1F2;
+    margin: 0 auto;
+    color: #fff;
+    box-shadow: 0px 1px 1px 0px #777777;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.completion:hover{
+    box-shadow: inset 0px 1px 1px 0px #777777;
+}
+.completion button{
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 960px) {
+    .ConfirmationMain{
+        width: 60%;
+        margin: 0 auto;
+        padding-top: 120px;
+    }
+    .ConfirmationMain > p{
+        text-align: center;
+        font-size: 16px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+    .ConfirmationMain > div{
+        display: flex;
+        justify-content: space-around;
+    }
+    .ballotPaper{
+        display: flex;
+        gap: 10px;
+        width: 150px;
+        height: 250px;
+        background-color: #FDF5E6;
+        mix-blend-mode: multiply;
+        position: relative;
+    }
+    .ballotPaper::after{
+        content: "選";
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: #EFEFEF;
+        font-size: 32px;
+        text-align: center;
+        line-height: 50px;
+        border: 1px solid #EFEFEF;
+        top: 5px;
+        right: 10px;
+        z-index: -1;
+    }
+    .ballotPaper2{
+        display: flex;
+        gap: 10px;
+        width: 150px;
+        height: 250px;
+        border: 1px #333 solid;
+        position: relative;
+    }
+    .ballotPaper2::after{
+        content: "比";
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: #EFEFEF;
+        font-size: 32px;
+        text-align: center;
+        line-height: 50px;
+        border: 1px solid #EFEFEF;
+        top: 5px;
+        right: 10px;
+        z-index: -1;
+    }
+    .CandidateNomination{
+        border: 1px #333 solid;
+        padding: 3px;
+        margin-top: 24px;
+        margin-left: 16px;
+    }
+    .CandidateNominationName{
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        width: 70px;
+        height: 182px;
+        border-bottom: 1px #333 solid;
+        border-left: 1px #333 solid;
+        border-right: 1px #333 solid;
+        font-size: 24px;
+        text-align: center;
+        line-height: 70px;
+        margin-left: 16px;
+    }
+    
+    .ElectionName{
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+    }
+    .ElectionName p{
+        margin-top: 1em;
+    }
+    .ElectionName h3{
+        margin-top: 2em;
+    }
+    .ElectionName span{
+        font-size: 20px;
+    }
+    
+    .correction{
+        width: 96px;
+        height: 36px;
+        background-color:#68C1F2;
+        border-radius: 5px;
+        margin: 0 auto;
+        color: #fff;
+        margin-top: 27px;
+        margin-bottom: 20px;
+        box-shadow: 0px 1px 1px 0px #777777;
+    }
+    .correction:hover{
+        box-shadow: inset 0px 1px 1px 0px #777777;
+    }
+    .correction button{
+        width: 100%;
+        height: 100%;
+    }
+    .completion{
+        width: 115px;
+        height: 46px;
+        background-color:#68C1F2;
+        margin: 0 auto;
+        color: #fff;
+        box-shadow: 0px 1px 1px 0px #777777;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    .completion:hover{
+        box-shadow: inset 0px 1px 1px 0px #777777;
+    }
+    .completion button{
+        width: 100%;
+        height: 100%;
+    }    
+}
