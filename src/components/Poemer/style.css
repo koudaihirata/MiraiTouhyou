@@ -1,0 +1,88 @@
+.Poem {
+  width: 95%;
+  height: 122px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 15px;
+  margin-top: 16px;
+  position: relative;
+  transition: all 0.5s;
+}
+.Poem .theWork {
+  display: flex;
+  align-items: flex-start;
+}
+.Poem .theWork > div {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+.Poem .theWork > div > div {
+  position: relative;
+}
+.Poem .theWork > div > div p {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+}
+.Poem .theWork .WorkName {
+  width: 80%;
+}
+.Poem .theWork .WorkName h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.Poem .theWork .WorkName h4 {
+  color: #A4A4A4;
+  margin-top: 6px;
+}
+.Poem .theWork .WorkName .deyToName {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.Poem .theWork .WorkName .deyToName p {
+  font-size: 10px;
+  color: #A4A4A4;
+}
+.Poem .theWork .WorkName .deyToName p span {
+  font-size: 12px;
+  color: #333;
+  padding-right: 1em;
+}
+.Poem .ArrowBtn {
+  width: 100%;
+  margin-top: 8px;
+}
+.Poem .ArrowBtn .goodBtn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-right: 1em;
+}
+.Poem .Arrow {
+  position: absolute;
+  margin-left: 50%;
+  width: 12px;
+  height: 12px;
+  bottom: 8px;
+  background: #fff;
+  border-bottom: 2px solid #333;
+  border-right: 2px solid #333;
+  transition: all 0.5s;
+}
+
+.open {
+  height: 500px;
+}
+
+.additionalContent {
+  width: 100%;
+  height: 350px;
+}
+.additionalContent p {
+  padding: 16px;
+}/*# sourceMappingURL=style.css.map */
