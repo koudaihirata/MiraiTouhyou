@@ -1,0 +1,106 @@
+main{
+    width: 80%;
+    margin: 0 auto;
+
+    .HouseOfCouncilors{
+        margin-top: 32px;
+        border-bottom: 1px solid #68C1F2;
+        border-right: 1px solid #68C1F2;
+
+        h2{
+            font-size: 16px;
+            width: 100%;
+            height: 24px;
+            background-color: #68C1F2;
+            color: #fff;
+            padding-left: 1em;
+            line-height: 24px;
+        }
+        div{
+            margin-top: 12px;
+            margin-bottom: 12px;
+
+            p{
+                margin-left: 2.5em;
+    
+                a{
+                    font-size: 10px;
+                    color: #1E76DE;
+                }
+            }
+        }     
+    }
+    .HouseOfRepresentatives{
+        margin-top: 32px;
+        border-bottom: 1px solid #68C1F2;
+        border-right: 1px solid #68C1F2;
+
+        h2{
+            width: 100%;
+            height: 24px;
+            background-color: #68C1F2;
+            color: #fff;
+            padding-left: 1em;
+            line-height: 24px;
+        }
+        div{
+            margin-top: 12px;
+            margin-bottom: 12px;
+
+            p{
+                margin-left: 2.5em;
+    
+                a{
+                    font-size: 10px;
+                    color: #1E76DE;
+                }
+            }
+        }
+    }
+    .localElections{
+        margin-top: 32px;
+        border-bottom: 1px solid #68C1F2;
+        border-right: 1px solid #68C1F2;
+
+        h2{
+            width: 100%;
+            height: 24px;
+            background-color: #68C1F2;
+            color: #fff;
+            padding-left: 1em;
+            line-height: 24px;
+            font-size: 16px;
+        }
+        div{
+            display: flex;
+            flex-wrap: wrap;
+
+            p{
+                width: 50%;
+                height: 42px;
+                border: #E9E9E9 1px solid;
+
+                a{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 1em;
+                    position: relative;
+
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        width: 8px;
+                        height: 8px;
+                        border-top: 1px solid #68C1F2;
+                        border-right: 1px solid #68C1F2;
+                        top: 16px;
+                        right: 15%;
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+    }
+}
