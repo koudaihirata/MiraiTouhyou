@@ -1,15 +1,18 @@
 .PoemMain {
   width: 100%;
   background: #F4F4F4;
+  margin-top: 60px;
+  padding-top: 0;
+  padding-bottom: 100px;
 }
-.PoemMain section {
+.PoemMain .poemTitle {
   width: 100%;
   height: 34px;
   background: #FAF7ED;
   border-bottom: #68C1F2 solid 3px;
   overflow: hidden;
 }
-.PoemMain section h2 {
+.PoemMain .poemTitle h2 {
   text-align: center;
   line-height: 34px;
   font-weight: bold;
@@ -37,4 +40,13 @@
 .PoemMain ul li:last-child {
   border-right: none;
   border-radius: 0 5px 5px 0;
+}
+.PoemMain > p {
+  text-align: center;
+  margin-top: 16px;
+}
+.PoemMain > p > a {
+  color: #1E76DE;
+  font-size: 10px;
+  text-decoration: underline;
 }/*# sourceMappingURL=style.css.map */

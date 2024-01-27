@@ -1,8 +1,12 @@
 .PoemMain{
     width: 100%;
     background: #F4F4F4;
+    margin-top: 60px;
+    padding-top: 0;
+    padding-bottom: 100px;
 
-    section{
+
+    .poemTitle{
         width: 100%;
         height: 34px;
         background: #FAF7ED;
@@ -39,6 +43,16 @@
                 border-right: none;
                 border-radius: 0 5px 5px 0;
             }
+        }
+    }
+    > p{
+        text-align: center;
+        margin-top: 16px;
+
+        > a{
+            color: #1E76DE;
+            font-size: 10px;
+            text-decoration: underline;
         }
     }
 }
