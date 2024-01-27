@@ -1,0 +1,330 @@
+
+.pseudoVoting{
+    width: 80%;
+    margin: 60px auto 40px;
+    font-size: 16px;
+}
+.pseudoVoting h2{
+    font-weight: bold;
+    margin-top: 20px;
+}
+.pseudoVoting p{
+    margin-left: 32px;
+    margin-top: 10px;
+}
+.componentsBtn{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+}
+.componentsBtn > a{
+    display: inline-block;
+}
+.CurrentSituation{
+    width: 80%;
+    margin: 26px auto 30px;
+    border-bottom: #D9D9D9 1px solid;
+}
+.update{
+    margin-bottom: 10px;
+    width: 45px;
+    height: 20px;
+    border-radius: 50px;
+    border: 1px solid #D9D9D9;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.update p{
+    font-size: 10px;
+}
+.rank{
+    padding-bottom: 16px;
+}
+.rank h3{
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+
+
+
+
+.candidateBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 20px;
+    border-bottom: #D8D8D8 1px solid;
+}
+.candidate{
+    width: 312px;
+    height: 40px;
+    box-shadow: 0px 1px 1px 0px #777777;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.candidate img{
+    margin-left: 8px;
+    margin-right: 12px;
+}
+.candidateName{
+    width: 100px;
+}
+.candidateParty{
+    margin-right: 5px;
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+.candidateParty p{
+    color: #fff;
+}
+.candidateNow{
+    margin-right: 24px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+}
+.Candidate{
+    margin-top: 20px;
+    background-color: #eee;
+}
+.Candidate .candidateParty{
+    background-color: #D9D9D9;
+}
+.Candidate .candidateNow{
+    background-color: #f1f1f1;
+}
+
+
+.PartyBox{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.PartyBox > p{
+    line-height: 80px;
+}
+.party{
+    width: 40px;
+    height: 48px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 1px 3px 0px #777777;
+}
+.partyName p{
+    color: #fff;
+}
+.partyNum{
+    width: 32px;
+    height: 16px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+
+.rank > p{
+font-size: 8px;
+margin-bottom: 8px;
+}
+.rank > p a{
+    font-size: 8px;
+    border-bottom: 1px solid #333;
+}
+
+.voteBtn{
+    box-shadow: 0px 1px 3px 0px #777777;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+@media (min-width: 960px) {
+    .ElectionMain{
+        padding-top: 160px;
+    }
+    .ElectionMain > div > img{
+        width: 50%;
+    }
+    .pseudoVoting{
+        width: 55%;
+        margin: 50px auto 40px;
+        font-size: 16px;
+    }
+    .pseudoVoting h2{
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    .pseudoVoting p{
+        margin-left: 32px;
+        margin-top: 10px;
+    }
+    .componentsBtn{
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        display: inline-block;
+    }
+    .componentsBtn > a{
+        display: inline-block;
+    }
+    .CurrentSituation{
+        width: 55%;
+        margin: 26px auto 30px;
+        border-bottom: #D9D9D9 1px solid;
+    }
+    .update{
+        margin-bottom: 10px;
+        width: 45px;
+        height: 20px;
+        border-radius: 50px;
+        border: 1px solid #D9D9D9;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .update p{
+        font-size: 10px;
+    }
+    .rank{
+        padding-bottom: 16px;
+    }
+    .rank h3{
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .candidateBox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 20px;
+        border-bottom: #D8D8D8 1px solid;
+    }
+    .candidate{
+        width: 312px;
+        height: 40px;
+        box-shadow: 0px 1px 1px 0px #777777;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        margin: 0 auto;
+    }
+    .candidate img{
+        margin-left: 8px;
+        margin-right: 12px;
+    }
+    .candidateName{
+        width: 100px;
+    }
+    .candidateParty{
+        margin-right: 5px;
+        width: 50px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .candidateParty p{
+        color: #fff;
+    }
+    .candidateNow{
+        margin-right: 24px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+    }
+    .Candidate{
+        margin-top: 20px;
+        background-color: #eee;
+    }
+    .Candidate .candidateParty{
+        background-color: #D9D9D9;
+    }
+    .Candidate .candidateNow{
+        background-color: #f1f1f1;
+    }
+
+    .PartyBox{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 100px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+    .PartyBox > p{
+        line-height: 80px;
+    }
+    .party{
+        width: 40px;
+        height: 48px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0px 1px 3px 0px #777777;
+    }
+    .partyName p{
+        color: #fff;
+    }
+    .partyNum{
+        width: 32px;
+        height: 16px;
+        margin: 0 auto;
+        border-radius: 5px;
+        background-color: #fff;
+        text-align: center;
+        overflow: hidden;
+    }
+
+
+
+    .rank > p{
+    font-size: 8px;
+    margin-bottom: 8px;
+    }
+    .rank > p a{
+        font-size: 8px;
+        border-bottom: 1px solid #333;
+    }
+
+    .voteBtn{
+        box-shadow: 0px 1px 3px 0px #777777;
+        border-radius: 5px;
+    }
+}
