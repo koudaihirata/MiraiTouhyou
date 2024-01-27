@@ -16,7 +16,7 @@ type PoemerProps = {
     dey: string,
     author: string,
     good: number,
-    poem: string,
+    poem: string[],
 }
 
 export default function Poemer(props:PoemerProps) {
@@ -66,7 +66,7 @@ export default function Poemer(props:PoemerProps) {
                     <button className="Arrow" onClick={() => setIsOpen(!isOpen)} style={{ transform: isOpen ? "rotate(45deg) rotate(180deg)" : "rotate(45deg)" }}></button>
                 {isOpen && (
                     <div className="additionalContent">
-                        <p>{props.poem}</p>
+                        <p style={{ whiteSpace: 'pre-line' }}>{props.poem.join('\n')}</p>
                     </div>
                 )}
             </div>

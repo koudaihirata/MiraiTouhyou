@@ -66,6 +66,7 @@
         .goodBtn{
             display: flex;
             justify-content: flex-end;
+            align-items: center;
             gap: 4px;
             margin-right: 1em;
         }
@@ -90,6 +91,107 @@
     height: 350px;
 
     p{
+        width: 20em;
         padding: 16px;
     }
+}
+
+@media (min-width: 960px) {
+    .Poem{
+        width: 50%;
+        height: 122px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 15px;
+        margin-top: 16px;
+        position: relative;
+        transition: all .5s;
+    
+        .theWork{
+            display: flex;
+            align-items: flex-start;
+        
+            > div{
+                width: 20%;
+                display: flex;
+                justify-content: center;
+    
+                > div{
+                    position: relative;
+    
+                    p{
+                        position: absolute;
+                        top: 6px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        font-size: 20px;
+                    }
+                }
+            }
+            .WorkName{
+                width: 80%;
+        
+                h3{
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin-top: 8px;
+                }
+                h4{
+                    color: #A4A4A4;
+                    margin-top: 6px;
+                }
+                .deyToName{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 16px;
+        
+                    p{
+                        font-size: 10px;
+                        color: #A4A4A4;
+        
+                        span{
+                            font-size: 12px;
+                            color: #333;
+                            padding-right: 5em;
+                        }
+                    }
+                }
+            }
+        }
+        .ArrowBtn{
+            width: 100%;
+            margin-top: 8px;
+    
+            .goodBtn{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 4px;
+                margin-right: 5em;
+            }
+        }
+        .Arrow{
+            position: absolute;
+            margin-left: 50%;
+            width: 12px;
+            height: 12px;
+            bottom: 8px;
+            background: #fff;
+            border-bottom: 2px solid #333;
+            border-right: 2px solid #333;
+            transition: all .5s;
+        }
+    }
+    .open {
+        height: 500px;
+    }
+    .additionalContent{
+        width: 100%;
+        height: 350px;
+    
+        p{
+            width: 100%;
+            padding: 16px 0 0 160px;
+        }
+    }    
 }
