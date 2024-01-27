@@ -43,7 +43,7 @@ export default function Footer_election() {
                     </li>
                     <li>
                         <p>
-                            <Link href="#">
+                            <Link href="/poem">
                                 <picture className="footerIcon">
                                     <img alt="ポエム" src="/img/poem.svg"/>
                                 </picture>

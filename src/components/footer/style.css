@@ -65,6 +65,7 @@
         height: 120px;
         position: fixed;
         top: 0;
+        background-color: rgba(255, 255, 255, .5);
     }
     .footer > li > p{
         width: 60px;

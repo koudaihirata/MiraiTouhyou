@@ -10,7 +10,6 @@ import Inquiry from '@/components/inquiry/inquiry';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import BackgroundText from '@/components/backgroundText/backgroundText';
-import { useRouter } from 'next/router';
 
 export default function Home() {
   const settings = {
@@ -26,7 +25,6 @@ export default function Home() {
 
   const [ scrollY , setScrollY ] = useState<any>(0);
 
-  // const router = useRouter()
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

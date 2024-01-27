@@ -1,13 +1,13 @@
 "use client"
 
-import "@/components/footer/style.css"
-import Image from "next/image"
-
-import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/firebase/firebase";
+import Image from "next/image";
 import Link from "next/link";
+import { useAuthState } from "react-firebase-hooks/auth";
+import "@/components/footer/style.css"
 
-export function Icon() {
+
+function Icon() {
     const [user] = useAuthState(auth);
 
     return (
@@ -27,8 +27,9 @@ export function Icon() {
 }
 
 
-export default function Footer_square() {
+export default function PoemFooter() {
     return(
+        <>
         <footer>
             <nav className="footerNav">
                 <ul className="footer">
@@ -46,7 +47,7 @@ export default function Footer_square() {
                         <p>
                             <Link href="/poem">
                                 <picture className="footerIcon">
-                                    <img alt="ポエム" src="/img/poem.svg"/>
+                                    <img alt="ポエム" src="/img/poem2.svg"/>
                                 </picture>
                                 選挙ポエム
                             </Link>
@@ -66,7 +67,7 @@ export default function Footer_square() {
                         <p>
                             <Link href="/square">
                                 <picture className="footerIcon">
-                                    <img src="/img/squareIcon.svg" alt="選挙の広場"/>
+                                    <img src="/img/square.svg" alt="選挙の広場"/>
                                 </picture>
                                 政治の広場
                             </Link>
@@ -83,5 +84,6 @@ export default function Footer_square() {
                 </ul>
             </nav>
         </footer>
+        </>
     )
 }
