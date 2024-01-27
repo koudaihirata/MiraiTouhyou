@@ -21,10 +21,7 @@ type PoemerProps = {
 
 export default function Poemer(props:PoemerProps) {
     const [ isOpen, setIsOpen ] = useState(false);
-    const poemRef = useRef<HTMLDivElement>(null);
-    console.log(props.dey);
-    console.log(props.poem);
-    
+    const poemRef = useRef<HTMLDivElement>(null);    
 
 
     useEffect(() => {
