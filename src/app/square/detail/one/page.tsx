@@ -36,7 +36,6 @@ const details = [
 ]
 
 function Com(props:detailProps) {
-    const { name = '', comment = '', replyNam = 0, goodNam = 0, badNum = 0 } = props;
     return(
         <div className="Com">
             <div className="name">

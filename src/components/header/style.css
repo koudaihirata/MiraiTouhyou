@@ -54,7 +54,6 @@ h1 img{
         /* border-bottom: 1px solid #eee; */
         position: fixed;
         /* background-color: #fff; */
-        z-index: 1000;
     }
     .header{
         display: flex;
