@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react';
+import "@/components/backgroundText/style.scss";
 
 
 export default function BackgroundText() {
@@ -48,10 +49,10 @@ export default function BackgroundText() {
     // 960px以下の場合のスタイルを設定
     const styleUnder960px = {
         position: 'fixed' as any,
-        bottom: '20px',
+        // bottom: '20px',
         left: left,
         color: color,
-        fontSize: '150px',
+        // fontSize: '150px',
         zIndex: '-100',
         mixBlendMode: 'multiply' as any,
         fontWeight: 'bold'
@@ -59,10 +60,10 @@ export default function BackgroundText() {
      // 960px以上の場合のスタイルを設定
     const styleOver960px = {
         position: 'fixed' as any,
-        bottom: '-100px',
+        // bottom: '-100px',
         left: left,
         color: color,
-        fontSize: '300px',
+        // fontSize: '300px',
         zIndex: '-100',
         mixBlendMode: 'multiply' as any,
         fontWeight: 'bold'
@@ -72,7 +73,7 @@ export default function BackgroundText() {
     return(
         <>
             <div>
-                <p style={windowWidth <= 960 ? styleUnder960px : styleOver960px }>
+                <p className='backgroundText' style={windowWidth <= 960 ? styleUnder960px : styleOver960px }>
                 FUTYRE&nbsp;VOTING&nbsp;&nbsp;&nbsp;FUTYRE&nbsp;VOTING
                 </p>
             </div>

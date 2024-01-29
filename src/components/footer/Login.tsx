@@ -71,7 +71,7 @@ export default function Footer_Login() {
                         <p>
                             <Link href="/">
                                 <picture className="footerIcon">
-                                    <img alt="ホーム" src="/img/Home.svg" />
+                                    <img alt="ホーム" src="/img/Home2.svg" />
                                 </picture>
                                 ホーム
                             </Link>

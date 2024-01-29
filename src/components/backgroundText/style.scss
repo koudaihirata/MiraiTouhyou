@@ -1,0 +1,10 @@
+.backgroundText{
+    font-size: 150px;
+    bottom: 20px;
+}
+@media (min-width: 960px) {
+    .backgroundText{
+        font-size: 300px;
+        bottom: -100px;
+    }    
+}

@@ -36,7 +36,7 @@ export default function Footer_profile() {
                         <p>
                             <Link href="/">
                                 <picture className="footerIcon">
-                                    <img alt="ホーム" src="/img/Home2.svg"/>
+                                    <img alt="ホーム" src="/img/Home.svg"/>
                                 </picture>
                                 ホーム
                             </Link>
