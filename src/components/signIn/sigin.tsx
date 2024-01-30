@@ -1,9 +1,10 @@
 
 
-import { auth, provider } from "@/firebase/firebase";
+import { auth, db, provider } from "@/firebase/firebase";
 import { signInWithPopup } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Image from "next/image";
+import { doc, setDoc } from "firebase/firestore";
 
 
 export function SignInBtn() {
@@ -13,8 +14,18 @@ export function SignInBtn() {
             return;
         }
         signInWithPopup(auth, provider)
-            .then((result) => {
+            .then(async(result) => {
+                console.log(result.user);
+
                 // ログイン成功時の処理
+                const user = result.user;
+                const userDocumentRef = doc(db, "users", `${user.uid}`);
+
+                const userData = await setDoc(userDocumentRef, {
+                    name: user.displayName,
+                    email: user.email,
+                    profile_picture : user.photoURL
+                });             
             })
             .catch((error) => {
                 // エラーハンドリング

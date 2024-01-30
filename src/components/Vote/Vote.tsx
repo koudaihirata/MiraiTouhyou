@@ -3,16 +3,20 @@
 import "@/app/election/vote/style.css"
 import Link from "next/link"
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import React from "react"
-import { addDoc, collection } from "firebase/firestore"
-import { db } from "@/firebase/firebase"
+import {  doc, setDoc } from "firebase/firestore"
+import { auth, db, provider } from "@/firebase/firebase"
 import { useRouter } from 'next/navigation';
+import { signInWithPopup } from "firebase/auth"
 
 export default function Vote() {
+    const router = useRouter();
 // 選択された名前を管理するためのstateを作成します。初期値は空文字列です。
 const [selectedName, setSelectedName] = useState('');
-const router = useRouter();
+// 選択された党名を管理するためのstateを作成します。初期値は空文字列です。
+const [partyName, setPartyName] = useState('');
+
 
 // 投票変更を処理する関数です。イベントオブジェクトを引数に取ります。
 const handleVoteChange = (event:any) => {
@@ -21,22 +25,6 @@ const handleVoteChange = (event:any) => {
         setSelectedName(event.target.value);
     }    
 };
-// 投票を送信する非同期関数です。イベントオブジェクトを引数に取ります。
-const handleSubmit = async () => {
-    if(typeof window !== 'undefined') {
-        try{
-            // Firestoreの"Vote"コレクションに新しいドキュメントを追加します。そのドキュメントの内容は、選択された名前です。
-            const docRef = await addDoc(collection(db, "Vote"),{
-                name:selectedName,
-            });
-        } catch(e) {
-        }
-    }        
-};
-
-// 選択された党名を管理するためのstateを作成します。初期値は空文字列です。
-const [partyName, setPartyName] = useState('');
-
 // 党の変更を処理する関数です。イベントオブジェクトを引数に取ります。
 const handlePartyChange = (e:any) => {
     if(typeof window !== 'undefined') {
@@ -45,15 +33,23 @@ const handlePartyChange = (e:any) => {
     }        
 };
 
-// 党の投票を送信する非同期関数です。イベントオブジェクトを引数に取ります。
-const partySubmit = async () => {
+// 投票を送信する非同期関数です。イベントオブジェクトを引数に取ります。
+const handleSubmit = async () => {
     if(typeof window !== 'undefined') {
-        try {
-            // Firestoreの"Vote"コレクションに新しいドキュメントを追加します。そのドキュメントの内容は、選択された党名です。
-            const docRef = await addDoc(collection(db, "Vote"), {
-            party: partyName,
-        });
-        } catch (e) {
+        try{
+            const user = auth.currentUser;
+            if (user) {
+                // Firestoreの"Vote"コレクションに新しいドキュメントを追加します。そのドキュメントの内容は、選択された名前です。
+                const userDocumentRef = doc(db, 'Vote',`${user.uid}`);
+                
+                const documentRef = await setDoc(userDocumentRef, {
+                    name: selectedName,
+                    party: partyName,
+                });
+            } else {
+                // ユーザーがログインしていない場合の処理をここに書くことができます。
+            }
+        } catch(e) {
         }
     }        
 };
@@ -64,9 +60,10 @@ async function handleBoth(event:any) {
         try {
             // 個別の投票と党の投票を送信します。
             await handleSubmit();
-            await partySubmit();
+            // await partySubmit();
             // 投票が成功したら、ユーザーを確認ページにリダイレクトします。
             router.push("/election/vote/Confirmation");
+            
     
         } catch (e) {
             // 何かエラーが発生した場合、そのエラーをコンソールに出力します。
@@ -213,7 +210,7 @@ async function handleBoth(event:any) {
                 </div>
                 <div className="proportionalRepresentationWarp">
                     <h3>比例代表選挙</h3>
-                    <form className="proportionalRepresentationBox" onSubmit={partySubmit}>
+                    <form className="proportionalRepresentationBox" onSubmit={handleSubmit}>
                         <div className="proportionalRepresentation">
                             <div className="partyName">
                                 <p style={{color:"rgb(100, 50, 10)"}}>維新政党・新風</p>

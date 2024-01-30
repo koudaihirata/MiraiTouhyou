@@ -10,6 +10,9 @@ import Header_Login from "@/components/header/Login"
 import Inquiry from "@/components/inquiry/inquiry"
 import { Candidate } from "@/components/Candidate/Candidate"
 import { Party } from "@/components/Party/Party"
+import { doc, getDoc } from "firebase/firestore"
+import { auth, db } from "@/firebase/firebase"
+import { useRouter } from 'next/navigation';
 
 
 const persons = [
@@ -129,6 +132,29 @@ const parties = [
 
 
 export default function Election() {
+    const router = useRouter();
+
+    const checkVote = async () => {
+        if(typeof window !== 'undefined') {
+            try {
+                const user = auth.currentUser;
+                if (user) {
+                    const docRef = doc(db, "Vote", `${user.uid}`); // 適切なドキュメントIDに置き換えてください
+                    const docSnap = await getDoc(docRef);
+                    
+                    if (docSnap.exists()) {
+                        // ドキュメントが存在し、データがある場合、別のページにリダイレクトします。
+                        router.push("/election/vote/Confirmation"); // 適切なページパスに置き換えてください
+                    } else {
+                        router.push("/election/vote"); // 適切なページパスに置き換えてください
+                    }
+                }
+            } catch(e) {
+                console.error("Error: ", e);
+            }
+        }        
+    };
+
     return(
         <>
             <main className="ElectionMain">
@@ -142,9 +168,7 @@ export default function Election() {
                     <p>6月1日　10時発表</p>
                 </div>
                 <div className="componentsBtn">
-                    <a href="/election/vote" className="voteBtn">
-                        <Btn label="投票する" />
-                    </a>
+                    <button onClick={checkVote} className="voteBtn">投票する</button>
                 </div>
                 <section className="CurrentSituation">
                     <div className="rank">
@@ -180,9 +204,9 @@ export default function Election() {
                     </div>
                 </section>
                 <div className="componentsBtn">
-                    <a href="/election/pastResults" className="voteBtn">
-                        <Btn label="過去の結果を見る"/>
-                    </a>
+                    <Link href="/election/pastResults" className="pastResultsBtn">
+                        過去の結果を見る
+                    </Link>
                 </div>
                 <Inquiry/>
             </main>

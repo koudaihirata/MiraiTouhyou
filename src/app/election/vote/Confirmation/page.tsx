@@ -1,10 +1,9 @@
 "use client"
 
 import Footer_election from "@/components/electionFooter/election";
-import Header_Login from "@/components/header/Login";
 import { useState, useEffect } from "react";
-import { db } from "@/firebase/firebase";
-import { DocumentData, collection } from "firebase/firestore";
+import { auth, db } from "@/firebase/firebase";
+import { DocumentData, collection, getDoc } from "firebase/firestore";
 import { getDocs } from "firebase/firestore";
 import { doc, deleteDoc } from "firebase/firestore";
 import "@/app/election/vote/Confirmation/style.css"
@@ -13,51 +12,33 @@ import { useRouter } from 'next/navigation';
 
 
 
-
 export default function Confirmation() {
+    const router = useRouter();
+
     const [ Votes, setVotes ] = useState<DocumentData[]>([]);
-    const router = useRouter()
 
-
-    useEffect(() => {                            /* ↓Cloud Firestoreのコレクションの名前 */
-        const usersCollectionRef = collection(db, 'Vote');
-
-        //コンソールで取れたデータを確認
-        getDocs(usersCollectionRef).then((querySnapshot) => {
-            querySnapshot.docs.forEach((doc) => console.log(doc.data()));
-        });
-
-        getDocs(usersCollectionRef).then((querySnapshot) => {
-            const data = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-            
-            setVotes(data);
-        });
+    useEffect (() => {
+        const fetchData = async () => {
+            const user = auth.currentUser;
+            if (user) {
+                const voteRef = collection(db, 'Vote');
+                const specificDocRef = doc(voteRef, `${user.uid}`);
+        
+                const docSnapshot = await getDoc(specificDocRef);
+                if(docSnapshot.exists()) {
+                    const data = docSnapshot.data();
+                    setVotes(prevVotes => [...prevVotes, data]);
+                }
+            }
+        };
+        fetchData();
     },[]);
+        
+    async function handleBoth(e:any) {
+        e.preventDefault();
 
-
-
-    async function handleBoth(event:any) {
-        event.preventDefault();
-        try {
-            // Votesから削除したいデータを選択
-            const voteToDelete1 = Votes[0]; // Votesの最初の要素を削除する
-            const voteToDelete2 = Votes[1]; // Votesの次の要素を削除する
-    
-            // Firestoreから該当のデータを削除
-            const docRef1 = doc(db, 'Vote', voteToDelete1.id);
-            const docRef2 = doc(db, 'Vote', voteToDelete2.id);
-            await deleteDoc(docRef1);
-            await deleteDoc(docRef2);
-    
-            // ローカルのstateからもデータを削除
-            setVotes(Votes.filter(vote => vote.id !== voteToDelete1.id && vote.id !== voteToDelete2.id));
-    
-            router.back();
-        } catch (e) {
-            console.error("Error: ", e);
-        }
+        router.push("/")
     }
-            
 
     return(
         <>
@@ -102,7 +83,7 @@ export default function Confirmation() {
                     <button onClick={handleBoth}>修正する</button>
                 </div>
                 <div className="completion">
-                    <Link href={"/election/vote/Confirmation/Conf"}>
+                    <Link href={"/"}>
                         <button>投票する</button>
                     </Link>
                 </div>

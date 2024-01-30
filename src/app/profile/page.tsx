@@ -4,9 +4,10 @@ import Footer_profile from "@/components/profileFooter/page";
 import "@/app/profile/style.scss"
 import Image from "next/image";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, provider } from "@/firebase/firebase";
+import { auth, db, provider } from "@/firebase/firebase";
 import { signInWithPopup } from "firebase/auth";
 import Inquiry from "@/components/inquiry/inquiry";
+import { doc, setDoc } from "firebase/firestore";
 
 
 
@@ -17,8 +18,18 @@ function SignInBtn() {
             return;
         }
         signInWithPopup(auth, provider)
-            .then((result) => {
+            .then(async(result) => {
                 // ログイン成功時の処理
+                console.log(result.user);
+
+                const user = result.user;
+                const userDocumentRef = doc(db, "users", `${user.uid}`);
+
+                const userData = await setDoc(userDocumentRef, {
+                    name: user.displayName,
+                    email: user.email,
+                    profile_picture : user.photoURL
+                });             
             })
             .catch((error) => {
                 // エラーハンドリング
@@ -45,7 +56,7 @@ function SignOutBtn() {
 
 function ProfilerPage() {
     const [user] = useAuthState(auth)
-    console.log(auth.currentUser);
+    // console.log(auth.currentUser);
     
     
 return(
