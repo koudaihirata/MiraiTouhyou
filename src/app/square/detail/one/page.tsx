@@ -9,6 +9,7 @@ import { faThumbsUp } from '@fortawesome/free-regular-svg-icons'
 import { faThumbsDown } from "@fortawesome/free-regular-svg-icons"
 import { useRouter } from 'next/navigation';
 import Inquiry from "@/components/inquiry/inquiry"
+import AddBtn from "@/components/AddBtn/AddBtn"
 
 
 type detailProps = {
@@ -101,7 +102,7 @@ export default function DetailOne() {
                         <p><a href="#">もっと見る（670件）</a></p>
                     </div>
                 </section>
-                <p><a href="#">＋</a></p>
+                <AddBtn/>
             </main>
             <Inquiry/>
             <Footer_square/>

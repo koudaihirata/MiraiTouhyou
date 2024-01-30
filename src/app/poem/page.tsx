@@ -5,6 +5,7 @@ import "@/app/poem/style.scss"
 import Poemer from "@/components/Poemer/Poemer"
 import Link from "next/link"
 import Btn from "@/components/Btn/Btn"
+import AddBtn from "@/components/AddBtn/AddBtn"
 
 
 const Poemers = [
@@ -193,7 +194,6 @@ export default function Poem() {
                 <section className="poemTitle">
                     <h2>選挙ポエム</h2>
                 </section>
-                <Btn label="ポエムを唄う"/>
                 <ul>
                     <li><Link href="#" style={{background: "#68c1f2",color: "#fff"}}>新着</Link></li>
                     <li><Link href="/poem/week">週間</Link></li>
@@ -206,6 +206,7 @@ export default function Poem() {
                 })}
                 <p><Link href="#">作品をもっと見る</Link></p>
             </main>
+            <AddBtn/>
             <PoemFooter/>
         </>
     )

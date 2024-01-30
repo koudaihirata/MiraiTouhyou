@@ -1,13 +1,14 @@
 "use client"
 
-
-import Header_Login from "@/components/header/Login";
 import Footer_square from "@/components/squareFooter/square";
 import "@/app/square/style.scss"
 import Image from "next/image";
 import Link from "next/link";
 import "@/app/square/style.css"
 import Inquiry from "@/components/inquiry/inquiry";
+import BackgroundText from "@/components/backgroundText/backgroundText";
+import { useEffect, useState } from "react";
+import type { NextPage, GetServerSideProps } from 'next'
 
 type articleProps = {
     link:string,
@@ -122,31 +123,29 @@ function Article(props:articleProps) {
                     </div>
                 </a>
             </div>
+
         </>
     )
 }
 
 export default function Square() {
-
     return(
         <>
             <main className="SquareMain">
                 <h2>政治の広場</h2>
-                <div className="search">
-                    <div className="Sort">
-                        <p>並び替え</p>
-                    </div>
-                    <input type="text" placeholder="キーワードで検索" />
-                </div>
-                <section> 
+                <section className="SquareSection"> 
                     {articles.map((article,index) => {
                         return<Article key={index} {...article} />
                     })}
                 </section>
                 <p><Link href="#">もっと見る</Link></p>
             </main>
-                <Inquiry/>
+            <BackgroundText/>
+            <Inquiry/>
             <Footer_square/>
         </>
     )
 }
+
+
+

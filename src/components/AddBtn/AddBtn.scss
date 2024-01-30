@@ -1,0 +1,25 @@
+.addBtn{
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    bottom: 100px;
+    right: 30px;
+    box-shadow: 0 0 8px #ddd;
+
+    .Addlink{
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 80px;
+        font-size: 65px;
+        color: #68C1F2;
+        overflow-y: hidden;
+    }
+    &:hover{
+        background: #e7e7e7;
+        box-shadow: none;
+    }
+}
