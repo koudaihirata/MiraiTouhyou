@@ -123,7 +123,6 @@ function Article(props:articleProps) {
                     </div>
                 </a>
             </div>
-
         </>
     )
 }
