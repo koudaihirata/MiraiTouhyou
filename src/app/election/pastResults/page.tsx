@@ -1,15 +1,13 @@
 "use client"
 
 import Footer_election from "@/components/electionFooter/election";
-import Header_Login from "@/components/header/Login";
 import "@/app/election/pastResults/style.scss"
 import Inquiry from "@/components/inquiry/inquiry";
 
 export default function PastResults() {
     return(
         <>
-            <Header_Login/>
-            <main>
+            <main className="PastResultsMain">
                 <section className="HouseOfCouncilors">
                     <h2>参議院議員通常選挙</h2>
                     <div>

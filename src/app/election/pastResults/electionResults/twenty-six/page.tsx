@@ -137,8 +137,7 @@ export default function twentySix() {
 
     return(
         <>
-            <Header_Login/>
-            <main>
+            <main className="twentySixMain">
                 <section id="information">
                     <h2>第26回参議院議員通常選挙</h2>
                     <div className="information">

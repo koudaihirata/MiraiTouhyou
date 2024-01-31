@@ -10,10 +10,9 @@ export default function AllResults() {
     return(
         <>
             <main className="AllResultsMain">
-
-
-
-
+                <section className="ResultAnnouncement">
+                    
+                </section>
                 <Inquiry/>
             </main>
             <Footer_election/>
