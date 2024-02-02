@@ -2,6 +2,7 @@ import Footer_election from "@/components/electionFooter/election";
 import Header_Login from "@/components/header/Login";
 import "@/app/election/pastResults/electionResults/style.scss"
 import Link from "next/link";
+import ElectoralDistrict from "@/components/electoralDistrict/electoralDistrict";
 
 type partyNames = {
     part:string,
@@ -169,18 +170,7 @@ export default function twentySix() {
                         <p>女性:54,278,894人</p>
                     </div>
                 </section>
-                <section id="electoralDistrict">
-                    <h2>選挙区</h2>
-                    <div>
-                        <p><a href="#">北海道・東北</a></p>
-                        <p><a href="#">関東</a></p>
-                        <p><a href="#">北陸・甲信越</a></p>
-                        <p><a href="#">東海</a></p>
-                        <p><a href="#">関西</a></p>
-                        <p><a href="#">四国・中国</a></p>
-                        <p><a href="#">九州・沖縄</a></p>
-                    </div>
-                </section>
+                <ElectoralDistrict/>
                 <section id="proportionalRepresentationDistrict">
                     <h2>比例代表区</h2>
                     <ProportionalRepresentationDistrict partyNames={partyNames} />

@@ -26,51 +26,6 @@
             gap: 12px;
         }
     }
-    #electoralDistrict{
-        width: 100%;
-
-        h2{
-            width: 100%;
-            height: 60px;
-            background-color: #68C1F2;
-            font-size: 16px;
-            text-align: center;
-            line-height: 60px;
-            color: #fff;
-            margin-top: 24px;
-        }
-        div{
-            display: flex;
-            flex-wrap: wrap;
-
-            p{
-                width: 50%;
-                height: 42px;
-                border: #E9E9E9 1px solid;
-
-                a{
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    padding-left: 1em;
-                    position: relative;
-
-                    &::after{
-                        content: "";
-                        position: absolute;
-                        width: 8px;
-                        height: 8px;
-                        border-top: 1px solid #68C1F2;
-                        border-right: 1px solid #68C1F2;
-                        top: 16px;
-                        right: 15%;
-                        transform: rotate(45deg);
-                    }
-                }
-            }
-        }
-    }
     #proportionalRepresentationDistrict{
         width: 100%;
 
@@ -158,52 +113,6 @@
             .gender{
                 display: flex;
                 gap: 12px;
-            }
-        }
-        #electoralDistrict{
-            width: 60%;
-            margin: 0 auto;
-    
-            h2{
-                width: 100%;
-                height: 60px;
-                background-color: #68C1F2;
-                font-size: 16px;
-                text-align: center;
-                line-height: 60px;
-                color: #fff;
-                margin-top: 24px;
-            }
-            div{
-                display: flex;
-                flex-wrap: wrap;
-    
-                p{
-                    width: 50%;
-                    height: 42px;
-                    border: #E9E9E9 1px solid;
-    
-                    a{
-                        width: 100%;
-                        height: 100%;
-                        display: flex;
-                        align-items: center;
-                        padding-left: 1em;
-                        position: relative;
-    
-                        &::after{
-                            content: "";
-                            position: absolute;
-                            width: 8px;
-                            height: 8px;
-                            border-top: 1px solid #68C1F2;
-                            border-right: 1px solid #68C1F2;
-                            top: 16px;
-                            right: 15%;
-                            transform: rotate(45deg);
-                        }
-                    }
-                }
             }
         }
         #proportionalRepresentationDistrict{
