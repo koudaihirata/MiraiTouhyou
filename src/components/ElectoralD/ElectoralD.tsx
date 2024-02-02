@@ -1,6 +1,6 @@
 "use client"
 
-import "@/components/ElectoralDistrict/ElectoralDistrict.scss";
+import "@/components/ElectoralD/ElectoralD.scss"
 import Link from "next/link";
 import { useState } from "react";
 
