@@ -2,7 +2,7 @@ import Footer_election from "@/components/electionFooter/election";
 import Header_Login from "@/components/header/Login";
 import "@/app/election/pastResults/electionResults/style.scss"
 import Link from "next/link";
-import ElectoralDistrict from "@/components/electoralDistrict/electoralDistrict";
+import ElectoralDistrict from '@/components/ElectoralDistrict/ElectoralDistrict.client';
 
 type partyNames = {
     part:string,

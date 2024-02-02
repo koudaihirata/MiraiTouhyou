@@ -15,7 +15,8 @@
         display: flex;
         flex-wrap: wrap;
 
-        button{
+
+        .button{
             width: 50%;
             height: 42px;
             border: 1px solid #E9E9E9;
@@ -31,6 +32,25 @@
                 top: 16px;
                 right: 15%;
                 transform: rotate(45deg);
+            }
+        }
+        .return{
+            width: 50%;
+            height: 42px;
+            border: 1px solid #E9E9E9;
+            position: relative;
+
+
+            &::before{
+                content: "";
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                border-top: 1px solid #68C1F2;
+                border-right: 1px solid #68C1F2;
+                top: 16px;
+                left: 15%;
+                transform: rotate(-135deg);
             }
         }
     }

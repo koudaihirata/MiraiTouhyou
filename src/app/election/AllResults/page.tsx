@@ -3,7 +3,7 @@
 import Footer_election from "@/components/electionFooter/election"
 import Inquiry from "@/components/inquiry/inquiry"
 import "@/app/election/AllResults/style.scss"
-import ElectoralDistrict from "@/components/electoralDistrict/electoralDistrict"
+import ElectoralDistrict from '@/components/ElectoralDistrict/ElectoralDistrict.client';
 import Link from "next/link"
 
 
