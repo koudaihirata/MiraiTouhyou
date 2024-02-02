@@ -3,8 +3,8 @@
 import Footer_election from "@/components/electionFooter/election"
 import Inquiry from "@/components/inquiry/inquiry"
 import "@/app/election/AllResults/style.scss"
-import ElectoralDistrict from '@/components/ElectoralDistrict/ElectoralDistrict.client';
 import Link from "next/link"
+import ElectoralD from "@/components/ElectoralD/ElectoralD"
 
 
 type partyNames = {
@@ -194,7 +194,7 @@ export default function AllResults() {
                         </section>
                     </div>
                 </section>
-                <ElectoralDistrict/>
+                <ElectoralD/>
                 <section className="ProportionalRepresentation">
                     <h2>比例代表区</h2>
                     <div>

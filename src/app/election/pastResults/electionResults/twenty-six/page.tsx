@@ -2,7 +2,7 @@ import Footer_election from "@/components/electionFooter/election";
 import Header_Login from "@/components/header/Login";
 import "@/app/election/pastResults/electionResults/style.scss"
 import Link from "next/link";
-import ElectoralDistrict from '@/components/ElectoralDistrict/ElectoralDistrict.client';
+import ElectoralD from "@/components/ElectoralD/ElectoralD";
 
 type partyNames = {
     part:string,
@@ -170,7 +170,7 @@ export default function twentySix() {
                         <p>女性:54,278,894人</p>
                     </div>
                 </section>
-                <ElectoralDistrict/>
+                <ElectoralD/>
                 <section id="proportionalRepresentationDistrict">
                     <h2>比例代表区</h2>
                     <ProportionalRepresentationDistrict partyNames={partyNames} />

@@ -38,7 +38,7 @@ function Kansai({setRegion}:PrefecturesProps) {
     )
 }
 
-export default function ElectoralDistrict() {
+export default function ElectoralD() {
     const [region, setRegion] = useState('prefectures');
 
     return(
