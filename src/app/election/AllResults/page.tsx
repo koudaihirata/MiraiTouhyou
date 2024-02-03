@@ -5,6 +5,7 @@ import Inquiry from "@/components/inquiry/inquiry"
 import "@/app/election/AllResults/style.scss"
 import Link from "next/link"
 import ElectoralD from "@/components/ElectoralD/ElectoralD"
+import CElectoralDistrictBox from "@/components/CElectoralDistrictBox/CElectoralDistrictBox"
 
 
 type partyNames = {
@@ -163,8 +164,6 @@ export default function AllResults() {
         },
     ]
 
-
-
     return(
         <>
             <main className="AllResultsMain">
@@ -194,7 +193,7 @@ export default function AllResults() {
                         </section>
                     </div>
                 </section>
-                <ElectoralD/>
+                <CElectoralDistrictBox/>
                 <section className="ProportionalRepresentation">
                     <h2>比例代表区</h2>
                     <div>

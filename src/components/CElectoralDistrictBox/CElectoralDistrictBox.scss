@@ -62,9 +62,7 @@
 }
 @media (min-width: 960px) {
     #electoralDistrict{
-        width: 60%;
-        margin: 0 auto;
-    
+        width: 100%;
         
         h2{
             width: 100%;
@@ -83,7 +81,7 @@
     
             .button{
                 width: 50%;
-                height: 42px;
+                height: 82px;
                 border: 1px solid #E9E9E9;
                 position: relative;
     
@@ -94,14 +92,14 @@
                     height: 8px;
                     border-top: 1px solid #68C1F2;
                     border-right: 1px solid #68C1F2;
-                    top: 16px;
+                    top: 34px;
                     right: 15%;
                     transform: rotate(45deg);
                 }
             }
             .return{
                 width: 50%;
-                height: 42px;
+                height: 82px;
                 border: 1px solid #E9E9E9;
                 position: relative;
 
@@ -112,7 +110,7 @@
                     height: 8px;
                     border-top: 1px solid #68C1F2;
                     border-right: 1px solid #68C1F2;
-                    top: 16px;
+                    top: 34px;
                     left: 15%;
                     transform: rotate(-135deg);
                 }

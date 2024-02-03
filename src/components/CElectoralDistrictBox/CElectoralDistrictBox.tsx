@@ -1,16 +1,15 @@
 "use client"
 
-import "@/components/ElectoralD/ElectoralD.scss"
+import "@/components/CElectoralDistrictBox/CElectoralDistrictBox.scss"
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import Profile from "./Profile/Profile";
 
 type PrefecturesProps = {
     setRegion: (region: string) => void;
 };
 
-function Prefectures({setRegion}:PrefecturesProps) {
+function Prefectures({setRegion}:PrefecturesProps) {    
     return(
         <div>
             <button className="button">北海道・東北</button>
@@ -23,7 +22,6 @@ function Prefectures({setRegion}:PrefecturesProps) {
         </div>
     )
 }
-
 
 function Kansai({setRegion}:PrefecturesProps) {
     return(
@@ -40,113 +38,78 @@ function Kansai({setRegion}:PrefecturesProps) {
     )
 }
 
+
 function Osaka({setRegion}:PrefecturesProps) {
     const profiles = [
         {
             Furigana: "タカギ カオリ",
             name: "高木 かおり",
-            Work: "参議院議員",
-            age: 49,
-            gender: "女",
-            job: "現職",
+            job: "自由民主党",
             vote: 862736,
         },
         {
             Furigana: "マツカワ ルイ",
             name: "松川 るい",
-            Work: "参議院議員",
-            age: 51,
-            gender: "女",
             job: "現職",
             vote: 725243,
         },
         {
             Furigana: "アサダ ヒトシ",
             name: "松川 るい",
-            Work: "参議院議員",
-            age: 51,
-            gender: "女",
             job: "現職",
             vote: 725243,
         },
         {
             Furigana: "マツカワ ルイ",
             name: "松川 るい",
-            Work: "参議院議員",
-            age: 51,
-            gender: "女",
             job: "現職",
             vote: 725243,
         },
         {
             Furigana: "マツカワ ルイ",
             name: "松川 るい",
-            Work: "参議院議員",
-            age: 51,
-            gender: "女",
             job: "現職",
             vote: 725243,
         },
         {
             Furigana: "マツカワ ルイ",
             name: "松川 るい",
-            Work: "参議院議員",
-            age: 51,
-            gender: "女",
             job: "現職",
             vote: 725243,
         },
         {
             Furigana: "マツカワ ルイ",
             name: "松川 るい",
-            Work: "参議院議員",
-            age: 51,
-            gender: "女",
             job: "現職",
             vote: 725243,
         },
         {
             Furigana: "マツカワ ルイ",
             name: "松川 るい",
-            Work: "参議院議員",
-            age: 51,
-            gender: "女",
             job: "現職",
             vote: 725243,
         },
         {
             Furigana: "マツカワ ルイ",
             name: "松川 るい",
-            Work: "参議院議員",
-            age: 51,
-            gender: "女",
             job: "現職",
             vote: 725243,
         },
         {
             Furigana: "マツカワ ルイ",
             name: "松川 るい",
-            Work: "参議院議員",
-            age: 51,
-            gender: "女",
             job: "現職",
             vote: 725243,
         },
         {
             Furigana: "マツカワ ルイ",
             name: "松川 るい",
-            Work: "参議院議員",
-            age: 51,
-            gender: "女",
             job: "現職",
             vote: 725243,
         },
         {
             Furigana: "マツカワ ルイ",
             name: "松川 るい",
-            Work: "参議院議員",
-            age: 51,
-            gender: "女",
             job: "現職",
             vote: 725243,
         },
@@ -155,13 +118,46 @@ function Osaka({setRegion}:PrefecturesProps) {
 
     return(
         <div className="electoralDistrictBox">
-            <button onClick={() => setRegion('Kansai')} className="return" >戻る</button>
-            {profiles.map((profile, index) => <Profile key={index} {...profile} />)}
+            <button onClick={() => setRegion('Kansai')} className="return">戻る</button>
+            <div>
+                {profiles.map((profile, index) => <OsakaDetail key={index} {...profile} />)}
+
+            </div>
         </div>
     )
 }
 
-export default function ElectoralD() {
+type profile = {
+    Furigana:string,
+    name:string,
+    job:string,
+    vote:number,
+}    
+function OsakaDetail(props:profile) {
+
+    return(
+        <>
+            <div className="electoralDistrictWrap">
+                <div className="electoralDistrict">
+                    <Image src="/img/arakawa.jpg" alt="新川" width={80} height={100}/>
+                    <a href="/election/vote/number/one" className="profile">
+                        <div className="profileName">
+                            <p>{props.Furigana}</p>
+                            <h4>{props.name}</h4>
+                        </div>
+                        <div className="profileParty"><p style={{color:"rgb(210, 35, 25)"}}>{props.job}</p></div>
+                    </a>
+                </div>
+                <div className="electoralDistrictVote">
+                    <p>{props.vote}票</p>
+                </div>
+            </div>
+
+        </>
+    )
+}
+
+export default function CElectoralDistrictBox() {
     const [region, setRegion] = useState('prefectures');
 
     return(

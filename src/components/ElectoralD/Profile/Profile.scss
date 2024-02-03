@@ -1,0 +1,88 @@
+.electoralDistrictWrap{
+    width: 90%;
+    height: 150px;
+    margin: 0 auto;
+    border-bottom: #D8D8D8 solid 1px;
+    justify-content: space-around;
+    align-items: center;
+
+    .electoralDistrict{
+        gap: 10px;
+        border-right: #D8D8D8 1px solid;
+
+
+        img{
+            width: 80px;
+            height: 100px;
+        }
+        .profileName{
+            display: flex;
+            flex-direction: column;
+
+            h4{
+                font-size: 20px;
+            }
+        }
+        .profileWork{
+            p{
+                font-size: 10px;
+            }
+        }
+        .profileParty{
+            border: #333 1px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;border-radius: 15px;
+            width: 106px;
+        }
+    }
+}
+@media (min-width: 960px) {
+    .electoralDistrictWrap{
+        width: 90%;
+        height: 150px;
+        margin: 0 auto;
+        border-bottom: #D8D8D8 solid 1px;
+        justify-content: center;
+        align-items: center;
+    
+        .electoralDistrict{
+            width: 70%;
+            gap: 10px;
+            border-right: #D8D8D8 1px solid;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                width: 80px;
+                height: 100px;
+            }
+            .profileName{
+                display: flex;
+                flex-direction: column;
+    
+                h4{
+                    font-size: 20px;
+                }
+            }
+            .profileWork{
+                p{
+                    font-size: 10px;
+                }
+            }
+            .profileParty{
+                border: #333 1px solid;
+                display: flex;
+                justify-content: center;
+                align-items: center;border-radius: 15px;
+                width: 106px;
+            }
+        }
+        .electoralDistrictVote{
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }    
+}
