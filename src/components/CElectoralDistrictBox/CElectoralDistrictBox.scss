@@ -186,4 +186,191 @@
     }
 }
 @media (min-width: 960px) {
+    #electoralDistrict{
+        width: 100%;
+    
+        
+        h2{
+            width: 100%;
+            height: 60px;
+            background-color: #68C1F2;
+            font-size: 16px;
+            text-align: center;
+            line-height: 60px;
+            color: #fff;
+            margin-top: 16px;
+        }
+        .electoralDistrictBox{
+            display: flex;
+            flex-wrap: wrap;
+    
+    
+            .button{
+                width: 50%;
+                height: 42px;
+                border: 1px solid #E9E9E9;
+                position: relative;
+    
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    border-top: 1px solid #68C1F2;
+                    border-right: 1px solid #68C1F2;
+                    top: 16px;
+                    right: 15%;
+                    transform: rotate(45deg);
+                }
+            }
+            .return{
+                width: 50%;
+                height: 42px;
+                border: 1px solid #E9E9E9;
+                position: relative;
+    
+    
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    border-top: 1px solid #68C1F2;
+                    border-right: 1px solid #68C1F2;
+                    top: 16px;
+                    left: 15%;
+                    transform: rotate(-135deg);
+                }
+            }
+        }
+        .EDBox{
+            margin-bottom: 32px;
+        
+            .return{
+                width: 50%;
+                height: 42px;
+                border: 1px solid #E9E9E9;
+                position: relative;
+    
+    
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    border-top: 1px solid #68C1F2;
+                    border-right: 1px solid #68C1F2;
+                    top: 16px;
+                    left: 15%;
+                    transform: rotate(-135deg);
+                }
+            }
+            .comparison{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 16px;
+                
+                section{
+                    width: 50%;
+    
+                    h4{
+                        font-size: 14px;
+                        text-align: center;
+                    }
+                    &:first-child{
+                        border-right: #D8D8D8 1px solid;
+                    }
+                }
+            }
+            .comparisonEDBox{
+                display: flex;
+                flex-wrap: wrap;
+    
+                .comparisonEDWrap{
+                    width: 100%;
+    
+                    .electoralDistrictWrap{
+                        width: 100%;
+            
+                        .electoralDistrict{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-top: 15px;
+                            gap: 10px;
+    
+                            > a{
+                                display: flex;
+                                align-items: center;
+                                gap: 8px;
+    
+                                > img{
+                                    width: 60px;
+                                    height: 70px;
+                                }
+                                .profileName{
+                
+                                    > p{
+                                        font-size: 10px;
+                                    }
+                                    h4{
+                                        font-size: 16px;
+                                    }
+                                }
+                                .profileParty{
+                                    width: 106px;
+                                    height: 20px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border: #333 1px solid;
+                                    border-radius: 15px;
+                                }
+                            }
+                        }
+                        .electoralDistrictVoteBoxWarp{
+                            display: flex;
+    
+                            .electoralDistrictVoteBox{
+                                width: 50%;
+                                position: relative;
+                
+                                .electoralDistrictVote{
+                                    width: 80%;
+                                    height: 30px;
+                                    margin: 12px auto 0;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border: #333 1px solid;
+                                    border-radius: 6px;
+                                    position: relative;
+                
+                                    &::after{
+                                        content: "票";
+                                        position: absolute;
+                                        bottom: 0;
+                                        right: .5em;
+                                    }
+                                }
+                                &::before{
+                                    content: "獲得表";
+                                    position: absolute;
+                                    top: .5em;
+                                    left: 2.5em;
+                                    background-color: #fff;
+                                    z-index: 100;
+                                }
+                                &:first-child{
+                                    border-right: #D8D8D8 1px solid;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }    
 }

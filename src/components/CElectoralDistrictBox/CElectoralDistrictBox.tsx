@@ -127,7 +127,6 @@ function Osaka({setRegion}:PrefecturesProps) {
         },
     ]
 
-
     return(
         <div className="EDBox">
             <button onClick={() => setRegion('Kansai')} className="return">戻る</button>
