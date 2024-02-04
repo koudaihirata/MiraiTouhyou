@@ -1,10 +1,10 @@
-main{
+.voteMain{
     margin-bottom: 100px;
+    margin-top: 60px;
 }
 h2{
     font-size: 20px;
     text-align: center;
-    margin-top: 24px;
 }
 h3{
     font-size: 16px;
@@ -155,12 +155,16 @@ h3{
     border-top: #fff 1px solid;
     border-right: #fff 1px solid;
 }
+.sendBtn button:hover{
+    background: #5aa8d2;
+    box-shadow: none;
+}
 
 
 @media (min-width: 960px) {
     .voteMain{
         /* margin-bottom: 100px; */
-        padding-top: 150px;
+        margin-top: 120px;
     }
     h2{
         font-size: 20px;
@@ -253,6 +257,7 @@ h3{
     .proportionalRepresentation{
         width: 50%;
         display: flex;
+        justify-content: center;
         gap: 10px;
     }
     .partyName{

@@ -1,12 +1,9 @@
 "use client"
 
-import Btn from "@/components/Btn/Btn"
 import Image from "next/image"
 import "@/app/election/style.css"
 import Link from "next/link"
-import { type } from "os"
 import Footer_election from "@/components/electionFooter/election"
-import Header_Login from "@/components/header/Login"
 import Inquiry from "@/components/inquiry/inquiry"
 import { Candidate } from "@/components/Candidate/Candidate"
 import { Party } from "@/components/Party/Party"
@@ -144,7 +141,7 @@ export default function Election() {
                     
                     if (docSnap.exists()) {
                         // ドキュメントが存在し、データがある場合、別のページにリダイレクトします。
-                        router.push("/election/vote/Confirmation"); // 適切なページパスに置き換えてください
+                        router.push("/ballotConfirmation"); // 適切なページパスに置き換えてください
                     } else {
                         router.push("/election/vote"); // 適切なページパスに置き換えてください
                     }

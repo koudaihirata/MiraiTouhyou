@@ -1,6 +1,6 @@
 section{
     width: 85%;
-    margin: 24px auto 0;
+    margin: 80px auto 0;
 
     .GoogleProfile{
         display: flex;
@@ -145,6 +145,14 @@ section{
     justify-content: center;
     align-items: center;
     margin-top: 60px;
+}
+.SignB{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    width: 100%;
+    height: 60vh;    
 }
 @media (min-width: 960px) {
     section{
@@ -296,6 +304,14 @@ section{
         justify-content: center;
         align-items: center;
         margin-top: 60px;
+    }
+    .SignB{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+        width: 100%;
+        height: 60vh;    
     }
     main{
         padding-top: 150px;

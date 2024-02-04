@@ -1,4 +1,6 @@
-
+.ElectionMain{
+    padding-top: 60px;
+}
 .pseudoVoting{
     width: 80%;
     margin: 60px auto 40px;

@@ -10,6 +10,9 @@ type profile = {
     gender:string,
     job:string,
     vote:number,
+    color: string,
+    CVote:string,
+    img: string,
 }
 
 
@@ -17,7 +20,7 @@ export default function Profile(props:profile) {
     return(
         <div className="electoralDistrictWrap">
             <div className="electoralDistrict">
-                <Image src="/img/arakawa.jpg" alt="新川" width={80} height={100}/>
+                <Image src={props.img} alt="新川" width={80} height={100}/>
                 <a href="/election/vote/number/one" className="profile">
                     <div className="profileName">
                         <p>{props.Furigana}</p>
@@ -27,7 +30,7 @@ export default function Profile(props:profile) {
                         <p>{props.Work}</p>
                         <p>{props.age}歳（{props.gender}）［{props.job}］</p>
                     </div>
-                    <div className="profileParty"><p style={{color:"rgb(210, 35, 25)"}}>自由民主党</p></div>
+                    <div className="profileParty"><p style={{color: props.color}}>{props.CVote}</p></div>
                 </a>
             </div>
             <div className="electoralDistrictVote">

@@ -119,7 +119,7 @@ return(
                 </div>
             </>
         ) : (
-            <div className="SignBtn">
+            <div className="SignB">
                 <SignInBtn/>
             </div>
         )}
