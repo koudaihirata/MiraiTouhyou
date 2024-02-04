@@ -8,6 +8,7 @@ import { getDocs } from "firebase/firestore";
 import { doc, deleteDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { useRouter } from 'next/navigation';
+import Link from "next/link";
 
 
 
@@ -56,10 +57,9 @@ async function handleBoth(event:any) {
 
     return(
         <>
-            <Header_Login/>
             <main style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', width: '100%', height: '100vh', gap: '32px'}}>
                 <p style={{fontSize: '16px', textAlign: 'center'}}>投票完了しました</p>
-                <a href="/" onClick={handleBoth} style={{fontSize: '16px', color: '#6464FF', textDecoration: 'underline'}}>ホームに戻る</a>
+                <Link href="/"style={{fontSize: '16px', color: '#6464FF', textDecoration: 'underline'}}>ホームに戻る</Link>
             </main>
             <Footer_election/>
         </>

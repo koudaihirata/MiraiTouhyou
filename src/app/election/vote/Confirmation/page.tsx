@@ -26,7 +26,7 @@ export default function Confirmation() {
                     <button onClick={handleBoth}>修正する</button>
                 </div>
                 <div className="completion">
-                    <Link href={"/"}>
+                    <Link href={"/election/vote/Confirmation/Conf"}>
                         <button>投票する</button>
                     </Link>
                 </div>
