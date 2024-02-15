@@ -14,7 +14,7 @@ export default function One(){
     return(
         <>
             <Header_Login/>
-            <main>
+            <main className="mainCandidate">
                 <div className="backBtn">
                     <button onClick={() => router.back()}>戻る</button>
                 </div>

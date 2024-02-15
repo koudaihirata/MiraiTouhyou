@@ -15,7 +15,7 @@ export default function Three(){
     return(
         <>
             <Header_Login/>
-            <main>
+            <main className="mainCandidate">
                 <div className="backBtn">
                     <Link href=''>
                         <button onClick={() => router.back()}>戻る</button>

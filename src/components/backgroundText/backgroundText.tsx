@@ -74,7 +74,7 @@ export default function BackgroundText() {
         <>
             <div>
                 <p className='backgroundText' style={windowWidth <= 960 ? styleUnder960px : styleOver960px }>
-                FUTYRE&nbsp;VOTING&nbsp;&nbsp;&nbsp;FUTYRE&nbsp;VOTING
+                FUTURE&nbsp;VOTING&nbsp;&nbsp;&nbsp;FUTURE&nbsp;VOTING
                 </p>
             </div>
         </>
