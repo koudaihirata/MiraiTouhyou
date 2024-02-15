@@ -14,40 +14,61 @@ import { useRouter } from 'next/navigation';
 
 const persons = [
     {
-        name: "平田広大",
-        party:"共産",
-        now:"新",
-        num:101212,
-        color:"#B0A200",
+        name: "新川るい",
+        party:"自民",
+        now:"元",
+        num:50065,
+        color:"rgb(210, 35, 25)",
+        link:"/election/vote/number/one",
     },
     {
         name: "五十嵐太郎",
         party:"参政",
         now:"新",
         num:85187,
-        color:"#F39800",
-    },
-    {
-        name: "新川るい",
-        party:"自民",
-        now:"元",
-        num:50065,
-        color:"#C51442",
+        color:"rgb(235, 100, 10)",
+        link:"/election/vote/number/two",
     },
     {
         name: "辛口池流",
         party:"N党",
         now:"現",
         num:10042,
-        color:"#657F10",
+        color:"rgb(182, 200, 27)",
+        link:"/election/vote/number/three",
     },
-    // {
-    //     name: "山口煙管",
-    //     party:"無",
-    //     now:"新",
-    //     num:5432,
-    //     color:"#D9D9D9",
-    // },      
+    {
+        name: "橘弥生",
+        party:"立民",
+        now: "現",
+        num: 2000,
+        color:"rgb(35, 145, 255)",
+        link:"/election/vote/number/four",
+    },
+    {
+        name: "平田広大",
+        party:"共産",
+        now:"新",
+        num:101212,
+        color:"rgb(110, 65, 225)",
+        link:"/election/vote/number/five",
+    },
+    {
+        name: "山口煙管",
+        party:"無",
+        now:"新",
+        num:5432,
+        color:"#D9D9D9",
+        link:"/election/vote/number/six",
+    },      
+    {
+        name: "流川楓",
+        party:"維新",
+        now:"新",
+        num: 12345,
+        color:"rgb(225, 154, 0)",
+        link:"/election/vote/number/seven",
+    },
 ]
 const parties = [
     {
@@ -173,18 +194,11 @@ export default function Election() {
                             <Image src='/img/reload.svg' alt="リロード" width={10} height={10}/>
                             <p>13:00</p>
                         </div>
-                        <h3>現在の順位</h3>
+                        <h3>あなたの地域の立候補者一覧</h3>
                         <div className="candidateBox">
                             {persons.map((person,index) =>{
                                 return <Candidate key={index} {...person} />
                             })}
-                        </div>
-                        <div className="candidate Candidate">
-                            <Image src='/img/profile.svg' alt="Icon" width={24} height={24}/>
-                            <p className="candidateName">山口煙管</p>
-                            <div className="candidateParty"><p>無</p></div>
-                            <div className="candidateNow"><p>新</p></div>
-                            <p>5432票</p>
                         </div>
                         <div className="PartyBox">
                             {parties.map((parties,index) => {
