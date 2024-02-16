@@ -62,7 +62,6 @@
     flex-wrap: wrap;
     gap: 10px;
     padding-bottom: 20px;
-    border-bottom: #D8D8D8 1px solid;
 }
 .candidate{
     width: 312px;
@@ -187,7 +186,14 @@ margin-bottom: 8px;
     box-shadow: none;
 }
 
-
+.situationLink{
+    text-align: center;
+    margin: 16px 0 100px 0;
+}
+.situationLink a{
+    color: #6464FF;
+    text-decoration: underline;
+}
 
 
 
@@ -244,8 +250,8 @@ margin-bottom: 8px;
     }
     .rank h3{
         text-align: center;
-        font-size: 16px;
-        margin-bottom: 8px;
+        font-size: 20px;
+        margin-bottom: 16px;
     }
 
     .candidateBox{
@@ -255,7 +261,6 @@ margin-bottom: 8px;
         flex-wrap: wrap;
         gap: 24px;
         padding-bottom: 20px;
-        border-bottom: #D8D8D8 1px solid;
     }
     .candidate{
         width: 312px;

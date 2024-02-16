@@ -166,6 +166,8 @@ export default function Election() {
                     } else {
                         router.push("/election/vote"); // 適切なページパスに置き換えてください
                     }
+                } else {
+                    alert("ログインしてください");
                 }
             } catch(e) {
                 console.error("Error: ", e);
@@ -200,6 +202,7 @@ export default function Election() {
                                 return <Candidate key={index} {...person} />
                             })}
                         </div>
+                        <div className="situationLink"><Link href="#">他の地域の立候補者の状況を確認する</Link></div>
                         <div className="PartyBox">
                             {parties.map((parties,index) => {
                                 return <Party key={index} {...parties}/>
