@@ -11,7 +11,7 @@ import { useState } from "react";
 
 export default function Confirmation() {
     const router = useRouter();
-    const [addClass, setAddClass] = useState(false);
+    const [addClass, setAddClass] = useState<string[]>([]);
         
     async function handleBoth(e:any) {
         e.preventDefault();
@@ -21,16 +21,15 @@ export default function Confirmation() {
     async function handleVote(e:any) {
         e.preventDefault();
 
-        setAddClass(true);
+        setAddClass(['newVoting1', 'newVoting2']);
 
-        // router.push("/election/vote/Confirmation/Conf")
     }
 
     return(
         <>
             <main className="ConfirmationMain">
                 <p>この内容でよろしいですか</p>
-                <BallotPaper  extraClassName={addClass ? 'newVoting' : ''}/>
+                <BallotPaper  extraClassName={addClass}/>
                 <div className="correction">
                     <button onClick={handleBoth}>修正する</button>
                 </div>
@@ -42,4 +41,3 @@ export default function Confirmation() {
         </>
     )
 }
-

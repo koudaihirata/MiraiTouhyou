@@ -5,7 +5,7 @@ import { doc,} from "firebase/firestore";
 
 
 
-export default function BallotPaper({extraClassName}: {extraClassName: string}) {
+export default function BallotPaper({extraClassName}: {extraClassName: string[]}) {
     const [ Votes, setVotes ] = useState<DocumentData[]>([]);
 
     useEffect (() => {
@@ -26,8 +26,8 @@ export default function BallotPaper({extraClassName}: {extraClassName: string}) 
     },[]);
 
     return(
-        <div>
-        <div className={`ballotPaper ${extraClassName}`}>
+    <div>
+        <div className={`ballotPaper ${extraClassName[0]}`}>
             <div className="ballotPaperName">
                 <div className="CandidateNomination">
                     <p>候補者指名</p>
@@ -43,7 +43,7 @@ export default function BallotPaper({extraClassName}: {extraClassName: string}) 
                 <h3><span>選挙区</span>選出議員選挙投票</h3>
             </div>
         </div>
-        <div className="ballotPaper2">
+        <div className={`ballotPaper2 ${extraClassName[1]}`}>
             <div className="ballotPaperName">
                 <div className="CandidateNomination">
                     <p>候補党指名</p>

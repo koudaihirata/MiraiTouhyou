@@ -131,6 +131,33 @@
     width: 100%;
     height: 100%;
 }
+.newVoting1{
+    animation: newVoting1 1s forwards;
+    /* パースペクティブを設定して3D変換を可能にします */
+    perspective: 1000px;
+}
+@keyframes newVoting1 {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-200px);
+    }
+}
+.newVoting2{
+    animation: newVoting2 1s forwards;
+    /* パースペクティブを設定して3D変換を可能にします */
+    perspective: 1000px;
+}
+@keyframes newVoting2 {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(200px);
+    }
+}
+
 
 @media (min-width: 960px) {
     .ConfirmationMain{
