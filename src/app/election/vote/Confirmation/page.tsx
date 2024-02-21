@@ -28,9 +28,9 @@ export default function Confirmation() {
             setWhiteClass('White');
         }, 1000);
 
-        // setTimeout(() => {
-        //     router.push('/election/vote/Confirmation/Conf');
-        // }, 4000);
+        setTimeout(() => {
+            router.push('/election/vote/Confirmation/Conf');
+        }, 4000);
 
     }
 
