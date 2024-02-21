@@ -5,7 +5,7 @@ import { doc,} from "firebase/firestore";
 
 
 
-export default function BallotPaper({extraClassName}: {extraClassName: string[]}) {
+export default function BallotPaper({extraClassName = ["",""]}: {extraClassName?: string[]}) {
     const [ Votes, setVotes ] = useState<DocumentData[]>([]);
 
     useEffect (() => {

@@ -12,6 +12,7 @@ import { useState } from "react";
 export default function Confirmation() {
     const router = useRouter();
     const [addClass, setAddClass] = useState<string[]>([]);
+    const [whiteClass, setWhiteClass] = useState<string>('WhiteNone');
         
     async function handleBoth(e:any) {
         e.preventDefault();
@@ -22,6 +23,14 @@ export default function Confirmation() {
         e.preventDefault();
 
         setAddClass(['newVoting1', 'newVoting2']);
+
+        setTimeout(() => {
+            setWhiteClass('White');
+        }, 1000);
+
+        // setTimeout(() => {
+        //     router.push('/election/vote/Confirmation/Conf');
+        // }, 4000);
 
     }
 
@@ -37,6 +46,25 @@ export default function Confirmation() {
                     <button onClick={handleVote}>投票する</button>
                 </div>
             </main>
+                <div className={whiteClass}>
+                    <div className="electionBox">
+                        <div className="line">
+                            <p>・</p>
+                            <p>・</p>
+                            <p>・</p>
+                            <p>・</p>
+                        </div>
+                        <p>選挙箱</p>
+                        <div className="line2">
+                            <p>・</p>
+                            <p>・</p>
+                            <p>・</p>
+                            <p>・</p>
+                        </div>
+                    </div>
+                    <div className="yellowCard"></div>
+                    <div className="whiteCard"></div>
+                </div>
             <Footer_election/>
         </>
     )
