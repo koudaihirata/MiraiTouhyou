@@ -34,6 +34,13 @@ const details = [
         goodNam: 2498,
         badNum: 102,
     },
+    {
+        name: "aaaa",
+        comment: "aa",
+        replyNam: 3,
+        goodNam: 243568,
+        badNum: 104532,
+    },
 ]
 
 function Com(props:detailProps) {
