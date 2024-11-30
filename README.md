@@ -1,1 +1,1 @@
-[PDFはこちら](public/document/企画書.pdf)
+[企画書はこちら](public/document/企画書.pdf)
